@@ -5,7 +5,105 @@ Lo mas antiguo en lo profundo del fondo.
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
-# :23) 19/08/2023 ,  # time video: 1:01.23 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+
+
+# :24) 20/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                        # muy usada en entornos profesionasles, la caracteristica git STAGED
+ls altr            
+vi otrofichero.txt      # Estoy cambiando este texto 
+vi branch1.txt          # tambien estoy cambiando este texto "ajusto documentacion etc.."
+git status              # me lista ficheros modificados, pero que de repente no he terminado de modificar, de repente suena el telefono y le alejo de ellos
+                        # me mandan un caorreo urgente, y me dicen: tio, tio, tio urgente te tienes que poner 
+                        # y arreglar el fichero branch2.txt es urgentisimo tienes que comitearlo lo antes posible 
+                        # da igual lo que estubieras haciendo tienes que pararlo para hacer esto que es mas importante. 
+                        # vale, no he terminado de modificar estos ficheros 
+                        # y ya me estan pidiendo que modifique otros porque es urgente
+                        # y aqui me surge el problema, pierdo lo que estaba adelantando por hacer lo urgente.
+                        # puedes solicionarlo de dos formas la cambona es que copias lo que ya tienes hecho 
+cp -prf miapp miapp2
+cd miapp2 
+git status 
+git reset --hard            # pierdo mis cambios 
+                            # hago aqui los cambios los commiteo, soluciono lo que hera urgente 
+                            # hago una copia de mis ficheros que ya estaban modificados aqui.
+cp ../miapp/branch1.txt .                        
+cp ..miapp/otrofichero.txt .
+                            # y sigo trabajando, pero esto no es practico, y menos en repositorios grandes.
+rm -rf miapp2               # es un muy mal ejemplo
+clear                       # como se debe hacer.
+git status                  # igual caso anterior
+                            # resulta que: 
+                            # yo no puedo hacer un commit de esto
+                            # porque no lo he terminado, y podria romper el trabajo de otros 
+git reset --hard            # pero no quiero hacer esto, porque perderia todos mis cambios                
+                            # bueno como se hace.
+git stash                   # me deja un directorio de trabajo limpio.          
+git status                  # limpio, nothing to commit, working tree clean.
+                            # lo que he hecho previamente no esta commiteado pero tampoco esta perdido
+                            # esto es trabajo paralelo. 
+                            # esta stasheado en una estructura de pila en memoria.
+                            # aqui yo ya puedo trabajar en la urgencia solicitada. 
+vi branch2.txt              # arreglalo es muy importante "cambio Hiper urgente".   y en cuanto lo tengas tienes que commitearlo.                     
+git add branch2.txt
+git commit -am "branch2.txt cambio super urgente"
+git log                     # listo aqui esta mi cambio super urgente.
+                            # y como puedo yo ahora volver a donde estaba? a lo previo que no podia commitear porque no lo habia terminado.
+git stash apply             # aplica los cambios que no tenia commiteados sobre los cambios que tengo actualmente.                            
+git log                     # commit cambio super urgente sigue ahi.
+                            # pero ya puedo seguir trabajando con lo que estaba haciendo antes. 
+vi otrofichero.txt          # sigo pretendiendo terminar lo que estaba haciendo antes para poder comitearlo.
+                            # "texto ahora si que me han dejado termino de hacer mi trabajo comodamente"
+git commit -am "cambio cierto texto"                            
+git log                     # ya esta no he perdido ningun cambio
+                            # esta muy bien porque yo puedo tener estas interrupciones y no quiero commitear algo porque no esta terminado.
+clear
+                            # podes tener multiples stashes SI, estos son apilables.
+git stash list              # para ver que staches tengo.                            
+                            # stash #(0) MIP on master: idCOMMIT merge branch 'nueva rama' 
+                            # el nombre del stash se lo puedo dar yo, pero por defecto 
+                            # es el nombre del ultimo commit
+git satash apply            #                            
+git stash clear             #                            
+git stash list              # aqui no pone nada.
+git stash save "Estoy creando el login"   # crear un stash con nombre concreto.
+git merge
+git reset --hard
+clear
+git stash save "Estoy creando el login"   # no lo puedo hacer porque no hecho cambios, no hay cambios locales 
+echo texto > vacio.txt 
+git status
+git stash save "Estoy creando el login"   # crear un stash con nombre concreto. OK
+git stash list                            # 
+ls                                        # estoy haciendo otros cambios super importantes cuando me piden otro mas super importante 
+vi otrofichero.txt
+git stash save "algo mas importante que lo anterior importante :-)"   # crear un stash con nombre concreto. OK
+git stash list                            # stash #(0) MIP on master: algo mas importante que lo anterior importante :-) 
+                                          # stash #(1) MIP on master: Estoy creando el login 
+                                          # es como una pila de folios.
+git stash pop                             # aplicariamos el actual de la cabeza de la pila de satsh., lo saca de la pila de stash.
+git stash list                            # stash #(0) MIP on master: Estoy creando el login              
+git stash pop 
+git stash list                            # no visualiza nada ya no hay stash.
+                                          # cuando uso el pop no tengo que hacerle el clear.
+git stash apply -h                        # ayuda, manual de git stash apply --index  (0, 1, 2, 4), eliges el que quieres dentro de la pila de stash
+                                          # con este apply luego tendras que hacer un clear para eliminar la pila de stash.
+                                          # que mas les vamos a contar (Tenemos mucho).
+                                          # bueno resumen:
+                                          # ya sabemos como trabajar con:
+                                          # ramas, merge, rebase, stash
+                                          # vamos a hacer cosas chulas vamos a la rama
+clear                                     # cherry picking, recogida de ceresas, consiste en lugar de fucionar ramas enteras, 
+                                          # voy a fucionar commits concretos     
+                                          # ejemplo concreto: los famosos parches de seguridad de windows.
+rm -rf * .git                             # y
+                                          # vamos a crearnos otra estructura git para practicar este ejemplo                                          
+git init .
+touch master1.txt
+git add master1.txt                                          
+git commit -am "master1.txt"
+git checkout -b fix-uergente12345
+touch fix1.txt
+# :23) 19/08/2023 ,  # time video start: 1:01.23 , Stop: 1:28:36,  Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
             # hayg gente que considera que estos commit autogenerados con el merge son superfluos, no les gusta ver esos commits.
             # que herramiente nos permite hacer un merge re-escribiendo el historial de confirmaciones "git rebase".
             # objetivo del revase: cuando hagamos el MERGE, el commit del HEAD no se vea afectado por otro commit automatico. 
