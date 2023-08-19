@@ -5,13 +5,82 @@ Lo mas antiguo en lo profundo del fondo.
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
-
-
-
-
-
-
-# :22) 18/08/2023 ,  # time video: 1:01.23 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+# :23) 19/08/2023 ,  # time video: 1:01.23 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+            # hayg gente que considera que estos commit autogenerados con el merge son superfluos, no les gusta ver esos commits.
+            # que herramiente nos permite hacer un merge re-escribiendo el historial de confirmaciones "git rebase".
+            # objetivo del revase: cuando hagamos el MERGE, el commit del HEAD no se vea afectado por otro commit automatico. 
+            # vamos hacerlo
+rm -rf * .git  # empiezo desde cero me cargo todo.
+ls
+            # ESTAS SON LAS MEJORES PARTES DE GIT
+git init . 
+git status
+clear
+touch master1.txt
+git add master1.txt
+git commit -am "master1.txt"   # mi primer puntico
+git checkout -b feacture-primeraRama
+touch branch1.txt 
+git add branch1.txt 
+git commit -am "branch1.txt "   
+touch branch2.txt 
+git add branch2.txt 
+git commit -am "branch2.txt "   
+git checkout master           # regreso a mi rama master a crear otro puntico de commit 
+touch master2.txt 
+git add master2.txt 
+git commit -am "master2.txt "   
+                                  # Ojo, vamos ha hacer un MERGE una Union de ramas pero:
+                                  # No queremos que nos genere un nuevo commit, por ser un commit superfluo, solo me dice que se a mergeado una rama nada mas.
+git rebase feacture-primeraRama   # seguido de la rama que vamos a re-basear.  y ya esta.        
+                                  # rebobinando la cabeza "HEAD" para cumplir unir los cambios commits que has hecho, applying master2.txt
+                                  # al ir a fork mi historial ahora es totalmente plano, lineal.
+git log                           # ya no hay ningun commit que me ponga mege branch       
+                                  # esto se llama historico lineal, es muchas veces lo que queremos.
+                                  # rebase, siempre lo vamos a intentar utilizar siempre en nuestro repositorio local.
+                                  # cuando trabajemos con compañeros con proyectos grandes vamos a trabajar siempre con ramas
+                                  # las ramas cuando las trabajemos para nosotros mismos de manera local las vamos a trabajar con rebase
+                                  # MERGE en remoto, REBASE en local
+                                  # el historial de un proyecto open source no se puede rescribir.
+                                  # por razonas de al hacer un rebase nos carguemos codigo importante, por hacer un replay del historial.
+                                  # REBASE tambien nos permite cometer errores y borrar cosas sin quererlas
+rm -rf .git 
+copy-paste                        # igual que el anterior                                  
+git merge feacture-primeraRama    # nos queda en el fork un dibujito perfecto, las dos ramas se unen en una sola que representa ser la rama master, se fusiona la rama con el la master.
+rm -rf .git                       # para utilizar un merge.
+ls -altr
+rm -rf * .git  
+copy and past "script commits"
+git rebase feacture-primeraRama   # el historial es plano, linea recta no hay figura unificada en el head del master
+                                  # puede pasar que yo quiera hacer cambios en mi rama, bueno mi rama sigue existiendo 
+                                  # al hacer rebase o el merge, las ramas siguen existiendos, no he eliminado esas ramas
+                                  # asi que puedo cambiarme de nuevo a esa rama. 
+                                   # git branch feacture-primeraRama                                  
+git checkout feacture-primeraRama  # Como yo estoy en esta rama puedo seguir tranajando en esta rama.
+                                  # vamos a crear nuevo fichero.                                
+touch branch3-nuevo.txt                                   
+git add branch3-nuevo.txt                                   
+git commit .am "modifico mas caosa branch3-nuevo.txt"
+                                  # y me vuelvo a mi git master
+git checkout master               # de forma visual en fork puedo ver que he vuelto a vifurcar mi codigo                                  
+                                  # puedo hacer exactamente lo mismo tengo dos opciones git merce o rebase.
+                                  # al yo saber que mi rama merge nadie mas ha tocado yo podria hacerle un merge y va aparecer lineal, fost forward
+                                  # ho no me deja hacer un fast fordware, bueno pues nada hagamoslo de la otra forma
+merge branch                                   
+git log 
+                                  # el el divujito de fork volvemos a ver como se fusiona la rama y cierra la figura no lineal.
+git log --oneline --graph         # formato de reporte git mas bonito
+                                  # voy a mover miapp.old
+mv miapp miapp.old                                   
+cp -pr miapp-ramas miapp          # voy a copiarlo para que no se borre
+cd miapp
+ls -altr
+                                  # yo puedo fusionar ramas tambien
+git rebase feacture-rama-mejora   # o merge            
+                                  # y aqui me aparece como secuencial 
+git merge nueva-rama              # y ahora no lo hago secuencial
+git log --oneline --graph         # tambien podemos ver las cosas que estamos haciendo.
+# :22) 18/08/2023 ,  # time video: 1:01.23 , Stop: 01:15:06 , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                                       # no lo voy hacer porque no tengo configurado ningun ORIGIN, ruta del servidor remoto en la configuracion de mi .git
                                       # pero suponiendo que si, haria: ORIGIN es el repositorio remoto: GitHub, GitLab, -Bare  ETC..
 git pull origin  nombreDeLaRama                
