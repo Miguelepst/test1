@@ -1,5 +1,7 @@
-Lo mas reciente arriba 
+Lo mas reciente arriba "HEAD"
 Lo mas antiguo en lo profundo del fondo.
+
+
 
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "ENTENDIENDO GIT"
 {
@@ -7,6 +9,44 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
+# :25) 21/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+git help     
+                  # usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]     
+                  #          [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]    
+                  #          [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+                  #          [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]       
+                  #          [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+                  #          <command> [<args>]
+                  # These are common Git commands used in various situations:
+                  # start a working area (see also: git help tutorial)
+                  #  clone     Clone a repository into a new directory
+                  #  init      Create an empty Git repository or reinitialize an existing one   
+                  # work on the current change (see also: git help everyday)
+                  #  add       Add file contents to the index
+                  #  mv        Move or rename a file, a directory, or a symlink
+                  #  restore   Restore working tree files
+                  #  rm        Remove files from the working tree and from the index
+                  # examine the history and state (see also: git help revisions)
+                  #  bisect    Use binary search to find the commit that introduced a bug       
+                  #  diff      Show changes between commits, commit and working tree, etc       
+                  #  grep      Print lines matching a pattern
+                  #  log       Show commit logs
+                  #  show      Show various types of objects
+                  #  status    Show the working tree status
+                  # grow, mark and tweak your common history
+                  #  branch    List, create, or delete branches
+                  #  commit    Record changes to the repository
+                  #  merge     Join two or more development histories together "Unir dos o más historias de desarrollo."
+                  #  rebase    Reapply commits on top of another base tip "Volver a aplicar confirmaciones encima de otra punta base"
+                  #  reset     Reset current HEAD to the specified state
+                  #  switch    Switch branches
+                  #  tag       Create, list, delete or verify a tag object signed with GPG
+                  # collaborate (see also: git help workflows)
+                  #  fetch     Download objects and refs from another repository "Descargar objetos y referencias desde otro repositorio"
+                  #  pull      Fetch from and integrate with another repository or a local branch "Obtener desde e integrar con otro repositorio o una rama local"
+                  # push      Update remote refs along with associated objects "Actualizar referencias remotas junto con los objetos asociados."
+                  #  'git help -a' and 'git help -g' list available subcommands and some concept guides. See 'git help <command>' or 'git help <concept>' to read about a specific subcommand or concept. See 'git help git' for an overview of the system.
+                  # {"practica-estudio" :"1 hora repaso contenido hasta lo presente observacion"}
 # :24) 20/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                         # muy usada en entornos profesionasles, la caracteristica git STAGED
 ls altr            
@@ -104,13 +144,13 @@ git commit -am "master1.txt"
 git checkout -b fix-uergente12345
 touch fix1.txt
 # :23) 19/08/2023 ,  # time video start: 1:01.23 , Stop: 1:28:36,  Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
-            # hayg gente que considera que estos commit autogenerados con el merge son superfluos, no les gusta ver esos commits.
-            # que herramiente nos permite hacer un merge re-escribiendo el historial de confirmaciones "git rebase".
-            # objetivo del revase: cuando hagamos el MERGE, el commit del HEAD no se vea afectado por otro commit automatico. 
-            # vamos hacerlo
+               # hayg gente que considera que estos commit autogenerados con el merge son superfluos, no les gusta ver esos commits.
+               # que herramiente nos permite hacer un merge re-escribiendo el historial de confirmaciones "git rebase".
+               # objetivo del revase: cuando hagamos el MERGE, el commit del HEAD no se vea afectado por otro commit automatico. 
+               # vamos hacerlo
 rm -rf * .git  # empiezo desde cero me cargo todo.
 ls
-            # ESTAS SON LAS MEJORES PARTES DE GIT
+               # ESTAS SON LAS MEJORES PARTES DE GIT
 git init . 
 git status
 clear
@@ -143,7 +183,7 @@ git log                           # ya no hay ningun commit que me ponga mege br
                                   # por razonas de al hacer un rebase nos carguemos codigo importante, por hacer un replay del historial.
                                   # REBASE tambien nos permite cometer errores y borrar cosas sin quererlas
 rm -rf .git 
-copy-paste                        # igual que el anterior                                  
+                                  # copy-paste   igual que el anterior                                  
 git merge feacture-primeraRama    # nos queda en el fork un dibujito perfecto, las dos ramas se unen en una sola que representa ser la rama master, se fusiona la rama con el la master.
 rm -rf .git                       # para utilizar un merge.
 ls -altr
@@ -160,14 +200,14 @@ touch branch3-nuevo.txt
 git add branch3-nuevo.txt                                   
 git commit .am "modifico mas caosa branch3-nuevo.txt"
                                   # y me vuelvo a mi git master
-git checkout master               # de forma visual en fork puedo ver que he vuelto a vifurcar mi codigo                                  
+git checkout master               # de forma visual en fork puedo ver que he vuelto a bifurcar mi codigo                                  
                                   # puedo hacer exactamente lo mismo tengo dos opciones git merce o rebase.
                                   # al yo saber que mi rama merge nadie mas ha tocado yo podria hacerle un merge y va aparecer lineal, fost forward
                                   # ho no me deja hacer un fast fordware, bueno pues nada hagamoslo de la otra forma
 merge branch                                   
 git log 
                                   # el el divujito de fork volvemos a ver como se fusiona la rama y cierra la figura no lineal.
-git log --oneline --graph         # formato de reporte git mas bonito
+git log --oneline --graph         # formato de reporte git mas bonito, grafico dibujo
                                   # voy a mover miapp.old
 mv miapp miapp.old                                   
 cp -pr miapp-ramas miapp          # voy a copiarlo para que no se borre
@@ -372,7 +412,7 @@ git branch nombreDeLANevaRamaHaCrear        # Como puedo crear una rama, hay dos
 touch vacio.txt  
 git add vacio.txt
 git commit -am "creo fichero vacio"                                            
-git branch nombreDeLANevaRamaHaCrear        # ahora si ya no se queja, ya medeja crear la rama nueva
+git branch nombreDeLANevaRamaHaCrear        # ahora si ya no se queja, ya me deja crear la rama nueva
 git branch                                  # mirar las ramas que tengo: estoy en rama master y tengo una rama que se llama: nombreDeLANevaRamaHaCrear
 git status                                  # para saber en que ramas estamos ubicados, en que rama estamos trabajando 
                                             # On branch master  
@@ -494,7 +534,7 @@ git log --oneline                        # como hago para saber a donde quiero v
 git reset --soft HEAD~3                  # desde la punta actual HEAD, desde el actual HEAD quiero desacer tres cambios, retroceder en el tiempo. 
 *                                        # Stop: time video 9.19 , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                       # :18) 13/08/2023
-git checkout v1.0     # Cambios de ramas cambio de tags, camvio de commits viajar al pasado y regresar al presente.       
+git checkout v1.0     # Cambios de ramas cambio de tags, cambio de commits viajar al pasado y regresar al presente.       
 git checkout v1.1     #
 git checkout master   # 
 git log               # listar log, historico de commits, estas en una especie de viaje al pasado, lo que haz creado en el presente no existe en el pasado(archivos, codigos etcc. ). 
@@ -544,7 +584,7 @@ git init --bare mio2
 cd 
 git clone ruta-bare-repositorio-central-remoto
 cd mio2
-touch fichero                                                    # Generacion de cambios
+touch fichero                                   # Generacion de cambios
 git add fichero 
 git commit -am "mi primer commit fichero"       # jugueis con el historico
 git log 
@@ -892,18 +932,31 @@ rm -r nombreCarpeta               # :1) borrar carpetas y su contenido",
 
 }
 
+
+
+
+
+
+
+
 ```
+
+
+
+```json DICCIONARIO DE EXPERIENCIAS practicas    "conceptos"
+
+El Manual Esencial de Git
+https://www.freecodecamp.org/espanol/news/el-manual-esencial-de-git/
 
 Estados: 
 Informacion sin seguimiento (Carpetas archivos).
 Area de preparacion (Lo que sea a añade al repositorio creado) Agregando archivos al área de preparación (staging area)
 
-El Manual Esencial de Git
-https://www.freecodecamp.org/espanol/news/el-manual-esencial-de-git/
+
+´´´
 
 
-
-```TS EXP 31, Video 11: Angular Avanzado sesión 10 - Parte 1, keyword: A2v11 
+``` TS EXP 31, Video 11: Angular Avanzado sesión 10 - Parte 1, keyword: A2v11 
  // PWA : app sirve para navegador y para aplicaciones de dispositivos no realmente nativa del SO del dispositivo x(celular, pc de escritorio, laptop, etc..)  es una App web solucion alternativa multiplataforma
 
  {Herramientas:" " ,}
@@ -915,8 +968,8 @@ https://www.freecodecamp.org/espanol/news/el-manual-esencial-de-git/
 
 
 
-proyecto: AngularAvanzadoSesion9
-```TS EXP 30, Video 10: Angular Avanzado sesión 9, keyword: A2v9 
+
+```json EXP 30, Video 10: Angular Avanzado sesión 9, keyword: A2v9  "proyecto: AngularAvanzadoSesion9"
  // Libreria RXJS     //PIPES 
  {Herramientas:" https://rxviz.com/ " ,}
 
@@ -988,6 +1041,4 @@ ng g application AngularAvanzadoSesion9 --routing --style scss    :1) ",
 ```json
 "defaultProject": "app0", // No se permite la propiedad defaultProject  Angular 14 la descontinuo 
 ```
-
-
 
