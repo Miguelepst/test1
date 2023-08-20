@@ -9,6 +9,9 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
+
+
+
 # :25) 21/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git help     
                   # usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]     
@@ -47,6 +50,37 @@ git help
                   # push      Update remote refs along with associated objects "Actualizar referencias remotas junto con los objetos asociados."
                   #  'git help -a' and 'git help -g' list available subcommands and some concept guides. See 'git help <command>' or 'git help <concept>' to read about a specific subcommand or concept. See 'git help git' for an overview of the system.
                   # {"practica-estudio" :"1 hora repaso contenido hasta lo presente observacion"}
+git status                  
+git add EXP-WORKPACE-DICC.md
+git status
+git commit -am "transaccion"
+git push
+                  # "fatal: No configured push destination.", no existe repositorio centrar remoto.
+                  # Either specify the URL from the command-line or configure a remote repository using
+                  # git remote add <name> <url>
+                  # and then push using the remote name
+                  # git push <name>
+                  # Ruta repo bare: D:/acumulacion-ftp/repositorios/exp-git/
+git clone  D:/acumulacion-ftp/repositorios/exp-git/ miapp           # crea carpeta miapp he introduce el repo ahi.
+git clone  D:/acumulacion-ftp/repositorios/exp-git/ .               # no crea crpeta, en la ruta en la que estas crea el repositorio                  
+git remote add exp-git D:/acumulacion-ftp/repositorios/exp-git/     # repositorio bare
+git push          
+                   # "fatal: The current branch master has no upstream branch."
+                   # To push the current branch and set the remote as upstream, use
+                   #     git push --set-upstream exp-git master
+                   # To have this happen automatically for branches without a tracking 
+ git push --set-upstream exp-git master             # Done
+                   # Enumerating objects: 13, done.
+                   # Counting objects: 100% (13/13), done.
+                   # Delta compression using up to 4 threads
+                   # Compressing objects: 100% (13/13), done.
+                   # Writing objects: 100% (13/13), 24.38 KiB | 242.00 KiB/s, done.
+                   # Total 13 (delta 3), reused 0 (delta 0), pack-reused 0
+                   # To D:/acumulacion-ftp/repositorios/exp-git/
+                   # * [new branch]      master -> master
+                   # branch 'master' set up to track 'exp-git/master'.
+git push           # Everything up-to-date                   
+                   # Se vinculo un repositorio local a uno central "remoto" (bare)
 # :24) 20/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                         # muy usada en entornos profesionasles, la caracteristica git STAGED
 ls altr            
