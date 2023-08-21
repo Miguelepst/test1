@@ -9,10 +9,109 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
-
-
-
+# :25) 21/08/2023 ,  # time video, Start: 1:39:17 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 # :25) 21/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                         # cherry-pick: de una serie de commits yo voy a escoger el que mas se ajuste a mis necesidades.
+git fixUrgente12345      # es de donde voy a tomar los cambios         # no es un comando de git.
+git checkout fis-urgente12345    # cambio de rama
+git log                   # en que rama se introdujo el cambio fix1.txt, cual es su ID-de-commit, copio mi hastash
+                          # abro el explorador de ficheros la carpeta mia app
+git checkout master       # me cambio a mi rama master                 
+                        # en esta rama no esta el fichero fix1.txt, osea el parche para reparar una vulnerabilidad.
+git cherry-pick  ID-COMMIT-CAMBIO_que_le indico   : # y lo mete en mi rama actual, 
+                                                    # esa corfirmacion de otra rama la ha metido en mi rama actual.                     
+                                                    # y solamente esa cambio
+git checkout   feacture-fixurgente12345
+ls                                                  # hay fix1.txt, fix2.txt y fix3.txt , no he cogido todos los cambios para fusionarlo con otra rama, solo tome un cambion un commit, que poseeia un archivo. 
+                                                    # Recomendacion para facilidad 
+                                                    # en la la plicacion de fusiones de cambios, que los commits representes entidades de archivos completas.
+                                                    # no un solo archivo que crese en tamaño de cambios internos o cambios de nombres en los archivos si es por versiones si es el caso que este inclopleto aun el archivo para cerrarlo. 
+                                                    # de esta manera se prueden apreciar visualmente y no hay necesidad de introducirnos en el archivo para ver que se ha cambiado.
+                                                    # que las fusiones esten representadas por entidades completas.
+git log 
+                                                    # podria cojer multiples hashes, si con el cherry-pick. representadas en varios archivos de entidad commit al pretender ralizar una fusion y no este tan oculta.                                                     
+                                                    # una fusion debe de representar archivos nuevos en la rama en la que se va a fundir, los cuales no estaban antes de la fusion
+git log --oneline | cat                             # | cat : los voy a pasar aqui para tenerlos en pantalla                                                    
+checkout master                                     # como haria un cherry-pick de multiples commits, multiples archivos a fusionar en una rama nueva.
+                                                    # identificar nombres de archivos con referencia a si rama origien en sus nombres, para cuando esten fusionados en la rama master sepas de que rama fue generado.
+git cherry-pick ID-CommitAAplicar1  ID-CommitAAplicar2  # fusionar multiples commit 2 o hasta mas elegidos   
+                                                    # puedo cojer un intervalo de commmits SI.
+reset --hard  HEAD~2                                # he revertido el historial 
+git log 
+git checkout fix-urgente12345                       # sigo teniendo esta rama.
+git checkout master
+git cherry-pick ID-CommitAAplicar1  ID-CommitAAplicar2 
+git checkout fix-urgente12345   
+git log --oneline | cat
+git checkout master 
+git checkout fix-urgente12345 
+touch fix3.txt
+git add fix3.txt
+git commit -am "fix3.txt"
+git log --oneline | cat                              # tengo tres cambios en esta rama
+git checkout master                                  # ma voy a mi rama master y voy aplicar un cherry-pick por rango para fusionar varios commit de la rama enterior a mi rama master, estos commit estan unificados en archivos.
+                                                     # cada commit a fusionar en la master que proviene de otra rama esta referenciado a un archivo entero como minima unidad completa de fusion.
+git cherry-pick  id-primerCommit*..Id-ultimoCommitAplicar  # pongo el primer comit que quiero aplicar el mas profundo en la pila de commits de la rama dedonde los voy a extraer.                
+                                                      # y luego el ultimo commit que quiero aplicar, eso me toma los commits en el medio de esos dos extremos, seria por fusion rango.                      
+                                                      # error
+git cherry-pick  --abort                              # no habias terminado los de antes, por eso el error      
+git cherry-pick  --quit
+git cherry-pick  id-primerCommit*..Id-ultimoCommitAplicar  # ahora si ahi estan los archivos adicionados directorio ruta master : fix1.txt, fix2.txt y fix3.txt
+git cherry-pick  --quit                               # ya esta el cherry pickeado
+                                                      # que mas podemos hacer aplicar los mismos cambios pero sin incluir el inicial y el final
+git checkout fix-urgente12345 
+git log --oneline | cat                                   # Aplicar fusion,parches sin elegir el parche commit que hay en los extremos, sin incluirlos.                                                     
+git cherry-pick  id-primerCommit..Id-ultimoCommitAplicar  # igual pero no se coloca el asterisco circomplejo, lo que valla entre los dos commits pero sin incluir ninguno de los dos.
+git cherry-pick  id-primerCommit*..Id-ultimoCommitAplicar # lo que valla d este commit al otro incluyendo los dos.
+                                                          # es solo cuention de cogerle el gustillo, porque es curioso
+git reset --hard HEAD~2                                                          
+git cherry-pick  id-primerCommit..Id-ultimoCommitAplicar  
+                    # como es un cherry-pick a nivel grafico, no lo esta mostrando.
+                    # si generamos habitalmente parches para diferentes versiones es comun usar el cherry-pick
+                    # ramas de mantenimiento como se suelen llamar
+                    # ir moviendo parches de una cosa a otra.
+                    # el cherry-pick es muy potente por esta rason de ejemplo que si entiendo: time video. y tiene muchisimo uso.
+                    # para que utilizamos cherry-pick:
+                    # si generamos habitualmete parches en lugar de una rama de parches
+                    # ese parche se tiene que aplicar a cuatro o cinco ramas a una version 
+                    # es un parche para el que afecta alas versiones 1.0, 1.1, 1.2, 1.3, 1.4, 1.5
+                    # constantemente estoy haciendo una nueva version para venderla de mi software, estilo windows. 
+                    # pues iremos utilizando en esas ramas especiales ramas de mantenimiento "ramas de creacion de fix de parches para la aplicacion"
+                    # pues el chery-pick para ir moviendo parches de una cosa a otra.
+                    # imaginate tambien que estas desarrollndo la version 2.0
+                    # y al mismo tiempo la version 1.1 de vuetro software
+                    # ha vez lanzado al ,ercado la version 1.0
+                    # el desarrollo sigue, la version 1.1, 1.2 etc..
+                    # y al mismo tiempo que havez lanzado la version 1.0 
+                    # comensais la rama de desarrollo dela version 2
+                    # resulta que hay un cambio de lesgislacion 
+                    # y tenes que meterle nueva funcionalidad en la version 1 
+                    # para no dejar a vuestros clientes colgados. 
+                    # inicias una nueva rama de desarrollo, la rama 1.1  tipo fis parche.
+                    # y en esta rama 1.1 añadis esta nueva funcionalidad
+                    # y vas corrigiendo otras series de parches, de cambios, corrigiendo bugs 
+                    # que han podido solucionarse o introducirse nuevos.                                     
+                    # bueno como en la version 1.1 hemos introducido nueva funcionalidad. 
+                    # posterior al lanzamiento de mi rama 2.0
+                    # yo no puedo tener una version 2.0 que elimine funcionalidad previa.
+                    # seria de locos que tubiera una version 2.0 con menos funcionalidades que la version 1.0
+                    # bueno pues tendria que irme mirando en mi historial de comfirmaciones de la version 1.1
+                    # que cambios añaden que funcionalidad
+                    # para hacer un cherry-pick de esos cambios y meterlos en la rama 2.0
+                    # para que la rama 2.0 tenga esa funcionalidad nueva,
+                    # pero que no importe otras cosas del 1.1 que podremos haber solventado
+                    # o que ni siquiera estarian en la 2.0 porque esos fallos no se han introducido en la version 2.0
+                    # por eso es tan importante utilizar el cherry-pick
+                    # algo diferente al cherry-pick es:
+                    # editar el codigo fuente a mano buscar las diferencias a mano
+                    # y mover los cambios a mano.
+                    # cuando hacemos esto como todo humano nos equivocamos mucho
+                    # es mas facil si una maquina lo hace por nosotros
+                    # cherry-pick : nos permite hacerlo de una form mucho mas automatica.
+                    # la verdad es que es muy potente el cherry-pick
+                    # y tiene muchicimo uso
+                    # dicho esto vamos a irnos a cosas mucho mas sencillitas.                                    
+# :24) 20/08/2023 ,  # time video, Start: 1:28:36 , Stop: 1:39:17 , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git help     
                   # usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]     
                   #          [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]    
@@ -81,7 +180,22 @@ git push
                    # branch 'master' set up to track 'exp-git/master'.
 git push           # Everything up-to-date                   
                    # Se vinculo un repositorio local a uno central "remoto" (bare)
-# :24) 20/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                   #
+touch fix1.txt 
+git add fix1.txt
+git commit -am "fix1.txt"                   
+touch fix2.txt 
+git add fix2.txt
+git commit -am "fix2.txt"                   
+git checkout 
+checkout master             # me vualvo al master, y mi desarrollo va a seguir avanzando de for ma virtual
+touch master2.txt 
+git add master2.txt
+git commit -am "master2.txt"                   
+touch master3.txt 
+git add master3.txt
+git commit -am "master3.txt"
+# :24) 20/08/2023   # time video Start: 1:28:36  Stop: --:--:--  Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                         # muy usada en entornos profesionasles, la caracteristica git STAGED
 ls altr            
 vi otrofichero.txt      # Estoy cambiando este texto 
