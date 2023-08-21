@@ -9,17 +9,64 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
+
+# :26) 22/08/2023 ,  # time video, Start: 1:39:17 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+git cherry-pick -h       # la ayuda al comando cherry-pick, consultando otra fuente
+                         # git cherry pick 💻 (ejemplo en ESPAÑOL), canal: Terminal Life 2.2K subscribers
+                         # otra esplicacion cherry-pick https://www.youtube.com/watch?v=wIRufAeRntA
+                         # es una herramienta de git que significa: coger ceresas 
+                         # te permite aplicar commits de otras ramas en una rama principal
+                         # puedes tener las siguientes ramas a lo mejor: 
+                         # Ramas destinadas a unas cosas, ej:
+                         # rama: estable, v1.1 de tu proyecto, base 
+                         # imaginate que estas creando la version 2.0 de tu priyecto
+                         # decubres un fallo de seguridad el la version 2.0 
+                         # y te das cuenta que tambien afecta a la version 1.1
+                         # bueno puedes aplicar ese parche de seguridad a la version 1.1 tambien
+                         # simplemente cogiendo el commit(cambio, parche) de la rama parche-fix con un cherry-pick para integrarlo em la rama master o en la rama de la version deseada.
+                         # en la rama base pongo el core de un proyecto, es como el corazon, la base fundamental delproyecto, es una rema con todo lo que es la estructura base.
+                         # por si depronto quiero crear proyectos similares puedo reutilizar la rama base del proyecto. 
+                         # y ya con la estructura base empieso hacer otro proyecto de una forma mas rapida.     
+                         # feacture-plugis, caracteristica que me permite en este core, en este nucleo instalar plugings
+                         # es un ejemplo real                        
+git log --oneline  -10   # que remos mostras los commits de feacture-plugins (osea es una rama), no todos                
+                         # asi te muestra 10 commits
+                         # escoger los que queremos poner since 6am te mostrara todos los commits de ese dia desde las seis am.
+                         # se han hecho estos tres commits
+git log --oneline since="6am" feacture-plugins  -10           # muestrame todos los commits que se han hecho en feacture-plugins desde hoy apartir de las 6 am
+                         # visualiza que se han hecho 3 commits
+git log since="6am" feacture-plugins  -10   # quito el oneline para ver completo que se han hecho los cambios.
+                         # reviso la descripcion de los commits: 
+                         # commit: arreglar un bug, 
+                         # commit: arreglar otro bug,
+                         # commit: intalacion de paquete nuevo.
+                         # commit: la estructura tal cual he añadido una nueva funcion
+                         # pues todo esto lo uiero aplicar.
+git log since="6am" feacture-plugins | cat : para que quede en pantalla para evitar regresar a colsultar nuevamente.                         
+                         # como voy a ponerlos todos y no voy a tener que filtrar pongo --oneline
+git log since="6am" --oneline feacture-plugins | cat                         
+                         # ahora si procedemos con el cherry-pick : 4:34 minitos video time.
+git cherry-pick  id-primerCommit^..Id-ultimoCommitAplicar       # combinacion de teclas (Al tGr + tilde + espaciadora): ^^  
+                        # le estoy diciendo al cherry-pick que me aplique los cambios de le los commits incliyendo los commits de los extremos
+                        # en este caso no ha habido confligto, de haber habido confligto 
+                        # simplemente te vas al archivo y corriges el conflicto, asi de sencillo no tiene mas.
+                        # la qente que usa git no la usa mucho, esta funcionalidad.
+                        # pero es muy util porque te permite llevar distintas ramas 
+                        # que unas no tienen los mismos commits que otras 
+                        # sino que coinciden en cierta parte de la funcionalidad.
+                        # y asi puedes estrapolar cambios, como lo camente antes.
+                        # pierdele el miedo a los conflictos en git, eso es una chorradita.
 # :25) 21/08/2023 ,  # time video, Start: 1:39:17 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 # :25) 21/08/2023 ,  # time video, Start: 1:28:36 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
-                         # cherry-pick: de una serie de commits yo voy a escoger el que mas se ajuste a mis necesidades.
-git fixUrgente12345      # es de donde voy a tomar los cambios         # no es un comando de git.
-git checkout fis-urgente12345    # cambio de rama
-git log                   # en que rama se introdujo el cambio fix1.txt, cual es su ID-de-commit, copio mi hastash
-                          # abro el explorador de ficheros la carpeta mia app
-git checkout master       # me cambio a mi rama master                 
-                        # en esta rama no esta el fichero fix1.txt, osea el parche para reparar una vulnerabilidad.
-git cherry-pick  ID-COMMIT-CAMBIO_que_le indico   : # y lo mete en mi rama actual, 
-                                                    # esa corfirmacion de otra rama la ha metido en mi rama actual.                     
+                                   # cherry-pick: de una serie de commits yo voy a escoger el que mas se ajuste a mis necesidades.
+                                   # git fixUrgente12345       # error: # no es un comando de git. es de donde voy a tomar los cambios         
+git checkout fix-urgente12345      # cambio de rama
+git log                            # en que rama se introdujo el cambio fix1.txt, cual es su ID-de-commit, copio mi hastash
+                                   # abro el explorador de ficheros la carpeta mia app
+git checkout master                # me cambio a mi rama master                 
+                                   # en esta rama no esta el fichero fix1.txt, osea el parche para reparar una vulnerabilidad.
+git cherry-pick  ID-COMMIT-CAMBIO_que_le indico     # y lo mete en mi rama actual 
+                                                    # esa confirmacion de otra rama la ha metido en mi rama actual.                     
                                                     # y solamente esa cambio
 git checkout   feacture-fixurgente12345
 ls                                                  # hay fix1.txt, fix2.txt y fix3.txt , no he cogido todos los cambios para fusionarlo con otra rama, solo tome un cambion un commit, que poseeia un archivo. 
@@ -66,28 +113,29 @@ git cherry-pick  id-primerCommit*..Id-ultimoCommitAplicar # lo que valla d este 
                                                           # es solo cuention de cogerle el gustillo, porque es curioso
 git reset --hard HEAD~2                                                          
 git cherry-pick  id-primerCommit..Id-ultimoCommitAplicar  
-                    # como es un cherry-pick a nivel grafico, no lo esta mostrando.
-                    # si generamos habitalmente parches para diferentes versiones es comun usar el cherry-pick
+                    # como es un cherry-pick a nivel grafico, no lo esta mostrando el app fork.
+                    # si generamos habitualmente parches para diferentes versiones es comun usar el cherry-pick
                     # ramas de mantenimiento como se suelen llamar
-                    # ir moviendo parches de una cosa a otra.
-                    # el cherry-pick es muy potente por esta rason de ejemplo que si entiendo: time video. y tiene muchisimo uso.
+                    # ir moviendo parches de una parte a otra.
+                    # el cherry-pick es muy potente por esta rason de ejemplo que si entiendo: 
+                    # time video: 1.39.0. y tiene muchisimo uso.
                     # para que utilizamos cherry-pick:
                     # si generamos habitualmete parches en lugar de una rama de parches
                     # ese parche se tiene que aplicar a cuatro o cinco ramas a una version 
-                    # es un parche para el que afecta alas versiones 1.0, 1.1, 1.2, 1.3, 1.4, 1.5
+                    # es un parche para el que afecta alas versiones 1.0, 1.1, 1.2, 1.3, 1.4, 1.5 las cuales son commits
                     # constantemente estoy haciendo una nueva version para venderla de mi software, estilo windows. 
                     # pues iremos utilizando en esas ramas especiales ramas de mantenimiento "ramas de creacion de fix de parches para la aplicacion"
                     # pues el chery-pick para ir moviendo parches de una cosa a otra.
                     # imaginate tambien que estas desarrollndo la version 2.0
                     # y al mismo tiempo la version 1.1 de vuetro software
-                    # ha vez lanzado al ,ercado la version 1.0
+                    # ha vez lanzado al mercado la version 1.0
                     # el desarrollo sigue, la version 1.1, 1.2 etc..
-                    # y al mismo tiempo que havez lanzado la version 1.0 
-                    # comensais la rama de desarrollo dela version 2
+                    # y al mismo tiempo que haz lanzado la version 1.0 
+                    # comensais la rama de desarrollo de la version 2
                     # resulta que hay un cambio de lesgislacion 
                     # y tenes que meterle nueva funcionalidad en la version 1 
                     # para no dejar a vuestros clientes colgados. 
-                    # inicias una nueva rama de desarrollo, la rama 1.1  tipo fis parche.
+                    # inicias una nueva rama de desarrollo, la rama 1.1  tipo fix parche.
                     # y en esta rama 1.1 añadis esta nueva funcionalidad
                     # y vas corrigiendo otras series de parches, de cambios, corrigiendo bugs 
                     # que han podido solucionarse o introducirse nuevos.                                     
@@ -99,7 +147,7 @@ git cherry-pick  id-primerCommit..Id-ultimoCommitAplicar
                     # que cambios añaden que funcionalidad
                     # para hacer un cherry-pick de esos cambios y meterlos en la rama 2.0
                     # para que la rama 2.0 tenga esa funcionalidad nueva,
-                    # pero que no importe otras cosas del 1.1 que podremos haber solventado
+                    # pero que no importe(envie) otras cosas de la version 1.1 que podremos haber solventado.
                     # o que ni siquiera estarian en la 2.0 porque esos fallos no se han introducido en la version 2.0
                     # por eso es tan importante utilizar el cherry-pick
                     # algo diferente al cherry-pick es:
