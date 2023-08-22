@@ -10,7 +10,48 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
-# :26) 22/08/2023 ,  # time video, Start: 1:39:17 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+# :26) 22/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                 # work flow : una forma de trbajar utilizando git.
+                 # update normal es:
+                 # update --> change --> review --> commit
+ls               
+git pull         # lo primero que hago es un update, o un git fech ,es la parte update
+git fech         # para saber si han habido cambios remotos
+                 # si tuviera un repositorio remoto
+                 # como no ha habido cambios ahora yo tengo que hacer los mios, tengo mi copia de trabajo local .git.
+vi master1.txt   # cambio este fichero
+vi master2.txt   # cambio este otro fichero
+                 # como verifico mis cambios, podes usar cualquier herramienta grafica, ej: fork
+git diff         # o usar esta herramienta, que cambios aun no has enviado a vuestra carpetica local: .git  , es la parte review                
+git commit -am "cambio" ## es lasigiente parte del flujo
+vi master1.txt   # cambio este a archivo
+git diff         # lo que aparece con menos son las lineas que previamente se han sustituido
+                 # cuando aparece un + son las nuevas lineas que sustituyeron la anterior
+                 # reviso los cambios si estoy deacuerdo con estos cambios que hago: un git commit
+                 # si no estoy deacuerdo tendre que seguir editando mi codigo fuente hasta que este deacuerdo
+git diff         # sobre ficheros binarios no nos v a dejar.                 
+                # al ser binarios si yo hago un cat de ellos puede salir mucha info, un chorizo un fumable
+                # otro metodo es el forking work flow : le pido a una persona que meta mis cambios, es en repositorios remotos que he clonado.
+                # aqui podria parecer que yo no tengo permisos para hacer algo
+                # pero yo quiero contribuir y este es un proyecto OPEN source 
+                # y quiero enviar ejemplos a la gente de open bootcamp
+                # y yo quiero enviar un cambio "un commit al proyecto de Java basico(repositorio gitHub)"
+                # pero no tengo permisos para hacerlo, que tengo que hacer.
+                # pues tengo que forkearlo, hacele un "FORK"
+                # hacer un fork significa que yo voy a clonar el repositorio en mi cuenta de usuario
+                # se crea un repositorio del mismo nombre en mi cuenta de usuario github.
+                # clonar el vuestra propia cuenta de usurio el repositorio de otra persona a la cual vosotros no tenies privilegios pero al cual queres contribuir
+git clone repo  # una vez ya hecho el FORK de ese repositorio melo voy a bajar a mi ordenador con un git clone.
+cd repo         #
+vi ignore.lo    # voy a modificar este fichero para no perjudicar mucho a alam
+git commit gitignore.lo -am "Metos los ficheros .c"
+git push        # lo estoy enviando a mi cuenta de usuario, me dice que debo usar un token personal que no tengo para poder hacer el push
+git push https://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  
+git config --local user.name "okmiguel@noreply.user-github.com"
+                # el caso es enviar el push al servidor
+
+
+# :25) 21/08/2023 ,  # time video, Start: 1:39:17 , Stop: 1:50:56 , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git cherry-pick -h       # la ayuda al comando cherry-pick, consultando otra fuente
                          # git cherry pick 💻 (ejemplo en ESPAÑOL), canal: Terminal Life 2.2K subscribers
                          # otra esplicacion cherry-pick https://www.youtube.com/watch?v=wIRufAeRntA
