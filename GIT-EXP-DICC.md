@@ -8,10 +8,71 @@ Lo mas antiguo en lo profundo del fondo.
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
 
-# :27) 23/08/2023 ,  # time video, Start: --:--:-- , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp  
-                # prentacion power point: evidencia 1. 
-                # mas traduccion de los dialogos al ingles
-                # AA1-EV01 Línea de tiempo situaciones pasadas (Vocabulary).pptx
+            # Fork :
+            # Es copiar y pegar, Duplicar un proyecto.
+            # yo me quiero hacer una copia de un proyecto de otra persona para poder trabajar en el.
+            # porque quiero contribuir a ese proyecto.
+            # pero quiero hcer cambios sin afectar a ese proyecto todavia, es un duplicar.
+            # la ventaja de fork:
+            # cualquier cambio que realices sobre el proyecto ya no va afectar al otro proyecto,
+            # tu te haz hecho tu copia, tienes tu copia y puedes generar alteraciones generar cambios, 
+            # que eso no va afectar al proyecto padre.  
+            # bifurcacion de los proyectos de codigo abierto, potencialmente pueden haber copias infiitas.
+            # si somos X personas en el mundo podrian haber x versiones de ese mismo proyecto.
+            # y cada uno tendriamos nuestra propia copia de seguridad.
+            # FORK: copiar y pegar de toda la vida duplicar un proyecto.
+            # historias graciosas con el OPEN source que se dan:
+            # de comunidades, bitcoin, 
+            # muchas veces han habido proyectos en donde ha habido una parte de la comunidad del proyecto
+            # que no ha estado deacuerdo con la trayectoria a la que se ha estado dirigiendo el proyecto de codigo abierto.
+            # y han dicho, sabes que, como es de codigo abierto "groceria dedo propietario creador: que osden por el *** ",  
+            # me voy hacer mi propio proyecto, 
+            # entonces se hacen esas bifurcaciones, esas direcciones de rumbos diferentes : Buena manera de ver los FORK
+            # en un momento dado haces una copia del proyecto, se bifurca al hacerle un FORK
+            # ejemplo:
+            # imagiraros que vas a GitHub
+            # quiero explorar proyectos que sean super populares 
+            # quiero aprender de esos proyectos 
+            # y quiero tener una copia de esos proyectos para poder modificarlos 
+            # por ejemplo vamos a tirarnos una locura Maxima
+            # este proyecto me encanta y quiero aprender 
+            # quiero hacer cambios sin entorpecer este proyecto 
+          ### pues aqui es cuando me haria una copia de ese proyecto, me haria un fork
+            # FORK 
+            # Te da la opcion despues de pedirles al propietario del repositorio que integren 
+            # en su repositorio un cambio que tu haz hecho.
+            # esto se llama una pull request : solicito que incorporen un cambio tu yo 
+            # en el repositorio central principal desde don de lo bifurcaste
+            # y esto se los podria yo enviar a mis compañeros de trabajo y decirles 
+            # oye estoy haciendo estos cambios que te parecen, y me podrian dar citas, sugerencias.
+            # y coloborar entorno a ella
+            # es muy sencillo El FORK, hacer un duplicado una copia de un repositorio externo el tu yo
+            # y una vez haz hecho el fork, 
+            # se comporta como un repositorio como otro cualquiera que tubieras en tu cuenta de gitHut
+            # access token: para conectar nuestros repositorios locales con nuestros repositorios remotos 
+            # debemos generas un ACCESS TOKEN politica got 2021
+            # para poder acceder alos repositorios remotos.
+            # nueva politica de seguridad conocida como access token
+git init    # inicializar el repositorio 
+            # lo siguiente configuraciones de identidad 
+git config user.name Miguelepst                          # coloco el usuario que tengo asociado en GitHut             
+git config user.email  miguelepst@hotmail.com            # aqui debe ir el email que tengamos asociado a nuestra cuente de GitHub
+git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU  token 
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git             # url del repositorio 
+           # ya esta todo configurado, provemos hacer un git add y un git push
+git add .  # para agregar todo 
+git commit -am probandoPat           
+git push -u origin master 
+
+
+
+            git push https://token: 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  
+git config --local user.name "okmiguel@noreply.user-github.com"
+
+
+
+
+
 # :26) 22/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                  # work flow : una forma de trbajar utilizando git.
                  # update normal es:
@@ -51,8 +112,6 @@ git push        # lo estoy enviando a mi cuenta de usuario, me dice que debo usa
 git push https://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  
 git config --local user.name "okmiguel@noreply.user-github.com"
                 # el caso es enviar el push al servidor
-
-
 # :25) 21/08/2023 ,  # time video, Start: 1:39:17 , Stop: 1:50:56 , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git cherry-pick -h       # la ayuda al comando cherry-pick, consultando otra fuente
                          # git cherry pick 💻 (ejemplo en ESPAÑOL), canal: Terminal Life 2.2K subscribers
