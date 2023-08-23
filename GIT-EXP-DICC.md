@@ -1,7 +1,7 @@
 Lo mas reciente arriba "HEAD"
 Lo mas antiguo en lo profundo del fondo.
 
-
+# :28) 24/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "ENTENDIENDO GIT"
 {
@@ -10,6 +10,155 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
+        # Creando un repositorio en gitHub
+        # Quick setup — if you’ve done this kind of thing before
+        # https://github.com/Miguelepst/git-exp-dicc.git        # Ruta del repositorio de GitHub
+        # …or create a new repository on the command line
+echo "# git-exp-dicc" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git
+git push -u origin main
+        # create a new repository on the command line
+git init                    # inicializando el repositorio Te ubica en la rama MASTER
+                            # Initialized empty Git repository in D:/acumulacion-ftp/practica-diaria/3-musica/canto/test-borrar/.git/
+git add .                   # agregar contenido
+git commit -m "mi tarea"    # Insertar cambios 
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git   # vincular repositorio local con el remoto
+git push   origin master    # enviamos el contenido al remoto
+                            # si mostrara un error 
+                            # es porque no esta en una rama diferente "main" o en otra diferente     
+                            # git push   origin main    # enviamos el contenido al remoto
+        # …or push an existing repository from the command line
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git
+git branch -M main
+git push -u origin main
+        # …or import code from another repository
+        # You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+        #Git Bash Here   Consola de Git ubicada en la carpeta local
+git config --global -l      # git config --global --list    
+                            # cuando es un comando reducido se pone un igual ejemplo: 
+                            # --list seria igual a: -l
+ls -all                     # ver todos los archivos inclusive los ocultos 
+pwd                        # ubicacion de mi repositorio      
+                           # local se utiliza para un proyecto git ya iniciado
+                           # y queremos mostrar que lo que hallamos aportado fuimos nosotros
+git config --global user.email none                             
+                           #satge area
+                           # todo en git se basa en confirmaciones commits
+                           # Retomar clase :https://www.youtube.com/watch?v=y6n4u2Ncm1M&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=3
+                           # time video: 5:42 / 1:03:31
+                           # pequeña configuracion en git
+                           # por norma general las confirmaciones en git 
+                           # van asociadas a un nombre y a un correo electronico
+                           # como le digo a GIT que utilice mi nombre y mi direccion de correo electronico 
+                           # para asociarlas a los commit que yo realice.
+git config                 # esta en tres partes: la podemos cambiar en tres partes
+                           # la primera utilizada a nivel de sistema operativo : system
+                              # SYSTEM      # raramente utilizada.                        
+                           # la siguiente es la opcion global se aplica a todos los repositorios de mi usuario: global     
+                              # GLOBAL  
+                              # es decir todos los repositorios que esten dentro de la carpeta de mi usuario
+                              # es decir los repositorios que esten dentro de mi carpeta de usuario 
+                           # por ultimo la zona de configuracion LOCAL 
+                              # LOCAL
+                              # los cambion de mi configuracion local 
+                              # se aplica a la configuracion de mi repositorio actual 
+                           # como puedo modificar unas u otras    
+git config  --zonaAModificar 
+git config --system 
+git config --global       # modificaria mi fichero de usuario
+git config --local        # modifica la configuracion de mi repositorio actual
+                          # si yo tengo un unico repositorio 
+                          # mis cambios de configuracion serian para ese unico repositorio
+git config --global       # y como usuario tengo multiples repositorios 
+                          # todos mis repositorios van a tener la misma configuracion
+                          # no tengo que ir uno por uno                          
+                          # cual es la que manda, cuanto mas cerca de repositorio mas mandamos.
+                          # emprimer lugar estaria SYSTEM 
+                          # las opciones de SYSTEM serian sobre escritas con las opciones GLOBAL.
+                          # y las opciones GLOBAL serian sobre escritas con las opciones LOCAL.
+                          # LOCAL es lo mas cerca al repositorio.
+git config --list --system    # para ver mi configuracion actual (system).
+                              # parametrizar git a nivel de sistema es raro.
+git config --list --global 
+git config --list --local     # A nivel local dentro de la carpeta .git hay un fichero que se llama config 
+                              # y de ahi es donde sale esta informacion
+                              # cuando modificamos local, 
+                              # lo que estamos modificando es ese fichero: .git/config
+cat .git/config               # esta es la configuracion local 
+cat $HOME/.gitconfig          # esta es la global, 
+                              # que es cuando usamos un: git config global
+                              # estamos modificando el fichero gitconfig
+                              # dentro de nuestro directorio de usuario
+                              # en windows sera: c:/user/nombreDeUsuario     
+                              # "C:\\Users\\Equipo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\"                          
+                              # y cuando estamos modificando el --system 
+cat /etc/gitconfig            # cuando estamos modificando --system
+                              # que directamente no esta definido no esta, no lo tengo.                     
+                              # system : lo vas autilizar cero veces.
+                              # global : lo vas a utilizar una vez, configura opciones por defecto del usuaro del sistema operativo para sus todos sus repositorios
+                              # local : lo vas a utilizar mas veces porque: 
+                                # en ciertos repositorios tenes que usar vuestro email del trabajo, si son cosas de trabajo 
+                                # y en otras tener que usar/mostrar vuestro email real 
+                                # si son cosas  de bueno pues proyectos open source que pueden ser vuestros 
+                                # o proyectillos que tenes por ahi.
+                              # como cambio yo una opcion  
+git config --list --global                               
+git config --global user.name "Jose test"     # nombre de la opcion seguido del valor de la opcion 
+git config --global user.name                 # visualiza opcion
+git config --global user.name " "             # user espacio en blanco
+git config --global user.name none            # usar none
+cat $HOME/.gitconfig 
+git config --list --global  
+                                              # que quiero cambiar las opciones 
+                                              # referentes a un repositorio especifico, a uno particular 
+                                              # quiero que se salga de la configuracion general:
+git config --local user.email "vroman@noreply.users.github.com"
+cat .git/config                                # "vroman@noreply.users.github.com"
+git config --list --local                      # "vroman@noreply.users.github.com"
+                                              #  cuando se va a utilizar este email 
+                                              # cuando yo haga un commit o una corfirmacion 
+                                              # dentro de este repositorio particular
+                                              # Cuando se va a utilizar el otro email el global 
+                                              # cuando haga una confirmacion 
+                                              # fuara de este repositorio (que posee email en su configuracion local)
+                                              # en cualquier otro repositorio relacionado a la cuenta usuario y su contenido
+git config --global user.name                                            
+git config --global --remove-section user.name ='off'         # NO funciono, eliminar al usuario
+git config --global --remove-section user.name                # no funciono.  
+git config --global --unset-all user.name                     # este si funciono
+git config --global --replace-all user.name "New User Name"   # otros comandos
+git config --global -e                        # Este comando abrirá el editor GNU nano con lo que está esperando.
+git config --global --remove-section user     # si ok
+git config --local --remove-section user      # ok
+git config --global --unset-all user.name     
+git config --global --add user.name <whatever>
+git version                                   # git version 2.38.1.windows.1
+                                              # The latest version is 2.42.0.
+                    ### Haz tus mensajes de GIT Commit PROFESIONALES con CONVENTIONAL COMMITS
+                      # https://www.youtube.com/watch?v=SigVVJmUGv8 
+                      # cuando no sabes que mensajes ponerles a tus commits 
+                      # https://www.conventionalcommits.org/en/v1.0.0/
+                      # El mensaje de confirmación debe estructurarse de la siguiente manera:
+                      # <type>[optional scope]: <description>
+                      # [optional body]
+                      # [optional footer(s)]
+                      # Los tipos:
+                      # fix 
+                      # feat: nueva funcionalidad que se esta añadiendo al proyecto 
+                      # BREAKING CHANGE: 
+                      # types other than fix : recommends build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, and others.
+                      # footers other than BREAKING CHANGE
+                      # Ej:
+                      # feat: allow provided config object to extend other configs
+                      # BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+
+
+
+                                              # consulta: git version 1.7.9.5
 # :27) 23/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
             # Fork :
             # Es copiar y pegar, Duplicar un proyecto.
