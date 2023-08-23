@@ -8,8 +8,10 @@ Lo mas antiguo en lo profundo del fondo.
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
 
-
-
+# :27) 23/08/2023 ,  # time video, Start: --:--:-- , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp  
+                # prentacion power point: evidencia 1. 
+                # mas traduccion de los dialogos al ingles
+                # AA1-EV01 Línea de tiempo situaciones pasadas (Vocabulary).pptx
 # :26) 22/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                  # work flow : una forma de trbajar utilizando git.
                  # update normal es:
