@@ -9,7 +9,7 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
-
+# :28) 24/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
         # Creando un repositorio en gitHub
         # Quick setup — if you’ve done this kind of thing before
         # https://github.com/Miguelepst/git-exp-dicc.git        # Ruta del repositorio de GitHub
@@ -155,13 +155,23 @@ git version                                   # git version 2.38.1.windows.1
                       # Ej:
                       # feat: allow provided config object to extend other configs
                       # BREAKING CHANGE: `extends` key in config file is now used for extending other config files
- git remote add origin https://github.com/Miguelepst/test1.git  # ya existe
-git remote set-url origin https://github.com/Miguelepst/test1.git
-git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU  token 
-git remote -v   # verificar las direcciones remotas
+                       # Error 
+git remote add origin https://github.com/Miguelepst/test1.git  # Error: ya existe
 git branch -M main
-git push -u origin main
-                                              # consulta: git version 1.7.9.5
+git push -u origin main                      
+                        ### Solucion:
+git remote set-url origin https://github.com/Miguelepst/test1.git        # repositorio GitHub Internet
+git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU  # token de acceso x 7 dias caducidad.
+git remote -v   # verificar las direcciones remotas
+git config --local --remove-section user
+git config --local user.name "Miguel Cartagena"
+git config --local user.email miguel@noreply.com
+cat .git/config
+git config --global --list
+git add .
+git commit -am "doc: "
+git push
+                                            # consulta: git version 1.7.9.5
 # :27) 23/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
             # Fork :
             # Es copiar y pegar, Duplicar un proyecto.
