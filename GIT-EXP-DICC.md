@@ -108,8 +108,8 @@ cat /etc/gitconfig            # cuando estamos modificando --system
                               # como cambio yo una opcion  
 git config --list --global                               
 git config --global user.name "Jose test"     # nombre de la opcion seguido del valor de la opcion 
-git config --global user.name                 # visualiza opcion
-git config --global user.name " "             # user espacio en blanco
+git config --global user.name                 # visualiza opcion nombre
+git config --global user.name " "             # user espacio en blanco " "
 git config --global user.name none            # usar none
 cat $HOME/.gitconfig 
 git config --list --global  
@@ -155,9 +155,12 @@ git version                                   # git version 2.38.1.windows.1
                       # Ej:
                       # feat: allow provided config object to extend other configs
                       # BREAKING CHANGE: `extends` key in config file is now used for extending other config files
-
-
-
+ git remote add origin https://github.com/Miguelepst/test1.git  # ya existe
+git remote set-url origin https://github.com/Miguelepst/test1.git
+git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU  token 
+git remote -v   # verificar las direcciones remotas
+git branch -M main
+git push -u origin main
                                               # consulta: git version 1.7.9.5
 # :27) 23/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
             # Fork :
@@ -201,7 +204,7 @@ git version                                   # git version 2.38.1.windows.1
             # es muy sencillo El FORK, hacer un duplicado una copia de un repositorio externo el tu yo
             # y una vez haz hecho el fork, 
             # se comporta como un repositorio como otro cualquiera que tubieras en tu cuenta de gitHut
-            # access token: para conectar nuestros repositorios locales con nuestros repositorios remotos 
+          ### Access token: para conectar nuestros repositorios locales con nuestros repositorios remotos 
             # debemos generas un ACCESS TOKEN politica got 2021
             # para poder acceder alos repositorios remotos.
             # nueva politica de seguridad conocida como access token
@@ -215,10 +218,6 @@ git remote add origin https://github.com/Miguelepst/git-exp-dicc.git            
 git add .  # para agregar todo 
 git commit -am probandoPat           
 git push -u origin master 
-
-
-
-
             git push https://token: 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  
 git config --local user.name "okmiguel@noreply.user-github.com"
 
