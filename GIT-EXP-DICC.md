@@ -8,6 +8,9 @@ Lo mas antiguo en lo profundo del fondo.
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
 
+
+
+# :27) 23/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
             # Fork :
             # Es copiar y pegar, Duplicar un proyecto.
             # yo me quiero hacer una copia de un proyecto de otra persona para poder trabajar en el.
@@ -63,7 +66,7 @@ git remote add origin https://github.com/Miguelepst/git-exp-dicc.git            
 git add .  # para agregar todo 
 git commit -am probandoPat           
 git push -u origin master 
-    
+
 
 
 
