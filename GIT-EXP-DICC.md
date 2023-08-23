@@ -63,6 +63,7 @@ git remote add origin https://github.com/Miguelepst/git-exp-dicc.git            
 git add .  # para agregar todo 
 git commit -am probandoPat           
 git push -u origin master 
+    
 
 
 
