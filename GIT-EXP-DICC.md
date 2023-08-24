@@ -9,35 +9,50 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
-# :28) 24/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
-        # Creando un repositorio en gitHub
-        # Quick setup — if you’ve done this kind of thing before
-        # https://github.com/Miguelepst/git-exp-dicc.git        # Ruta del repositorio de GitHub
-        # …or create a new repository on the command line
-echo "# git-exp-dicc" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Miguelepst/git-exp-dicc.git
-git push -u origin main
-        # create a new repository on the command line
-git init                    # inicializando el repositorio Te ubica en la rama MASTER
+# :28) 24/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                    #----------------------------------------------------
+                    # Creando un repositorio en gitHub y vinculandolo con un repositorio local
+                    # Configuracion rapida si ya has hecho este tipo de cosas antes
+                    # Quick setup — if you’ve done this kind of thing before
+https://github.com/Miguelepst/git-exp-dicc.git        # Ruta del repositorio de GitHub
+                    # O crear un nuevo repositorio en la linea de comandos
+                    # …or create a new repository on the command line
+echo "# git-exp-dicc" >> README.md          # crear un archivo README.md con el contenido interno: # git-exp-dicc
+git init                                    # inicializar repositorio  
+git add README.md                           # agregar readme.md al staged
+git commit -m "first commit"                # commit 1, el inicial, hacer primer confirmacion de cambio, commit inicial
+git branch -M main                          #  -M  move/rename a branch, even if target exists  
+                                            # https://git-scm.com/docs/git-branch
+                                            # Con una opción -mo -M, se cambiará el nombre de <oldbranch> a <newbranch>. Si <oldbranch> tenía un reflog correspondiente, se le cambia el nombre para que coincida con <newbranch> y se crea una entrada de reflog para recordar el cambio de nombre de la rama. Si <newbranch> existe, se debe usar -M para forzar el cambio de nombre. 
+                                            # https://www.makigas.es/series/tutorial-de-git/git-reflog
+                                            #  git-reflog, El reflog es un log especial donde se incorporan commits cada vez que se hace un cambio de rama o un reset, lo que puede ser usado en caso de emergencia para recuperar un estado anterior de la rama si la liamos con el rebase, reset o checkout.
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git     # pero si ya habia sido fijado anteriormente da error
+                                            # Curso Avanzado de Git y Github - 7. Ramas de seguimiento: https://www.youtube.com/watch?v=kYqBFAsD-r8 
+                                            # git push -u origin master                    Cuando uno sube una rama le podemos dar la opcion -u, lo que dice: Cree una rama de seguimiento para esta rama y la enlaace con esta rama.
+                                            # git push -u origin mi-rama                  
+git push -u origin main                     # --set-upstream (-u), crear una rama de seguimiento de la rama main local en el remoto 
+                            # create a new repository on the command line
+git init                    # inicializando el repositorio Te ubica en la rama MASTER, MAIN
                             # Initialized empty Git repository in D:/acumulacion-ftp/practica-diaria/3-musica/canto/test-borrar/.git/
-git add .                   # agregar contenido
+git add .                   # agregar contenido staged
 git commit -m "mi tarea"    # Insertar cambios 
-git remote add origin https://github.com/Miguelepst/git-exp-dicc.git   # vincular repositorio local con el remoto
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git   # vincular repositorio local con el remoto, si ya estaba definido da error
 git push   origin master    # enviamos el contenido al remoto
                             # si mostrara un error 
-                            # es porque no esta en una rama diferente "main" o en otra diferente     
-                            # git push   origin main    # enviamos el contenido al remoto
-        # …or push an existing repository from the command line
-git remote add origin https://github.com/Miguelepst/git-exp-dicc.git
-git branch -M main
-git push -u origin main
-        # …or import code from another repository
-        # You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
-        #Git Bash Here   Consola de Git ubicada en la carpeta local
+                            # es porque no estas en una rama diferente, puede ser en vez de master la rama "main" o en otra diferente.     
+                            # git push   origin main    # enviamos el contenido al remoto de la rama main
+                            # Si el repositorio ya existe
+                            # …or push an existing repository from the command line
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git    # vincular a remoto 
+git branch -M main          # Cambio el nombre del <oldbranch> to <newbranch> con force, master to main.
+git push -u origin main     # crea una rama de seguimiento en remoto de la rama local main y envia los commits.
+                            # otra opcion es importar un repositorio de otro repositorio online.
+                            # …or import code from another repository
+                            # You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+                            #Git Bash Here   Consola de Git ubicada en la carpeta local
+                            #----------------------------------------------------
+
+                            
 git config --global -l      # git config --global --list    
                             # cuando es un comando reducido se pone un igual ejemplo: 
                             # --list seria igual a: -l
