@@ -9,8 +9,11 @@ Lo mas antiguo en lo profundo del fondo.
 
 
 
+# :30) 26/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+          # estudiando y organizando contenido
+# :29) 25/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 # :28) 24/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
-                    #----------------------------------------------------
+#----------------------------------------------------
                     # Creando un repositorio en gitHub y vinculandolo con un repositorio local
                     # Configuracion rapida si ya has hecho este tipo de cosas antes
                     # Quick setup — if you’ve done this kind of thing before
@@ -44,125 +47,155 @@ git push   origin master    # enviamos el contenido al remoto
                             # Si el repositorio ya existe
                             # …or push an existing repository from the command line
 git remote add origin https://github.com/Miguelepst/git-exp-dicc.git    # vincular a remoto 
-git branch -M main          # Cambio el nombre del <oldbranch> to <newbranch> con force, master to main.
-git push -u origin main     # crea una rama de seguimiento en remoto de la rama local main y envia los commits.
+git branch -M main          # -M (MOVE), Cambio el nombre del <oldbranch> to <newbranch> con force (-M), sin force (-m), master to main.
+                            # otro ejemplo: 
+                            # Rename your local master branch into main with the following command:
+                            # $ git branch --move master main
+                            # There’s no master branch locally anymore, because it’s renamed to the main branch.
+git push -u origin main     # -u (--set-upstream) crea una rama de seguimiento en remoto de la rama local main y envia los commits.
+                            # https://git-scm.com/docs/git-push   -u (--set-upstream)
                             # otra opcion es importar un repositorio de otro repositorio online.
                             # …or import code from another repository
                             # You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
                             #Git Bash Here   Consola de Git ubicada en la carpeta local
-                            #----------------------------------------------------
+#----------------------------------------------------
+#----------------------------------------------------
 
-                            
-git config --global -l      # git config --global --list    
+git config --global -l      # git config --global --list   (-l), listar configuracion global 
                             # cuando es un comando reducido se pone un igual ejemplo: 
                             # --list seria igual a: -l
 ls -all                     # ver todos los archivos inclusive los ocultos 
 pwd                        # ubicacion de mi repositorio      
                            # local se utiliza para un proyecto git ya iniciado
                            # y queremos mostrar que lo que hallamos aportado fuimos nosotros
-git config --global user.email none                             
+git config --global user.email none     # asigna none, como variable de correo                        
                            #satge area
                            # todo en git se basa en confirmaciones commits
                            # Retomar clase :https://www.youtube.com/watch?v=y6n4u2Ncm1M&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=3
                            # time video: 5:42 / 1:03:31
+#----------------------------------------------------------------
+#----------------------------------------------------------------
+                           # explicacion: config en git zonas system, global y local
                            # pequeña configuracion en git
                            # por norma general las confirmaciones en git 
-                           # van asociadas a un nombre y a un correo electronico
+                           # van asociadas a un nombre y a un correo electronico.
                            # como le digo a GIT que utilice mi nombre y mi direccion de correo electronico 
                            # para asociarlas a los commit que yo realice.
-git config                 # esta en tres partes: la podemos cambiar en tres partes
-                           # la primera utilizada a nivel de sistema operativo : system
-                              # SYSTEM      # raramente utilizada.                        
-                           # la siguiente es la opcion global se aplica a todos los repositorios de mi usuario: global     
+git config                 # esta en tres partes la configuracion y la podemos 
+                           # SYSTEM: la primera utilizada a nivel de sistema operativo
+                              # SYSTEM      # raramente utilizada, no usada.                        
+                           # GLOBAL: la siguiente es la opcion global se aplica a todos los repositorios de un usuario, es general a todos los repositorios de un usuario X, global     
                               # GLOBAL  
-                              # es decir todos los repositorios que esten dentro de la carpeta de mi usuario
-                              # es decir los repositorios que esten dentro de mi carpeta de usuario 
-                           # por ultimo la zona de configuracion LOCAL 
+                              # es decir todos los repositorios que esten dentro de la carpeta de mi usuario, o pertenescan a un usuario usara esta configuracion en el caso de no tener definida unca configuracion local o especifica a de un repositorio.
+                              # Suele configurarse una vez y no mas a no ser que se desee cambiar de usuario al estar trabajando en el pc de otro usuario.
+                           # LOCAL: por ultimo la zona de configuracion LOCAL 
                               # LOCAL
                               # los cambion de mi configuracion local 
                               # se aplica a la configuracion de mi repositorio actual 
+                              # es la que mas veces se va a usar en el caso de querer definir un auario especifico de un repositorio especifico local.
                            # como puedo modificar unas u otras    
-git config  --zonaAModificar 
+git config  --zonaAModificar # ejemplo
 git config --system 
-git config --global       # modificaria mi fichero de usuario
-git config --local        # modifica la configuracion de mi repositorio actual
+git config --global       # modificaria mi fichero de usuario, afecta a todo lo del usuario
+git config --local        # modifica la configuracion de mi repositorio actual, afecta a solo un repositorio especifico
                           # si yo tengo un unico repositorio 
                           # mis cambios de configuracion serian para ese unico repositorio
-git config --global       # y como usuario tengo multiples repositorios 
+git config --global       # si como usuario tengo multiples repositorios, y no quiero estar configurando uno por uno de manera LOCAL, entonces hago la configuracion de git de manera GLOBAL. 
+                          # Es algo asi como los niveles de confuguracion de git. Git trata de commits de cambios y de identificar la persona que genera esos cambios de versiones.          
                           # todos mis repositorios van a tener la misma configuracion
                           # no tengo que ir uno por uno                          
-                          # cual es la que manda, cuanto mas cerca de repositorio mas mandamos.
-                          # emprimer lugar estaria SYSTEM 
-                          # las opciones de SYSTEM serian sobre escritas con las opciones GLOBAL.
-                          # y las opciones GLOBAL serian sobre escritas con las opciones LOCAL.
+                          # cual es la que manda, cuanto mas cerca de repositorio mas mandamos, LOCAL es la mas cercana al repositorio,la mas alejada del repositorio es SYSTEM.
+                          # en primer lugar estaria SYSTEM como la mas alejada del repositorio
+                          # las opciones de SYSTEM serian sobre escritas con las opciones GLOBAL, que es mas proxima al repositorio.
+                          # y las opciones GLOBAL serian sobre escritas con las opciones LOCAL, que es la mas sercana al repositorio que se este trabajando.
                           # LOCAL es lo mas cerca al repositorio.
 git config --list --system    # para ver mi configuracion actual (system).
                               # parametrizar git a nivel de sistema es raro.
 git config --list --global 
 git config --list --local     # A nivel local dentro de la carpeta .git hay un fichero que se llama config 
-                              # y de ahi es donde sale esta informacion
+                              # y de ahi es donde sale esta informacion de configuracion local al repositorio especifico
                               # cuando modificamos local, 
                               # lo que estamos modificando es ese fichero: .git/config
 cat .git/config               # esta es la configuracion local 
-cat $HOME/.gitconfig          # esta es la global, 
+cat $HOME/.gitconfig          # esta es la global, variable del usurio X en el sistema operativo
                               # que es cuando usamos un: git config global
-                              # estamos modificando el fichero gitconfig
+                              # estamos modificando el fichero .gitconfig variable del usurio $HOME
                               # dentro de nuestro directorio de usuario
-                              # en windows sera: c:/user/nombreDeUsuario     
+                              # en windows sera: c:/user/nombreDeUsuario($HOME)     
                               # "C:\\Users\\Equipo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\"                          
                               # y cuando estamos modificando el --system 
-cat /etc/gitconfig            # cuando estamos modificando --system
-                              # que directamente no esta definido no esta, no lo tengo.                     
+cat /etc/gitconfig            # El archivo de configuracion gitconfig se encuentra en la carpeta /etc/gitconfig
+                              # al tratar de imprimirlo en pantalla con cat me dice: que no esta definido, no esta, no lo tengo, no se ha hecho esta configuracion y es comun que sea asi, es una configuracion mucho mas generalizada, puede abarcar a todos los usurios de yn mismo systema SYSTEM, pero para que se aplicase no deberia estar definida la configuracion GLOBAL y mucho menos la configuracion LOCAL de git.                     
                               # system : lo vas autilizar cero veces.
-                              # global : lo vas a utilizar una vez, configura opciones por defecto del usuaro del sistema operativo para sus todos sus repositorios
+                              # global : lo vas a utilizar una vez, configura opciones por defecto del usuaro del sistema operativo para todos sus repositorios
                               # local : lo vas a utilizar mas veces porque: 
-                                # en ciertos repositorios tenes que usar vuestro email del trabajo, si son cosas de trabajo 
-                                # y en otras tener que usar/mostrar vuestro email real 
-                                # si son cosas  de bueno pues proyectos open source que pueden ser vuestros 
-                                # o proyectillos que tenes por ahi.
-                              # como cambio yo una opcion  
-git config --list --global                               
+                                # en ciertos repositorios tenes que usar (un usuario diferente sobre quien genera los commits sobre el repositorio que asi lo requiera) vuestro email del trabajo, si son cosas de trabajo 
+                                # y en otros repositorios tienes que usar/mostrar vuestro email real y no el de la empresa o el de la uiniversidad.
+                                # si son cosas  de proyectos open source que pueden ser vuestros personales, 
+                              # como cambio yo una opcion:  
+git config --list --global                    # listar, imprimir, mostrar configuracion global en pantalla            
 git config --global user.name "Jose test"     # nombre de la opcion seguido del valor de la opcion 
 git config --global user.name                 # visualiza opcion nombre
-git config --global user.name " "             # user espacio en blanco " "
-git config --global user.name none            # usar none
-cat $HOME/.gitconfig 
-git config --list --global  
-                                              # que quiero cambiar las opciones 
+git config --global user.name " "             # Cambio el valor a user espacio en blanco " ", no es un unset, o reset del valor del parametro.
+git config --global user.name none            # Cambio el valor a user a "none "
+cat $HOME/.gitconfig                          # otra manera, # listar, imprimir, mostrar configuracion global en pantalla                  
+                                              # Quiero cambiar las opciones 
                                               # referentes a un repositorio especifico, a uno particular 
                                               # quiero que se salga de la configuracion general:
-git config --local user.email "vroman@noreply.users.github.com"
-cat .git/config                                # "vroman@noreply.users.github.com"
-git config --list --local                      # "vroman@noreply.users.github.com"
-                                              #  cuando se va a utilizar este email 
-                                              # cuando yo haga un commit o una corfirmacion 
-                                              # dentro de este repositorio particular
-                                              # Cuando se va a utilizar el otro email el global 
-                                              # cuando haga una confirmacion 
-                                              # fuara de este repositorio (que posee email en su configuracion local)
-                                              # en cualquier otro repositorio relacionado a la cuenta usuario y su contenido
-git config --global user.name                                            
-git config --global --remove-section user.name ='off'         # NO funciono, eliminar al usuario
+git config --local user.email "vroman@noreply.users.github.com"   # cambiar configuracion email a nivel local del repositorio
+cat .git/config                                # "vroman@noreply.users.github.com"  # imprimir configuracion LOCAL
+git config --list --local                      # "vroman@noreply.users.github.com"  # otra manera de imorimir configuracion local 
+                                               #  cuando se va a utilizar este email 
+                                               # cuando yo haga un commit o una corfirmacion 
+                                               # dentro de este repositorio particular
+                                               # Cuando se va a utilizar el otro email, el global 
+                                               # cuando haga una confirmacion 
+                                               # fuara de este repositorio (que posee email en su configuracion local)
+                                               # en cualquier otro repositorio relacionado a la cuenta usuario que no posea usuario configurado en su LOCAL
+#------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------
+                                               # otros comandos implementados, requeridos EXP
+git config --global --remove-section user.name ='off'         # NO funciono: eliminar al usuario
 git config --global --remove-section user.name                # no funciono.  
-git config --global --unset-all user.name                     # este si funciono
-git config --global --replace-all user.name "New User Name"   # otros comandos
-git config --global -e                        # Este comando abrirá el editor GNU nano con lo que está esperando.
-git config --global --remove-section user     # si ok
-git config --local --remove-section user      # ok
-git config --global --unset-all user.name     
-git config --global --add user.name <whatever>
-git version                                   # git version 2.38.1.windows.1
-                                              # The latest version is 2.42.0.
+git config --global --unset-all user.name                     # OK: es hacer un reset del valor user.name
+git config --global --replace-all user.name "New User Name"   # otro comando
+git config --global -e                         # Este comando abrirá el editor GNU nano o VSCODE editor si lo tienes configurado como editor de texto predeterminado para git con la configuracion global. 
+                                               # de este modo puedes cambiar la configuracion del archivo 
+git config --global --remove-section user      # OK: elimina la configuracion de user a nivel GLOBAL
+git config --local --remove-section user       # OK:  elimina la configuracion de user a nivel LOCAL
+git config --global --unset-all user.name      # no implentado
+git config --global --add user.name <whatever> # no implementado
+git version                                    # git version 2.38.1.windows.1
+                                               # The latest version is 2.42.0.
+#------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------
+                      # <tipo>[alcance opcional]: <descripción>
                     ### Haz tus mensajes de GIT Commit PROFESIONALES con CONVENTIONAL COMMITS
+                      # El porque estandarizar, el porque de su importancia:
+                      # La estructura completa del mensaje de confirmación COMMIT
+                      # en Conventional Commits ayuda a estandarizar y categorizar 
+                      # los cambios realizados en el código, 
+                      # lo que facilita la comprensión y seguimiento de los cambios a lo largo del tiempo.  
+                      # La estructura típica de un mensaje de confirmación en Conventional Commits es la siguiente:
+                      # <tipo>[alcance opcional]: <descripción>
+                      # Haz tus mensajes de GIT Commit PROFESIONALES con CONVENTIONAL COMMITS, 
+                      # youtuber: https://www.youtube.com/@CarlosAzaustre
+                      # canal de youtube: Learn JavaScript with Carlos Azaustre
                       # https://www.youtube.com/watch?v=SigVVJmUGv8 
                       # cuando no sabes que mensajes ponerles a tus commits 
-                      # https://www.conventionalcommits.org/en/v1.0.0/
+                      # Herramienta: https://www.conventionalcommits.org/en/v1.0.0/
                       # El mensaje de confirmación debe estructurarse de la siguiente manera:
                       # <type>[optional scope]: <description>
                       # [optional body]
                       # [optional footer(s)]
+                      #
+                      # explicacion:
+                      # [optional scope] El "alcance opcional" se refiere a una descripción breve y concisa de la sección específica del código que ha sido modificada en el commit. 
+                      # No es obligatorio incluirlo, pero puede proporcionar información adicional sobre el cambio que se realizó. 
+                      # Por ejemplo, si estás trabajando en un proyecto de software con múltiples componentes o módulos, 
+                      # el "alcance" podría indicar en cuál de ellos se hicieron los cambios.
                       # Los tipos:
-                      # fix 
+                      # fix : reparacion de codigo
                       # feat: nueva funcionalidad que se esta añadiendo al proyecto 
                       # BREAKING CHANGE: 
                       # types other than fix : recommends build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, and others.
@@ -170,14 +203,19 @@ git version                                   # git version 2.38.1.windows.1
                       # Ej:
                       # feat: allow provided config object to extend other configs
                       # BREAKING CHANGE: `extends` key in config file is now used for extending other config files
-                       # Error 
+#-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
+                      # EXP EXPERIENCE:
 git remote add origin https://github.com/Miguelepst/test1.git  # Error: ya existe
-git branch -M main
-git push -u origin main                      
-                        ### Solucion:
+git branch -M main            # Rename your local master branch into main with the following command
+git push -u origin main       # To let others see the new main branch, you need to push it to the remote. This makes the renamed branch available on the remote.               
+                             ### Solucion:
 git remote set-url origin https://github.com/Miguelepst/test1.git        # repositorio GitHub Internet
 git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU  # token de acceso x 7 dias caducidad.
-git remote -v   # verificar las direcciones remotas
+#-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
+                               # docs[]: comandos 
+git remote -v                  # verificar las direcciones remotas
 git config --local --remove-section user
 git config --local user.name "Miguel Cartagena"
 git config --local user.email miguel@noreply.com
@@ -186,7 +224,29 @@ git config --global --list
 git add .
 git commit -am "doc: "
 git push
-                                            # consulta: git version 1.7.9.5
+#-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
+                                       # Docs: estudio git comandos,     fuente: https://git-scm.com/book/be/v2/Git-Branching-Branch-Management
+                                       # Changing the master branch name
+$ git branch --move master main        # Rename your local master branch into main with the following command
+                                       # There’s no master branch locally anymore, because it’s renamed to the main branch.
+$ git push --set-upstream origin main  # To let others see the new main branch, you need to push it to the remote. This makes the renamed branch available on the remote.
+git branch --all                       # result:
+                                       # * main
+                                       #   remotes/origin/HEAD -> origin/master
+                                       #   remotes/origin/main
+                                       #   remotes/origin/master
+                                       # Your local master branch is gone, as it’s replaced with the main branch. 
+                                       # The main branch is also available on the remote. 
+                                       # But the remote still has a master branch. 
+                                       # Other collaborators will continue to use the master branch as the base of their work, 
+                                       # until you make some  further changes.
+                                       # ...
+$ git push origin --delete master      # After you’ve done all these tasks, 
+                                       # and are certain the main branch performs just as the master branch, 
+                                       # you can delete the master branch
+#-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------                                       
 # :27) 23/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
             # Fork :
             # Es copiar y pegar, Duplicar un proyecto.
