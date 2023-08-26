@@ -11,9 +11,53 @@ Lo mas antiguo en lo profundo del fondo.
 
 # :30) 26/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
           # estudiando y organizando contenido
+          # es una demo enel curso de Git puedes ignorar la PR (PULL REQUEST) : solicitudud que intengres mis contribuciones al proyecto FORKeado.
+          # me puedo hacer un auto Pull Request, a mi mismo, yo podria decirle que la acepto, que sus commits se apliquen a mi repositorio, pero debo de tener los permisos. 
+          # me voy a un proyecto en el que si tengo permisos para hacerlo yo mismo todo
+          # cree otra cuenta github para relizar las pruebas de FORK : miguelepst@gmail.com user: okmiguel
+          # curso interactivo de git en ingles: https://skills.github.com/
+          # Learn how to use GitHub Get started with an "Introduction to GitHub" course in GitHub Skills. 
+          # GitHub Skills Learn how to use GitHub with interactive courses designed for beginners and experts. 
+          # What do you want to do first? Every developer needs to configure their environment, so let's get your GitHub experience optimized for you.
+          # opcion 2: Collaborate with your team Improve the way your team works together and get access to more features with an organization. : https://github.com/organizations/plan
+          # tiene un plan gratuito: Pick a plan for your organization, costos: 0, 4 usd, 19.25 usd por mes
+          # opcio 1: Start a new project Start a new repository or bring over an existing repository to keep contributing to it. 
+          # https://github.com/new       # Crear nuevo repositorio
+https://github.com/search                # buscar a alguien en github
+https://github.com/search/advanced       # busqueda avanzada
+                                         # Users options
+                                         # From this location : colombia    , influencer de colombia
+                                         # With this many followers : >1000
+                                         # With this many public repositories : > 50   # que este muy activo
+                                         # Working in this language: JavaScript   (es igual a Angular)
+                                         # le das en buscar
+                                         # como crear tu perfil en github: debes poner tu correo
+                                         # otra manera de buscar usuario es ir donde otro usuarios y ver aquien sigue este tio, investigas.
+                                         # y eliges a quienes vas aseguir
+                                         # para que amplies tu red de contactos
+                                         # Cómo crear tu PERFIL de GITHUB desde cero *muy sencillo* (Curso de Github) #3
+                                         # https://www.youtube.com/watch?v=nrMSM3NleUM
+
 # :29) 25/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 # :28) 24/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 #----------------------------------------------------
+# GitHub despues de crear un repositorio #
+#----------------------------------------------------
+…or create a new repository on the command line
+echo "# primer" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/okmiguel/primer.git
+git push -u origin main
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/okmiguel/primer.git
+git branch -M main
+git push -u origin main
+
                     # Creando un repositorio en gitHub y vinculandolo con un repositorio local
                     # Configuracion rapida si ya has hecho este tipo de cosas antes
                     # Quick setup — if you’ve done this kind of thing before
@@ -211,11 +255,12 @@ git branch -M main            # Rename your local master branch into main with t
 git push -u origin main       # To let others see the new main branch, you need to push it to the remote. This makes the renamed branch available on the remote.               
                              ### Solucion:
 git remote set-url origin https://github.com/Miguelepst/test1.git        # repositorio GitHub Internet
+git remote -v                  # verificar las direcciones remotas
 git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU  # token de acceso x 7 dias caducidad.
+
 #-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------
                                # docs[]: comandos 
-git remote -v                  # verificar las direcciones remotas
 git config --local --remove-section user
 git config --local user.name "Miguel Cartagena"
 git config --local user.email miguel@noreply.com
@@ -228,9 +273,9 @@ git push
 #-----------------------------------------------------------------------------
                                        # Docs: estudio git comandos,     fuente: https://git-scm.com/book/be/v2/Git-Branching-Branch-Management
                                        # Changing the master branch name
-$ git branch --move master main        # Rename your local master branch into main with the following command
+$ git branch --move master main        # (-m) Rename your local master branch into main with the following command
                                        # There’s no master branch locally anymore, because it’s renamed to the main branch.
-$ git push --set-upstream origin main  # To let others see the new main branch, you need to push it to the remote. This makes the renamed branch available on the remote.
+$ git push --set-upstream origin main  # (-u) To let others see the new main branch, you need to push it to the remote. This makes the renamed branch available on the remote.
 git branch --all                       # result:
                                        # * main
                                        #   remotes/origin/HEAD -> origin/master
@@ -252,10 +297,10 @@ $ git push origin --delete master      # After you’ve done all these tasks,
             # Es copiar y pegar, Duplicar un proyecto.
             # yo me quiero hacer una copia de un proyecto de otra persona para poder trabajar en el.
             # porque quiero contribuir a ese proyecto.
-            # pero quiero hcer cambios sin afectar a ese proyecto todavia, es un duplicar.
+            # pero quiero hacer cambios sin afectar a ese proyecto todavia "despues puedo solicitar que mis cambios se aplique el proyecto original el propietario del reposotorio deside si acepta o no", es un duplicar un proyecto app.
             # la ventaja de fork:
-            # cualquier cambio que realices sobre el proyecto ya no va afectar al otro proyecto,
-            # tu te haz hecho tu copia, tienes tu copia y puedes generar alteraciones generar cambios, 
+            # cualquier cambio que realices sobre el proyecto no va afectar al otro proyecto, al original,
+            # tu te haz hecho tu copia, tienes tu copia y puedes generar alteraciones generar cambios, generar tus propios commits
             # que eso no va afectar al proyecto padre.  
             # bifurcacion de los proyectos de codigo abierto, potencialmente pueden haber copias infiitas.
             # si somos X personas en el mundo podrian haber x versiones de ese mismo proyecto.
@@ -282,32 +327,30 @@ $ git push origin --delete master      # After you’ve done all these tasks,
             # Te da la opcion despues de pedirles al propietario del repositorio que integren 
             # en su repositorio un cambio que tu haz hecho.
             # esto se llama una pull request : solicito que incorporen un cambio tu yo 
-            # en el repositorio central principal desde don de lo bifurcaste
+            # en el repositorio central principal desde donde lo bifurcaste
             # y esto se los podria yo enviar a mis compañeros de trabajo y decirles 
             # oye estoy haciendo estos cambios que te parecen, y me podrian dar citas, sugerencias.
             # y coloborar entorno a ella
             # es muy sencillo El FORK, hacer un duplicado una copia de un repositorio externo el tu yo
             # y una vez haz hecho el fork, 
             # se comporta como un repositorio como otro cualquiera que tubieras en tu cuenta de gitHut
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
           ### Access token: para conectar nuestros repositorios locales con nuestros repositorios remotos 
             # debemos generas un ACCESS TOKEN politica got 2021
             # para poder acceder alos repositorios remotos.
             # nueva politica de seguridad conocida como access token
 git init    # inicializar el repositorio 
             # lo siguiente configuraciones de identidad 
-git config user.name Miguelepst                          # coloco el usuario que tengo asociado en GitHut             
-git config user.email  miguelepst@hotmail.com            # aqui debe ir el email que tengamos asociado a nuestra cuente de GitHub
-git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU  token 
-git remote add origin https://github.com/Miguelepst/git-exp-dicc.git             # url del repositorio 
-           # ya esta todo configurado, provemos hacer un git add y un git push
-git add .  # para agregar todo 
+git config user.name Miguelepst                                                  # coloco el usuario que tengo asociado en GitHut, no necesariamente, no necesariamente puede ser la configuracion local de repositorio git            
+git config user.email  miguelepst@hotmail.com                                    # aqui debe ir el email que tengamos asociado a nuestra cuente de GitHub, no necesariamente puede ser la configuracion local de repositorio git
+git config user.password ghp_mgv007r0v3Q1DrGiVQlVPSDWUWURafcJrZPs1fNbcU          # token de cceso valido por 7 dias.
+git remote add origin https://github.com/Miguelepst/git-exp-dicc.git             # Ruta: url del repositorio remoto gitHub
+                                                                                 # ya esta todo configurado, provemos hacer un git add y un git push
+git add .                                                                        # para agregar todo 
 git commit -am probandoPat           
 git push -u origin master 
-            git push https://token: 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  
-git config --local user.name "okmiguel@noreply.user-github.com"
-
-
-
+#--------------------------------------------------------------------------
 
 
 # :26) 22/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
