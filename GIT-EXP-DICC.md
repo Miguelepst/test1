@@ -1,14 +1,275 @@
+la instantánea de los cambios
 Lo mas reciente arriba "HEAD"
 Lo mas antiguo en lo profundo del fondo.
-
+(#-) : nuevo tema, (#) comentario, (:) explicacion de comando, (->>>) cursor 
 # :28) 24/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "ENTENDIENDO GIT"
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
+->>>
 
-
+# :31) 27/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+          #-------
+          # ¿Cuáles son los 3 estados de git? 
+          # confirmado (committed), modificado (modified), y preparado (staged).
+          #--------
+          #-
+          # Comandos básicos en la terminal de Git Bash en Windows
+            La ruta principal en Windows es c:/, en UNIX es solo /.
+            Windows no hace diferencia entre mayúsculas y minúsculas, pero UNIX si.
+            Git Bash usa la rua /c para dirigirse al disco c:/ en Windows. 
+            Por lo tanto, la ruta del usuario con el que estás trabajando es /c/Users/NombreUsuario
+            Comandos
+pwd             : nos muestra la carpeta actual en la que nos encontramos.
+mkdir           : nos permite crear carpetas, p. ej. mkdir NuevaCarpeta
+touch           : nos permite crear archivos nuevos, p.ej. touch NuevoArchivo.txt
+cat             : nos permite ver el contenido de un archivo, p.ej. cat NuevoArchivo.txt
+cd              : nos permite cambiarnos de carpeta, p.ej. cd NuevaCarpeta.
+cd ..           : nos permite regresar al directorio o carpeta anterior.
+cd o cd ~       : nos lleva a la ruta del usuario.
+cd /c           : nos vamos al disco C:/.
+cd -            : nos lleva directamente al ultimo directorio visitado.
+ls              : nos permite ver los archivos de la carpeta donde estamos actualmente.
+ls -l           : Ver todos los archivos como una lista en donde incluye el usuario, grupo, permisos sobre el archivo, tamaño, fecha y hora de creación.
+ls -lh          : Muestra la misma información que ls-l pero con unidades de tamaño, es decir, kb o mb.
+ls-R            : muestra el contenido de todos los sudirectorios de forma recursiva.
+ls -S           : Ordena los resultados por tamaño de archivo.
+rm              : Nos permite borrar un archivo o carpeta ej: rm NuevoArchivo.txt
+rmdir “nombre del directorio”/    : borrar un directorio: Solo funciona con directorios vacíos.
+rm -r ‘nombre de la carpeta’      :me permite eliminar la carpeta y los archivos dentro de ella de forma recursiva.
+cp “nombre del archivo que quremos copiar” “nombre del directorio a donde lo queremos copiar”                   : nos permite copiar un archivo.
+mv “el directorio de donde queremos mover/el nombre del archivo” “el directorio hacia donde lo queremos mover”  : nos permite mover un archivo.
+clear           : nos permite limpiar la pantalla.
+history         : ver los últimos comandos que ejecutamos y un número especial con el que podemos volver a repetir el comando.
+                #-
+                #-
+                ¿Cuáles son los comandos GIT más utilizado
+git config
+git clone
+git init
+git status
+git push
+git add
+git commit
+git branch                
+#-
+         #Un proyecto GIT consta de tres secciones principales: 
+         #WORKING DIRECTORY   : el directorio de trabajo, 
+         #STAGING (INDEX)     : el área de preparación, 
+         #LOCAL (REPOSITORY)  : y el directorio git.
+         #REMOTE (REPOSITORY) : mas la opcion de repositorio remoto centralizado para trabajo en equipo sobre un mismo repositorio.
+         #Cuando quieres tomar una foto una instantannea cuando ya hay algo definido minimamente, cuando ya hay algo funcional
+         # aqui es cuendo se suele hacer un commit. de otra maneda pueden ser solo commits de doc: backup.
+         # si haces elgo publico que quieres mostrar, y para que lo haces.
+         # El directorio de trabajo es donde se agregan, borran y editan los archivos. 
+         # Luego, los cambios son preparados (indexados) en el área de preparación. 
+         # Después de que confirmes tus cambios, la instantánea de los cambios se guardará en el directorio git.
+         # El software puede tener una fuerte curva de aprendizaje, pero hay muchos tutoriales disponibles para ayudarte.
+         # Comandos de GIT básicos:                   
+git init                        : git init creará un nuevo repositorio local GIT. El siguiente comando de Git creará un repositorio en el directorio actual                   
+git init [nombre del proyecto]  : Como alternativa, puedes crear un repositorio dentro de un nuevo directorio especificando el nombre del proyecto                   
+git clone nombredeusuario@host:/path/to/repository
+                                :git clone se usa para copiar un repositorio. Si el repositorio está en un servidor remoto, usa
+git clone /path/to/repository   :A la inversa, ejecuta el siguiente comando básico para copiar un repositorio local                   
+git add <temp.txt>              :git add se usa para agregar archivos al área de preparación. Por ejemplo, el siguiente comando de Git básico indexará el archivo temp.txt 
+git commit –m “El mensaje que acompaña al commit va aquí”
+                                :git commit creará una instantánea de los cambios y la guardará en el directorio git.
+                                # Consejo profesional Ten en cuenta que los cambios confirmados no llegarán al repositorio remoto.
+git config --global user.email tuemail@ejemplo.com
+                                :git config puede ser usado para establecer una configuración específica de usuario, como el email, nombre de usuario y tipo de formato, etc. Por ejemplo, el siguiente comando se usa para establecer un email                                
+git config --local user.email tuemail@ejemplo.com
+                                :La opción -global le dice a GIT que vas a usar ese correo electrónico para todos los repositorios locales. Si quieres utilizar diferentes correos electrónicos para diferentes repositorios, usa el siguiente comando
+git status                      :git status muestra la lista de los archivos que se han cambiado junto con los archivos que están por ser preparados o confirmados 
+git push  origin <master>       :git push se usa para enviar confirmaciones locales a la rama maestra del repositorio remoto. Aquí está la estructura básica del código
+                                #Consejo profesional Reemplaza <master> con la rama en la que quieres enviar los cambios cuando no quieras enviarlos a la rama maestra.
+git checkout -b <branch-name>
+                                : git checkout crea ramas y te ayuda a navegar entre ellas. Por ejemplo, el siguiente comando crea una nueva y automáticamente se cambia a ella
+git checkout <branch-name>      : Para cambiar de una rama a otra, sólo usa
+git remote -v                   :git remote te permite ver todos los repositorios remotos. El siguiente comando listará todas las conexiones junto con sus URLs
+git remote add origin <host-or-remoteURL>
+                                :Para conectar el repositorio local a un servidor remoto, usa este comando
+git remote <nombre-del-repositorio>
+                                :Por otro lado, el siguiente comando borrará una conexión a un repositorio remoto especificado 
+git branch                      :git branch se usa para listar, crear o borrar ramas. Por ejemplo, si quieres listar todas las ramas presentes en el repositorio, el comando debería verse así 
+git branch -d <branch-name>     :Si quieres borrar una rama, usa
+git pull                        :git pull fusiona todos los cambios que se han hecho en el repositorio remoto con el directorio de trabajo local
+git merge <branch-name>         :git merge se usa para fusionar una rama con otra rama activa
+git diff --base <file-name>     :git diff se usa para hacer una lista de conflictos. Para poder ver conflictos con respecto al archivo base, usa  
+git diff <source-branch> <target-branch>
+                                :El siguiente comando se usa para ver los conflictos que hay entre ramas antes de fusionarlas 
+git diff                        : Para ver una lista de todos los conflictos presentes usa
+git tag 1.1.0 <instert-commitID-here>
+                                : git tag marca commits específicos. Los desarrolladores lo usan para marcar puntos de lanzamiento como v1.0 y v2.0.
+git log                         :git log se usa para ver el historial del repositorio listando ciertos detalles de la confirmación. Al ejecutar el comando se obtiene una salida como ésta    
+                                #commit 15f4b6c44b3c8344caasdac9e4be13246e21sadw
+                                #Author: Alex Hunter <alexh@gmail.com>
+                                #Date:   Mon Oct 1 12:56:29 2016 -0600
+git reset - -hard HEAD          :git reset sirve para resetear el index y el directorio de trabajo al último estado de confirmación                                
+git rm filename.txt             :git rm se puede usar para remover archivos del index y del directorio de trabajo.
+git stash                       :git stash guardará momentáneamente los cambios que no están listos para ser confirmados. De esta manera, pudes volver al proyecto más tarde.
+git show                        :git show se usa para mostrar información sobre cualquier objeto git.
+git fetch origin                :git fetch le permite al usuario buscar todos los objetos de un repositorio remoto que actualmente no se encuentran en el directorio de trabajo local.
+                                #cuales son los objetos de un repositorio:  
+git ls-tree HEAD                :git ls-tree te permite ver un objeto de árbol junto con el nombre y modo de cada ítem, y el valor blob de SHA-1. Si quieres ver el HEAD, usa:
+git cat-file –p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+                                :git cat-file se usa para ver la información de tipo y tamaño de un objeto del repositorio. Usa la opción -p junto con el valor SHA-1 del objeto para ver la información de un objeto específico, por ejemplo:
+git grep “www.hostinger.com”    :git grep le permite al usuario buscar frases y palabras específicas en los árboles de confirmación, el directorio de trabajo y en el área de preparación. Para buscar por www.hostinger.com en todos los archivos, usa:
+gitk                            :gitk muestra la interfaz gráfica para un repositorio local. Simplemente ejecuta
+git instaweb –http=webrick      :git instaweb te permite explorar tu repositorio local en la interfaz GitWeb. Por ejemplo:
+git gc                          :git gc limpiará archivos innecesarios y optimizará el repositorio local.
+git archive - -format=tar master
+                                :git archive le permite al usuario crear archivos zip o tar que contengan los constituyentes de un solo árbol de repositorio. Por ejemplo:
+git prune                       :git prune elimina los objetos que no tengan ningún apuntador entrante.                            
+git fsck                        :git fsck realiza una comprobación de integridad del sistema de archivos git e identifica cualquier objeto corrupto
+git rebase master               :git rebase se usa para aplicar ciertos cambios de una rama en otra. Por ejemplo.
+.                                # fuente: https://www.hostinger.es/tutoriales/comandos-de-git  
+#-
+#-
+                  #10 Comandos de Git Que Todo Desarrollador Debería Saber
+                  #fuente: https://www.freecodecamp.org/espanol/news/10-comandos-de-git-que-todo-desarrollador-deberia-saber/
+                  #Git es una parte importante de quien programa a diario 
+                  #(especialmente si estás trabajando con un equipo) 
+                  #y se usa extensamente en la industria de software.
+git clone <https://link-con-nombre-del-repositorio>
+                  :Git clone es un comando para descargarte el código fuente existente desde un repositorio remoto (como Github, por ejemplo). En otras palabras, Git clone básicamente realiza una copia idéntica de la última versión de un proyecto en un repositorio y la guarda en tu ordenador.
+                  #Hay un par de formas de descargar el código fuente, pero principalmente yo prefiero clonar de la forma con https                  
+                  #Esto hará una copia del proyecto en tu espacio de trabajo local y así podrás empezar a trabajar con él.
+git branch <nombre-de-la-rama>   :Creando una nueva rama
+                  :Las ramas (branch) son altamente importantes en el mundo de Git. Usando ramas, varios desarrolladores pueden trabajar en paralelo en el mismo proyecto simultáneamente. Podemos usar el comando git branch para crearlas, listarlas y eliminarlas.                  
+git push <nombre-remoto> <nombre-rama>
+                  :Este comando creará una rama en local. Para enviar (push) la nueva rama al repositorio remoto, necesitarás usar el siguiente comando
+git branch        :Visualización de ramas 
+git branch --list :Visualización de ramas   
+git branch -d <nombre-de-la-rama>
+                  :Borrar una rama
+git checkout <nombre-de-la-rama>                  
+                  :Este es también uno de los comandos más utilizados en Git. Para trabajar en una rama, primero tienes que cambiarte a ella. Usaremos git checkout principalmente para cambiarte de una rama a otra. También lo podemos usar para chequear archivos y commits.
+                  #Hay algunos pasos que debes seguir para cambiarte exitosamente entre ramas:
+                  #Los cambios en tu rama actual tienen que ser confirmados o almacenados en el guardado rápido (stash) antes de que cambies de rama.
+                  #La rama a la que te quieras cambiar debe existir en local.
+git checkout -b <nombre-de-tu-rama>
+                  :Hay también un comando de acceso directo que te permite crear y cambiarte a esa rama al mismo tiempo
+                  #Este comando crea una nueva rama en local (-b viene de rama (branch)) y te cambia a la rama que acabas de crear
+git status        :El comando de git status nos da toda la información necesaria sobre la rama actual.
+                  #Podemos encontrar información como:
+                  #Si la rama actual está actualizada
+                  #Si hay algo para confirmar, enviar o recibir (pull).
+                  #Si hay archivos en preparación (staged), sin preparación(unstaged) o que no están recibiendo seguimiento (untracked)                  
+                  #Si hay archivos creados, modificados o eliminados
+staged            :archivos en preparación               
+unstaged          :archivos sin preparación  
+untracked         :que no están recibiendo seguimiento
+                  :git status nos da información acerca del archivo y las ramas 
+git add <archivo> : Cuando creamos, modificamos o eliminamos un archivo, estos cambios suceden en local y no se incluirán en el siguiente commit (a menos que cambiemos la configuración).
+                  #Necesitamos usar el comando git add para incluir los cambios del o de los archivos en tu siguiente commit.                  
+                  # es como quien dice: que vas a incluir en tus commits
+git add -A        :Añadir todo de una vez          
+                  #Si revisas la captura de pantalla que he dejado en la sección 4, verás que hay nombres de archivos en rojo - esto significa que los archivos sin preparación. 
+                  #Estos archivos no serán incluidos en tus commits hasta que no los añadas.   
+                  #Para añadirlos, necesitas usar el git add:
+                  #Los archivos en verde han sido añadidos a la preparación gracias al git add
+                  #Importante: El comando git add no cambia el repositorio 
+                  #y los cambios que no han sido guardados 
+                  #hasta que no utilicemos el comando de confirmación git commit.
+git commit -m "mensaje de confirmación"
+                  :Importante: Git commit guarda tus cambios únicamente en local.
+                  #Este sea quizás el comando más utilizado de Git. 
+                  #Una vez que se llega a cierto punto en el desarrollo, 
+                  #queremos guardar nuestros cambios 
+                  #(quizás después de una tarea o asunto específico).
+                  #Git commit es como establecer un punto de control en el proceso de desarrollo 
+                  #al cual puedes volver más tarde si es necesario.
+                  #También necesitamos escribir un mensaje corto 
+                  #para explicar qué hemos desarrollado o modificado en el código fuente.
+git push <nombre-remoto> <nombre-de-tu-rama>
+                  :Git push envía tus commits al repositorio remoto.
+                  #Después de haber confirmado tus cambios, el siguiente paso que quieres dar es: 
+                  #enviar tus cambios al servidor remoto.
+git push --set-upstream <nombre-remoto> <nombre-de-tu-rama>            : -u (--set-upstream)  
+                  :De todas formas, si tu rama ha sido creada recientemente, puede que tengas que cargar y subir tu rama con el siguiente comando:                  
+                  #Importante: Git push solamente carga los cambios que han sido confirmados.                  
+                  # or
+git push -u origin <nombre-de-tu-rama>                  
+                  : -u (--set-upstream)
+git pull <nombre-remoto>
+                  :El comando git pull se utiliza para recibir actualizaciones del repositorio remoto. Este comando es una combinación del git fetch y del git merge lo cual significa que cundo usemos el git pull recogeremos actualizaciones del repositorio remoto (git fetch) e inmediatamente aplicamos estos últimos cambios en local (git merge).                  
+                  :Esta operación puede generar conflictos que tengamos que resolver manualmente.
+git revert        :A veces, necesitaremos deshacer los cambios que hemos hecho. 
+                  #Hay varias maneras para deshacer nuestros cambios en local y/o en remoto 
+                  #(dependiendo de lo que necesitemos), 
+                  #pero necesitaremos utilizar cuidadosamente estos comandos 
+                  #para evitar borrados no deseados.  
+                  #Una manera segura para deshacer nuestras commits es utilizar git revert.                
+ git log -- oneline
+                  :Para ver nuestro historial de commits
+                  #histórico de git en mi rama master
+git revert 3321844
+                  :Entonces, solo necesitamos especificar el código de comprobación que encontrarás junto al commit que queremos deshacer                     
+                  #Después de esto, verás una pantalla como la de abajo 
+                  #-tan solo presiona shift + q para sali  
+                  # un mensaje vacio aborta a un commit, es obligatorio un minimo mensaje de descripcion del commit 
+                  :El comando git revert deshará el commit que le hemos indicado, 
+                  #pero creará un nuevo commit deshaciendo la anterior.
+                  #commit generado con el git revert
+                  #La ventaja de utilizar git revert 
+                  #es que no afecta al commit histórico. 
+                  #Esto significa que puedes seguir viendo todos los commits en tu histórico, incluso los revertidos.
+                  #Otra medida de seguridad es que todo sucede en local a no ser que los enviemos al repositorio remoto. Por esto es que git revert es más seguro de usar y es la manera preferida para deshacer los commits.
+git merge <nombre-de-la-rama>                  
+                  #10. Git merge
+                  #Cuando ya hayas completado el desarrollo de tu proyecto en tu rama 
+                  #y todo funcione correctamente, 
+                  #el último paso es fusionar la rama con su rama padre (dev o master). 
+                  #Esto se hace con el comando git merge.
+                  #Git merge básicamente integra las características de tu rama con todos los commits realizados 
+                  #a las ramas dev (o master).  
+                  #Es importante que recuerdes que tienes que estar 
+                  #en esa rama específica que quieres fusionar con tu rama de características.
+git checkout dev  : Primero, debes cambiarte a la rama dev
+                  #Por ejemplo, cuando quieres fusionar tu rama de características en la rama dev
+git fetch         :Antes de fusionar, debes actualizar tu rama dev local
+git merge <nombre-de-la-rama>
+                  :Por último, puedes fusionar tu rama de características en la rama dev
+                  #Pista: Asegúrate de que tu rama dev tiene la última versión 
+                  #antes de fusionar otras ramas, 
+                  #si no, te enfrentarás a conflictos u otros problemas no deseados.
+                  #Aquí están mis 10 comandos de git más usados cuando me enfrento a la programación en mi día a día. 
+                  #Hay muchas más cosas que aprender sobre Git y las explicaré más adelante en oros artículos. 
+                  #Si quieres aprender más sobre el desarrollo web, ¡puedes seguirme en Youtube! : https://www.youtube.com/channel/UC1EgYPCvKCXFn8HlpoJwY3Q
+                  #¡Gracias por leerme!
+                  #Traducido del artículo de Cem Eygi - 10 Git Commands Every Developer Should Know  : https://www.freecodecamp.org/news/10-important-git-commands-that-every-developer-should-know/
+                  #Cara sonrriente carismatica de perfil y
+                  #Nora Gonzalo Ciordia, FullStack Dev Jr living in Madrid LinkedIn: https://www.linkedin.com/in/noragonzalo/
+                  #Aprende a codificar de forma gratuita. 
+                  #El plan de estudios de código abierto de freeCodeCamp 
+                  #ha ayudado a más de 40,000 personas a obtener trabajos como desarrolladores. 
+                  #Empezar : https://www.freecodecamp.org/learn/
+freeCodeCamp      :Empezar : https://www.freecodecamp.org/espanol/learn/
+                  #Si eres nuevo en la programación, te recomendamos comenzar por el principio y obtener estas certificaciones en orden.
+                  #Para obtener cada certificación, construye los 5 proyectos requeridos y consigue aprobar todas las pruebas 
+                  #Puedes agregar estas certificaciones a tu currículum o LinkedIn. Pero más importante que las certificaciones es la práctica que obtienes en el camino
+                  #Si te sientes abrumado, es normal. Programar es difícil.
+                  #La práctica es la clave. Práctica, práctica, práctica.
+                  #Y este currículo te brindará miles de horas de práctica de programación.
+                  #Y si deseas aprender más sobre matemáticas y teoría de la informática, 
+                  #también tenemos miles de horas de cursos en video en el canal de YouTube de freeCodeCamp: https://www.youtube.com/freecodecamp
+                  #Si deseas obtener un trabajo de desarrollador o clientes independientes, 
+                  #las habilidades de programación serán solo una parte del rompecabezas. 
+                  #También necesitas construir tu red personal 
+                  #y tu reputación como desarrollador.
+                  #Puedes hacer esto en LinkedIn y GitHub, y también en el foro freeCodeCamp: https://forum.freecodecamp.org/.
+                  #¡Feliz día programando!
+                  #- Quincy Larson, el profesor que fundó freeCodeCamp.org
+                  # Bienvenido a freeCodeCamp.org
+                  #Ahora veo que las circunstancias de nuestro nacimiento no importan. 
+                  #Es lo que hacemos con el regalo de la vida lo que nos define
+                  #MewTwo - Pokemon
+                  #1. Certificacion diseño Web resposivo : https://www.freecodecamp.org/espanol/learn/2022/responsive-web-design/                  
+                  #2. Certificacion Algoritos de JavaScript y estructuras de datos
+                  #3. Certificacion librerias de desarrollo de la interfaz
+#-
 # :30) 26/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
           # estudiando y organizando contenido
           # es una demo enel curso de Git puedes ignorar la PR (PULL REQUEST) : solicitudud que intengres mis contribuciones al proyecto FORKeado.
