@@ -1,7 +1,7 @@
 la instantánea de los cambios
 Lo mas reciente arriba "HEAD"
 Lo mas antiguo en lo profundo del fondo.
-(#-) : nuevo tema, (#) comentario, (:) explicacion de comando, (->>>) cursor 
+(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor 
 # :28) 24/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "ENTENDIENDO GIT"
@@ -10,6 +10,283 @@ Lo mas antiguo en lo profundo del fondo.
 
 ->>>
 
+
+
+# :32) 28/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+#-
+                    #CONVENTIONAL COMMITS
+                    #estructura de mensaje de confirmación consistente:
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+                    #-    
+                    #SISTEMA DE VERSIONES SEMVER 
+                    #El versonamiento semantico (SemVer.org)
+                    #es la forma en la que indicamos el numero de version de cierto proyecto
+                    #normalmente todos los paquetes tienen tres numeros:
+                    #ej: v1.1.1  (paquete version 1.1.1.)
+                    #1.el primer numero corresponte a una version mejor(mayor),
+                    #es decir un cambio vastante grande que puede romper versiones anteriores
+                    #2.el segundo digito coresponde a una version minor (añadiendo funcionalidades, mejoras)
+                    #que suelen ser FEAT (FEATURE(Mejoras)), que se van añadiendo a la version mas grande 
+                    #y el ultimo numero coresponde a un parch (parche), 
+                    #es decir: un arreglo que se hace por un bug(error que se ha detectado, etc...)
+                    -#                            
+                    tipos mas habituales de commit:
+fix                 :que es cuando estamos arreglando un bug 
+                    #este tipo de commit se correlaciona con una version de tipo patch.                   
+feat (feacture)    :nueva funcionalidad o caracteristica que estamos añadiendo al proyecto  (feactures: mejoras)
+                    #en el versionado semantico (SEMVER), este commit coresponde con una version minor  
+                    #es decir el segundo digito
+BREAKING CHANGE     #Si aparece en mayusculas dentro de la descripcion o en el pie de pagina de un commit
+                    # o puede ser remplazado por una signo de exclamacion a final del pie del commit (!)
+                    #corresponde a una version major, primer digito de SemVer.
+                    #es decir estamos subiendo la version VerSem primer digito v2.0.0
+                    #porque esta habiendo cambios vastante importantes 
+                    #con respecto a versiones anteriores del proyecto                    
+                    #types other than fix: and feat: are allowed, 
+                    #for example @commitlint/config-conventional (based on the Angular convention) 
+                    #recommends build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, and others.
+build               :Cuando hacemos un cambio que afecte al sistema de compilacion o de dependencias externas
+chore:              :Hacemos cambios pero no afectan al codigo fuente     
+ci                  :Es todo lo relacionado a la integracion continua, y aquellos scrips que estemos modifcando ej: un gitHubActions
+docs                :Si estamos tocando algo referente a la documentacion del proyecto
+style               :cambios referentes al css y al estilo del proyecto, presentacion correcciones ortograficas
+refactor:
+perf:
+test                :Cuando estamos añadiendo pruebas que faltan
+                    #(time-video: 4:06 / 12:43):https://www.youtube.com/watch?v=SigVVJmUGv8
+                    #dejando una linea en blanco el pie de pagina del commit, que fix estamos cerrando, cierta issue (Tema, problematica que requiera cerrarse), etc..
+El pie del commit   :podemos decir que PULL REQUEST (PS) estamos cerrando                    
+[optional scope]    : significado 1
+(optional scope)    : significado 2: nueva fecture enfocada al paquete o el proyecto dentro de un monorepo(?) del el API
+                    #entonces ese SCOPE se pone entre parentesis (api) y el commit es del tipo feat
+feat(api)!: send an email to the customer when a product is shipped 
+                    :Commit message with scope and ! to draw attention to breaking change                    
+                    #mensaje de commit mucho mas elaborado                     
+                    #
+                    #
+fix: prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123                    
+                    : Commit message with multi-paragraph body and multiple footers
+                    #Se trata de un fix, no posee scope, aqui vemos la descripcion, vemos un resumen un poco mas detallado.
+                    # y final mente en el pie de pagina podemos ver que esta revisado o se ha hecho per programin (progrmacion entre dos perdonas par) junto con otra persona
+                    #y lo hace referencia a una iso concreta ya sea de github issues, gira    
+                    #
+                    #tambien puede estar un BREAKING CHANGE en esta seccion de pie del commit y coresponde a SemVer digito primero cambio MAJOR, se suve la version porque esta habiendo cambios vastante importantes con respecto a versiones anteriores del proyecto
+                    #
+                    #PORQUE USAR CONVENCIONAL COMMITS
+                    #varia ventajas: 
+                    #1. unificar la forma de escribir esos mensajes dentro del equipo. 
+                    #2. Siguendo este estandar o especificacion: podemos configurar herramientas de automatizacion y tener un fichero change-log de forma automatica.
+                    #3. Si especificamos bien que tipo de commit es, podemos ajustarlo con SEMVER y determinar automaticamente cuando hay un cambio de version y utilizando herramientas, hacer que ese numero se actualice de manera automatica.
+                    #4. puedes usarlo tambien para automatizar los procesos de build y de despliegue o publicacion si se trata de uns libreria 
+                    #5. tambien permite si estas haciendo un proyecto open source o para gente que este entrando de nuevo en un proyecto (por primera vez al proyecto) de tu empresa comprender el proyecto, es un proceso de UNBORDING, hacer mas facil para estas personas nuevas en el proyecto que todavia no tienen un contexto del proyecto, permitirles explorar el historial de commits para que se hagan una idea de por donde van los cambios.    
+                    #estos cambios lo podemos hacer de manera manual o atravez de una herramienta extension o pluging de VSCODE: conventionals commits , permite hacerlo de una manera automatica
+scopes              : conventionalCommits.scopes : "GI", "UI" nombre de paquetes, modulos a los que haces referencia es como en que departamento o modulo del proyecto estas commiteando, algo asi como clasificasion.
+                    #Establecer un linter que verifique si los mensajes de commits siguen este patron
+                    # porque tu puedes tener tu extencion de visual estudio code, o seguir esta nomenclatura, esta especificacion. 
+                    # pero el resto del equipo no y si ya habeis llegado a un concenso 
+                    #lo suyo es que todas las personas de un proyecto sigan ese convenio
+                    #para ello tenemos herramientas como: commitlint
+                    #que seria como el slint para los ficheros de JavaScript
+                    #pero para los mensajes de commits
+                    #es una herramienta de linea de comandos
+                    #pero la podemos integrar en nuestro proyecto
+                    #he incluso unirlo con nuestro GitHub 
+                    #para asegurarnos que cada vez que vamos a hacer un commit 
+                    #ese hook se lance 
+                    #verifique si sigue las normas de estilo de convencional commit
+                    #y si es asi el commit se realizara.
+gitmoji             :https://gitmoji.dev/ # es un proyecto estandarrizar imagenes en el area de git commit descriptions.        
+                    #un ejemplos:
+:art:               :Improve structure / format of the code.
+:zap:               :Improve performance.
+:fire:              :Remove code or files.
+:bug:               :Fix a bug.
+:lipstick:          :icono del pintalabios, si haz añadido o actualizado la UI y los ficheros de estilo style, este es el que mas se encaja.
+                    #son opcionales pero dan un poco de colorido a tu repositorio
+                    # es una libreria de 70 imagenes relacionadas a descripciones git
+                    #una imagen vale mas que mil palabras, es bueno saber esta especificacion.  
+                    #igual que conventional commits pero mas visual a la hora de darle significado a los commits
+                    #commitlint example:
+npm init -y         #nos crea el fichero package.json                     
+                    #ahora vamos a instalar dos dependencias de desarrollo:
+npm install --save-dev @commitlint/cli @commitlint/config-conventional                     
+                    "devDependencies": {
+                      "@commitlint/cli": "^17.7.1",
+                      "@commitlint/config-conventional": "^17.7.0"
+                    }
+                    #commitlint cli
+                    #y commitlint conventional
+commitlint.config.js :una vez instaladas creamos un fichero en la raiz de nuestro proyecto (commitlint.config.js)
+                     #y añadimos el siguiente contenido: 
+                     module.exports = {
+                       extends: ['@commitlint/config-conventional'],
+                     };
+                     #vasicamente estamos heredando las reglas de estilos de conventional commit, que es la libreria que acabamos de instalar  
+                     #ahora vamos a integrarlo con HUSKY (configurar husky y lintestate para automatizar todo este proceso de gitsHubs)
+                     #instalariamos HUSKY como dependencia de desarrollo
+npm i -D husky              
+                    "devDependencies": {
+                        "husky": "^8.0.3"
+                      }       
+                     #añadiriamos el script-prepare que lo que hace es llamar "husky install" dentro del packjson
+npm set-script [<script>] [<command>]                     
+npm set-script prepare 'husky install'      #no funciono el comando en windows               
+npm config set script-shell "d:\\D-Program Files\\git\\bin\\bash.exe"   : no soluciono
+npm set-script prepare 'husky install'  # no funciona
+npm config delete script-shell                                          : revertir el proceso
+set-script           :has been deprecated as per documentation, se procede hacerlo manual en el archivo package.json
+                    "scripts": {
+                        "prepare": "husky install"
+                      },
+                     #y llamaremos a este script que acabamos de crear para que se instale husky en el proyecto
+npm run prepar                                           
+                     #nos da error porque no tenemos configurado un repositorio
+                     #husky - .git can't be found (see https://typicode.github.io/husky/#/?id=custom-directory)                     
+                     #llamamos a git init para que se inicialice
+git init                     
+                     #y ahora si que se configurara husky correctamente
+npm run prepar       : husky - Git hooks installed
+                     #ahora vamos añadir el hook-commit-message : este hook va a verificar el mensage de commit
+                     #hay distintos githubs, no confundir con los reacts hub
+                     #pre-commit y pre-push : son hook o script que se van ajecutar antes de hacer commit o antes de hacer un push ala rama principal o a la rama origen de nuestro repositorio
+                     # el hook commit-message lo que va a verificar es el mensaje de commit                     
+npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}" : enter y ya se nos habra creado este escript, solo se tiene que hecer en este momento                     
+                     #husky - created .husky/commit-msg  : y ya se nos ha creado este script
+                     #esto solo lo tienen que hacer en este momento no tienes que hacerlo cada vez que haces un commit
+                     #esta es la gracia de husky que automatiza todo este script y no tienes que hacerlo cada vez que ejecutas un commit
+                     #https://typicode.github.io/husky/
+                     #entonces vamos aprovarlo 
+                     #creamos un fichero .gitgnore
+                     #y aqui vemos que tenemos cinco cambios 
+git add .                     
+git commit -am "initial commit" : Este es un ejemplo de un commit que no sigue la espeficicacion de conventional commit, no le estamos diciendo de que tipo es, no hay un SCOPE aunque es opcional, 
+                                 # es simplemente un mensaje     
+                                 # como puedes ver nos salta un error:
+                                 #
+                                 ⧗   input: initial commit
+                                 ✖   subject may not be empty [subject-empty]
+                                 ✖   type may not be empty [type-empty]
+
+                                 ✖   found 2 problems, 0 warnings
+                                 ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+                                 husky - commit-msg hook exited with code 1 (error)
+                                 #
+                                 # el sujeto no puede estar vacio, 
+                                 #el tipo no puede estar vacio y no se ha podico realizar el commit
+                                 #entonces vamos hacerlo denuevo pero siguiendo la especificacion de conventional commits  
+                                 #implementamos la herramienta, el pluging de VSCODE conventional commit para realizar el commit
+tipo chore                        : es commit del tipo chore, no tiene scope 
+                                  #y hay un emmoji especial para cuando se empieza un proyecto(begin a project)                    
+                                  # descripcion corta: inicial commit
+                                  # no le ponemos descripcion 
+                                  # y no le ponemos ningun braking changes pie del commit
+                                  # le decimos que salve todo
+                                  #y ahora si que no ha salido ningun error.
+                                  #si nos vamos al historial de commits podemos ver que esta aui y que ha funcionado correctamente.
+                                  # para terminar y dejar esto finisimo, tenemos una herramienta 
+                                  # conventional change-log que nos permite: 
+                                  #nos permite generar ese fichero de cambios entre versiones (change-log) 
+                                  #si seguimos las normas de estilo de conventional commit
+                                  #se instalar de forma global la libreria conventionalchangelog-cli, tambien se puede instalar de forma local en tu propio proyecto
+npm install -g conventional-cahngelog-cli : error ortografico
+                                  :npm ERR! 404 Not Found - GET https://registry.npmjs.org/conventional-cahngelog-cli 
+npm install -g conventional-changelog-cli  :https://www.npmjs.com/package/conventional-changelog-cli
+                                  : added 86 packages in 11s :ok
+                                  #y el comando a utilizar seria 
+conventional-changelog -i CHAGELOG.md -s -r 0
+                                  #nos crea el fichero CHANGELOG.md, con el siguiente contenido: 
+                                  #
+                                  ## 1.0.0 (2023-08-29)
+
+                                  * chore: :tada: initial commit 0c36721
+
+                                  #
+                                  #y hasta ahora aparece el unico commit que hemos hecho
+                                  #pero como puedes ver que se a tratado 
+                                  #de un cambio pequeño utiliza 
+                                  #el ultimo numero de SEMVER (0.0.1)
+                                  #es decir un parche (pach), ademas aparece la fecha en la que se ha hecho el commit
+                                  # y la lista de aquellos commits que se hallan hecho
+                                  # si hacemos un commit que lleve un cambio MINOR o un cambio MAJOR 
+                                  #pues el versionado tambien se ira incrementando automaticamente
+git add CHANGELOG.md              : añadiriamos este archivo que se ha creado                     
+chore:release a pach version     :y añadiriamos un pequeño commit que seria CHORE, (opcional por ser pequeño lo puedes hacel manual sin la herramienta pero respetanto la especificacion conventional commit, si no respetas esta especificacion de igualmanera no te permitira hacer el commit) o con la herramienta conventionals commits
+                                  # ahora que tenemos el directorio de trabajo de git limpio podemos ejecutar
+npm version patch                 # he indicar de que tipo sera este cambio de version, y el automaticamente se va a encargar de subir de version nuestro paquete.
+npm version major                 #pues vemos que sube la version 1.0.0                                  
+npm version major                 #pues vemos que sube la version 2.0.0                                  
+npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git] 
+                                  : https://docs.npmjs.com/cli/v9/commands/npm-version
+npm version minor                 #pues vemos que sube la version 2.1.0
+                                  #este comando te crea un commit automaticamente al cambio de version
+                                  #como puedes ver de esta forma siguiendo ciertas herramientas 
+                                  #puedes tener automatizado 
+                                  #todas estas pequeñas tareas 
+                                  #que no son muy dificiles de hacer 
+                                  #pero si que te van robando tiempo en el dia a dia
+                                  #incluso pueden inducirte a errores
+                                  #fuente, fin del viedo: https://www.youtube.com/watch?v=SigVVJmUGv8
+                                  #Que especificaciones conoces, cuales manejas, cuales dominas. 
+                                  #vas a empezar a iplementarlos en tus proyectos en tu empresa?, fin del video
+                                  # link: https://www.youtube.com/watch?v=SigVVJmUGv8
+                    #-
+                    fuente: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
+                    #La anatomía de un mensaje de compromiso
+git commit -m <message>                   :Básico
+git commit -m <title> -m <description>    :Detallado
+                    #tipos de commits  
+chore               :cambios que no se relacionan con una solución o característica y no modifican archivos src o de prueba (por ejemplo, actualización de dependencias)
+refactor            :código refactorizado que no corrige un error ni agrega una característica                        
+docs                :actualizaciones de documentación como el README u otros archivos de rebajas
+style               :cambios que no afectan el significado del código, probablemente relacionados con el formato del código, como espacios en blanco, falta de punto y coma, etc.
+test                :incluir pruebas nuevas o corregir pruebas anteriores
+perf                :mejoras de rendimiento
+ci                  :integración continua relacionada
+build               :cambios que afectan el sistema de compilación o dependencias externas
+revert              :revierte una confirmación anterior
+                    #Ejemplo de compromiso convencional completo:
+                    #
+                    #
+fix: fix foo to enable bar
+
+This fixes the broken behavior of the component by doing xyz. 
+
+BREAKING CHANGE
+Before this fix foo wasn't enabled at all, behavior changes from <old> to <new>
+
+Closes D2IQ-12345
+                    #
+                    #
+                    #Comparaciones de mensajes de confirmación
+                    #Revise los siguientes mensajes y vea cuántas de las pautas sugeridas marcan en cada categoría.
+                    #Bien
+feat: improve performance with lazy load implementation for images          :Bien
+chore: update npm dependency to latest version                              :Bien   
+Fix bug preventing users from submitting the subscribe form                 :Bien
+Update incorrect client phone number within footer body per client request  :Bien                 
+                    #Mal
+fixed bug on landing page         :Mal
+Changed style                     :Mal
+oops                              :Mal
+I think I fixed it this time?     :Mal
+mensajes de confirmación vacíos   :Mal           
+                      #Natalia Pina  Ingeniero UX en D2iQ. Entusiasmado por CSS, React, JavaScript, TypeScript, sistemas de diseño, UX y diseño de UI.                
+                    -#            
+-#
 # :31) 27/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
           #-------
           # ¿Cuáles son los 3 estados de git? 
@@ -242,6 +519,7 @@ git merge <nombre-de-la-rama>
                   #Traducido del artículo de Cem Eygi - 10 Git Commands Every Developer Should Know  : https://www.freecodecamp.org/news/10-important-git-commands-that-every-developer-should-know/
                   #Cara sonrriente carismatica de perfil y
                   #Nora Gonzalo Ciordia, FullStack Dev Jr living in Madrid LinkedIn: https://www.linkedin.com/in/noragonzalo/
+#-                  
                   #Aprende a codificar de forma gratuita. 
                   #El plan de estudios de código abierto de freeCodeCamp 
                   #ha ayudado a más de 40,000 personas a obtener trabajos como desarrolladores. 
@@ -269,10 +547,11 @@ freeCodeCamp      :Empezar : https://www.freecodecamp.org/espanol/learn/
                   #1. Certificacion diseño Web resposivo : https://www.freecodecamp.org/espanol/learn/2022/responsive-web-design/                  
                   #2. Certificacion Algoritos de JavaScript y estructuras de datos
                   #3. Certificacion librerias de desarrollo de la interfaz
+#-                  
 #-
 # :30) 26/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
           # estudiando y organizando contenido
-          # es una demo enel curso de Git puedes ignorar la PR (PULL REQUEST) : solicitudud que intengres mis contribuciones al proyecto FORKeado.
+          # es una demo en el curso de Git puedes ignorar la PR (PULL REQUEST) : solicitudud que intengres mis contribuciones al proyecto FORKeado.
           # me puedo hacer un auto Pull Request, a mi mismo, yo podria decirle que la acepto, que sus commits se apliquen a mi repositorio, pero debo de tener los permisos. 
           # me voy a un proyecto en el que si tengo permisos para hacerlo yo mismo todo
           # cree otra cuenta github para relizar las pruebas de FORK : miguelepst@gmail.com user: okmiguel
@@ -284,6 +563,7 @@ freeCodeCamp      :Empezar : https://www.freecodecamp.org/espanol/learn/
           # tiene un plan gratuito: Pick a plan for your organization, costos: 0, 4 usd, 19.25 usd por mes
           # opcio 1: Start a new project Start a new repository or bring over an existing repository to keep contributing to it. 
           # https://github.com/new       # Crear nuevo repositorio
+#-          
 https://github.com/search                # buscar a alguien en github
 https://github.com/search/advanced       # busqueda avanzada
                                          # Users options
@@ -298,11 +578,11 @@ https://github.com/search/advanced       # busqueda avanzada
                                          # para que amplies tu red de contactos
                                          # Cómo crear tu PERFIL de GITHUB desde cero *muy sencillo* (Curso de Github) #3
                                          # https://www.youtube.com/watch?v=nrMSM3NleUM
-
+#-                                         
 # :29) 25/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 # :28) 24/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 #----------------------------------------------------
-# GitHub despues de crear un repositorio #
+#- GitHub despues de crear un repositorio #
 #----------------------------------------------------
 …or create a new repository on the command line
 echo "# primer" >> README.md
@@ -365,7 +645,6 @@ git push -u origin main     # -u (--set-upstream) crea una rama de seguimiento e
                             #Git Bash Here   Consola de Git ubicada en la carpeta local
 #----------------------------------------------------
 #----------------------------------------------------
-
 git config --global -l      # git config --global --list   (-l), listar configuracion global 
                             # cuando es un comando reducido se pone un igual ejemplo: 
                             # --list seria igual a: -l
@@ -1771,11 +2050,7 @@ rm -r nombreCarpeta               # :1) borrar carpetas y su contenido",
 
 }
 
-
-
-
-
-
+START
 
 
 ```
