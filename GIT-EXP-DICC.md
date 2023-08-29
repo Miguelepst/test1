@@ -10,7 +10,102 @@ Lo mas antiguo en lo profundo del fondo.
 
 ->>>
 
+# :34) 30/08/2023 , hora de inicio: --:--, hora de fin: --:--,  session de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                            PRE COMMT:
+                            Cómo crear tu PERFIL de GITHUB desde cero *muy sencillo* (Curso de Github) #3
+                            Agradecimientos al Autor: canal de youtube "Programa Con Jorge."
+                            link: https://www.youtube.com/watch?v=nrMSM3NleUM
+                            usando conventional commit como seria este commit:
+                            #commit 1
+1.Tipo: docs                 :o chore(otros cambios que no modifican src ni archivos de pruebas).
+2.Scope: GIT                 :"new scope GIT" (de tematica, o area a tratar).
+3.gitmoji: :memo:            :Agregar o actualizar documentación. "los commits siguientes pueden ser(en proceso)"
+4.crear tu PERFIL de GITHUB  :write a short, imperactive tense descrition of the change. "los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"
+5.Cómo crear tu PERFIL de GITHUB desde cero *muy sencillo* (Curso de Github) #3          "los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"                 
+                             :provide a longer description of the change.
+6.link. https://www.youtube.com/watch?v=nrMSM3NleUM                             
+                            cuando ejecutas el commit 
+                            1. Si el video es corto, enseñansa es corta  cuando lo termines.
+                            2. Si el video es largo y requieres varias sessiones o dias de trabajo y estudio, creas sub-commit, es hacer el mismo commit indicando el prograso del mismo (el avence, por que parte del video vaz) tiempo de estudio, lineas de redaccion, pausas de la actividad: pueden ser variables que te direccionen a hacer un sub-commit de una commit no terminado.
+                            3. cuando no hacer commit
+                            # commit 2, segundo commit de ejemplo para este estudio POST COMMIT a lo que ya se ha avanzado sin tener un commit definido:
+                            #En que momento debo realizar un commit en git
+1.Tipo: docs                 :o chore(otros cambios que no modifican src ni archivos de pruebas).
+2.Scope: GIT                 :"new scope GIT" (de tematica, o area a tratar).
+3.gitmoji: :memo:            :Agregar o actualizar documentación. "los commits siguientes pueden ser(en proceso)"
+4.Cuando hacer un commit    :write a short, imperactive tense descrition of the change. "los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"
+5.¿En que momento debo realizar un commit en git?
+                             :provide a longer description of the change.    :"los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"                 
+6.link: https://es.stackoverflow.com/questions/4144/en-que-momento-debo-realizar-un-commit-en-git
+                            #-
+                            nuevas lecturas: nuevos commits:  3. cuando no hacer commit
 
+                            ¿En que momento debo realizar un commit en git? (https://es.stackoverflow.com/questions/4144/en-que-momento-debo-realizar-un-commit-en-git)
+
+                            Sobre la elaboración de salchichas (https://sethrobertson.github.io/GitBestPractices/)
+                            A algunas personas les gusta ocultar la fabricación de salchichas¹ , o en otras palabras pretender ante el mundo exterior que sus confirmaciones surgieron completamente formadas y perfectamente en su repositorio de git. Ciertos grandes proyectos públicos exigen esto, otros exigen concentrar todo el trabajo en un gran compromiso y a otros no les importa.
+
+                            Una buena razón para ocultar la elaboración de salchichas es si cree que puede estar seleccionando muchos compromisos (aunque esto también suele ser una señal de un mal flujo de trabajo). Tener una o una pequeña cantidad de confirmaciones para elegir es mucho más fácil que tener que encontrar una confirmación aquí, otra allá y la mitad de esta otra. Este último enfoque hace que el problema sea mucho más difícil y normalmente dará lugar a conflictos de fusión cuando finalmente se fusione la rama donante.
+                            Ejemplo de elaboracion de salchicha, repo de un documento:
+                            https://github.com/SethRobertson/GitBestPractices/commit/2dfa39600061a3ef6d48f721ea8e442eeb51cddf
+
+                            #commit 3 de ejemplo, descriocion  de varias teaticas
+                            5 pasos para escribir mejores mensajes de confirmación link: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
+                            Resumamos las pautas sugeridas:
+                            1.Capitalización y puntuación: escriba en mayúscula la primera palabra y no termine en puntuación. Si utiliza confirmaciones convencionales, recuerde usar todo en minúsculas.
+                            2.Estado de ánimo: utilice el modo imperativo en la línea de asunto. Ejemplo – Add fix for dark mode toggle state. El modo imperativo da el tono con el que estás dando una orden o petición.
+                            3.Tipo de confirmación: especifique el tipo de confirmación. Se recomienda y puede ser aún más beneficioso tener un conjunto consistente de palabras para describir sus cambios. Ejemplo: corrección de errores, actualización, refactorización, mejora, etc. Consulte la sección sobre compromisos convencionales a continuación para obtener información adicional.
+                            4.Longitud: Lo ideal es que la primera línea no tenga más de 50 caracteres y el cuerpo esté restringido a 72 caracteres.
+                            5.Contenido: Sea directo, trate de eliminar palabras y frases de relleno en estas oraciones (ejemplos: aunque, tal vez, creo, más o menos). Piensa como un periodista.
+                            #Cómo encontrar a su periodista interior
+                            Los periodistas y escritores se hacen preguntas para asegurarse de que su artículo sea detallado, sencillo y responda todas las preguntas del lector.
+                            Al escribir un artículo buscan responder quién , qué , dónde , cuándo , por qué y cómo.  Para propósitos de confirmación, es muy importante responder el qué y el por qué de nuestros mensajes de confirmación.
+                            Para llegar a compromisos bien pensados, considere lo siguiente:
+                            #
+                            1.¿Por qué he hecho estos cambios?
+                            2.¿Qué efecto han tenido mis cambios?
+                            3.¿Por qué era necesario el cambio?
+                            4.¿A qué se refieren los cambios?
+                            #
+                            Supongamos que el lector no comprende a qué se refiere la confirmación. Es posible que no tengan acceso a la historia que aborda los antecedentes detallados del cambio.
+                            No espere que el código se explique por sí mismo. Esto es similar al punto anterior.
+                            Puede parecerle obvio a usted, el programador, si está actualizando algo como estilos CSS, ya que es visual. Es posible que tenga un conocimiento profundo de por qué se necesitaban estos cambios en ese momento, pero es poco probable que recuerde por qué lo hizo cientos de solicitudes de extracción más adelante.
+                            Deje claro por qué se realizó ese cambio y observe si puede ser crucial para la funcionalidad o no.
+                            #
+                            Vea las diferencias a continuación:
+                            git commit -m 'Add margin'
+                            git commit -m 'Add margin to nav items to prevent them from overlapping the logo'
+                            Está claro cuál de ellos sería más útil para futuros lectores.
+                            #
+                            Imagina que estás escribiendo un artículo importante y de interés periodístico. Da el titular que resuma lo que pasó y lo que es importante. Luego, proporcione más detalles en el cuerpo de forma organizada.
+                            En el cine, a menudo se cita "mostrar (no contar)" utilizando imágenes como medio de comunicación en comparación con una explicación verbal de lo que está sucediendo.
+                            En nuestro caso, " dígale  no [solo] muestre"; aunque tenemos algunos elementos visuales a nuestra disposición, como el navegador, la mayoría de los detalles provienen de la lectura del código físico.
+                            Si es usuario de VSCode, descargue la extensión Git Blame . Este es un excelente ejemplo de cuándo los mensajes de confirmación útiles son útiles para futuros desarrolladores.
+                            Este complemento enumerará la persona que realizó el cambio, la fecha de los cambios y el mensaje de confirmación comentado en línea.
+                            Imagínese lo útil que podría ser esto para solucionar un error o rastrear los cambios realizados. Otras menciones honoríficas para ver información histórica de Git son Git History y GitLens .
+                            -#
+                            # tercer de ejemplo commit unificado 
+1.Tipo: docs                 :o chore(otros cambios que no modifican src ni archivos de pruebas).
+2.Scope: GIT                 :"new scope GIT" (de tematica, o area a tratar).
+3.gitmoji: :memo:            :Agregar o actualizar documentación. "los commits siguientes pueden ser(en proceso)"
+4.practicas git              :write a short, imperactive tense descrition of the change. "los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"
+5.pasos para escribir mejores mensajes de confirmación
+                             :provide a longer description of the change.    :"los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"                 
+6.                           :opcional  "pie del commit" dar enter 
+                              #El mismo commit escrito de manera manual sin el plugin conventional commits
+                              #
+                              #
+docs(GIT): :memo: practicas git
+
+pasos para escribir mejores mensajes de confirmación                              
+                              #
+                              #
+git add .                    : 
+git commit -am "docs(GIT): :memo: practicas git pasos para escribir mejores mensajes de confirmación"
+
+                              #
+                              #
+# :33) 29/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 
 # :32) 28/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 #-
@@ -78,6 +173,8 @@ obsolete now.
 
 Reviewed-by: Z
 Refs: #123                    
+                    #
+                    #
                     : Commit message with multi-paragraph body and multiple footers
                     #Se trata de un fix, no posee scope, aqui vemos la descripcion, vemos un resumen un poco mas detallado.
                     # y final mente en el pie de pagina podemos ver que esta revisado o se ha hecho per programin (progrmacion entre dos perdonas par) junto con otra persona
@@ -182,7 +279,6 @@ git commit -am "initial commit" : Este es un ejemplo de un commit que no sigue l
 
                                  ✖   found 2 problems, 0 warnings
                                  ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
-
                                  husky - commit-msg hook exited with code 1 (error)
                                  #
                                  # el sujeto no puede estar vacio, 
