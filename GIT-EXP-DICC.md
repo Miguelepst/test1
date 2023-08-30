@@ -33,14 +33,28 @@ Drecripcion longer
 List any breacking changes or issues closed                                                      
                                                       #
                                                       #en linea de comandos seria:
-git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion longer' -m 'List any breacking changes or issues closed'               : Insertando linea de espaciado en un commit descripcion                                                      
+git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion longer' -m 'List any breacking changes or issues closed'               
+                                                      : Insertando linea de espaciado en un commit descripcion                                                      
                                                       #gerando cambio para probar
+                                                      # 1 file changed, 1 insertion(+)
+                                                      # test OK, aparentemente igual
+                                                      # testear otra forma
+git commit -m "docs(GIT): :memo: Descripcion corta inperative 
+> Drecripcion longer 
+> List any breacking changes or issues closed 
+"
+
+
 
 
 
 
 #
 # Este es elcommit "antes de el contenido de arriba (pre commit)"  , commit: tipo doc, repaso dia anterior 
+git commit  
+> -m "docs(GIT): :memo: Descripcion corta inperative" 
+> -m 'Drecripcion longer' 
+> -m 'List any breacking changes or issues closed'               
 #
 
 docs(GIT): :memo: Curso Git - OpenBootcamp
