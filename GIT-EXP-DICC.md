@@ -46,6 +46,7 @@ git commit -m "docs(GIT): :memo: Descripcion corta inperative
                                                        #otra prueba
 git commit -m "docs(GIT): :memo: Descripcion corta inperative 
 Drecripcion longer 
+
 List any breacking changes or issues closed"               
                                                         # el editor lo pasa a:
 git commit -m "docs(GIT): :memo: Descripcion corta inperative   
@@ -54,8 +55,12 @@ git commit -m "docs(GIT): :memo: Descripcion corta inperative
                                                         # en espera de la tecla enter.                                                                                                
                                                         # 1 file changed, 2 insertions(+), 3 deletions(-)
                                                         # no introdujo linea de espacio, otra prueba
+git commit -m "docs(GIT): :memo: Descripcion corta inperative 
+Drecripcion longer 
 
-
+List any breacking changes or issues closed"               
+                                                        #  1 file changed, 14 insertions(+)
+                                                        # test ok
 
 
 
@@ -65,9 +70,15 @@ git commit -m "docs(GIT): :memo: Descripcion corta inperative
 #
 # Este es elcommit "antes de el contenido de arriba (pre commit)"  , commit: tipo doc, repaso dia anterior 
 git commit  
-> -m "docs(GIT): :memo: Descripcion corta inperative" 
-> -m 'Drecripcion longer' 
-> -m 'List any breacking changes or issues closed'               
+ -m "docs(GIT): :memo: Descripcion corta inperative" 
+ -m 'Drecripcion longer' 
+ -m "" 
+ -m 'List any breacking changes or issues closed'         
+                                                                    # or
+git commit -m "docs(GIT): :memo: Descripcion corta inperative 
+Drecripcion longer 
+
+List any breacking changes or issues closed"               
 #
 
 docs(GIT): :memo: Curso Git - OpenBootcamp
