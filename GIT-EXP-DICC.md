@@ -8,9 +8,112 @@ Lo mas antiguo en lo profundo del fondo.
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
+
+
 ->>>
 
-# :34) 30/08/2023 , hora de inicio: --:--, hora de fin: --:--,  session de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+# :34) 30/08/2023 , hora de inicio: --:--, hora de fin: --:--,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                  #haciendo un fork
+                  # primer paso    :  crear el fork.
+                  # segundo paso   : obtener el fork.  
+                  # el tercero enviar cambios mios al repositorio
+                  # el cuarto paso va a ser crearme la PULL REQUEST PR (open pulrequest) 
+                  # mensaje es necesario crearme ficheros README.md
+                  # create pullrequest
+                  # despues el que tiene permisos sobre todo el reposositorio, puedo ver todas las pull request 
+                  # veria el commit de quien hiso la pull request 
+                  # vale como me parece bien lo que ha hecho este señor
+                  #le doy al boton merge pul request, antes de darle click veo que no hay ningun fichero readme.md 
+                  #confirmo lo que estoy haciendo otro boton, pull request close 
+                  # si voy a pull reques ya no me pone que halla alguna abierta 
+                  # puedo ponerle close , para ver todas las que estan cerradas(PR).
+                  #ahora si me voy al repositorio me aparece el fichero README.md quien fue creado en un commit por otro programador y a el cual yo permito al hacer un merge de su solicitud despues de revisar su codigo.
+                  #Si miro mi historial de commits pone:
+                  # merge.roman "ha creado un commit para hacer el merge." y ademas me pone verificado con firma digital, cosas que garantizan la autenticidad.
+                  # este work flow es super tipico en el desarroyo tanto para empresas como para proyectos Open source
+                  #
+                  #Git permete que alteremos el compirtamiento de lo que hace.
+                  # lo hace en local site o server site
+                  # hay una cositas que se llaman HOOKs estos se ejecutan en ciertos momentos 
+                  # estan escritos en un leguaje de programacion que nosotros queramos. 
+                  # pero que se tiene que poder ejecutar en nuestro S.Operativo
+                  # en windows: ficheros .cmd, .ps (power shell) 
+                  # en linux fricheros: SH, PY, perl, PHP 
+                  # los hook estan dentro de mi repo local en:
+                  # .git/hooks
+ls                 : veo todo lo que tiene adentro  
+                   # y todos son .sample, lo que evita que se dispare automaticamente.
+                   # en que orden se ejecutan: primero hook de pre commts            
+                   #el siguiente es prepare-commit.smg  # elimina una de las lineas del rm
+                   #commit msg : manipula las cosas el mensaje, cuando guardo es que este hook se dispara.
+git commit -s fix3.txt  : -s mete la linea de firma de quien esta haciendo el commit, cambio firmado por mi, sos vos realmente el autor de ese codigo 
+                    #hook post-commit usualmente para enviar correos electronicos, pero es absurdo que a mi me envie un email de mi propio commit
+                    #post checkout se ejecuta despues de hacer un checkout
+                    # el pre rebase, al cambiar de rama
+                    #
+                    #Ahora los que se ejecutan del lado del servidor SERVER SITE
+                    #los que ejecuta el servidor cuando ocurre algo son: 
+                    #pre-receiver : antes de recibir los datos.
+                    #update       : cuando se reciven los datos
+                    #POST-RECEIVE : cuando se tienen los datos se ejecuta, super comun para enviar por correo electronico una lista de correos cuando se hace un cambio
+ssh 185.142.62.4    : este es un servidor de verdad 
+                    #username
+                    #password                 
+git --bare init repo-central  : he inicializado un repositorio en este servidor remoto                 
+                    #trabajaremos con este repo
+git clone git+ssh://vroman@185.142.62.4:/home/vroman/repo-central 
+password                    #me pide la cntraseña de su servidor                         
+                    # y lo hemos clonado aqui en repo central
+                    #ahora quiero que cada vez que halla un cambion el servidor remoto de la repo 
+                    #me mande un correo a la cuenta de email o lo pudes configurar con tuiter
+                    #lo hago un un HOOk que se llama 
+                    #post-receive
+                    # lo voy a crear
+                    # me creo el post receiber con nano
+                    # hago copi y paste es un script vastante grande.
+                    #le doy los permisos de ejecucion a este script 
+chmod                     
+nano config        # configuro hook , email 
+                    # esto tiene que funcionar
+                    #video: 4 Repositorio local 2 - Curso Git - OpenBootcamp 2:14:09 / 2:20:47
+                    #este hook se va a ejecutar cuando yo haga un push
+git push origin master : voy a enviar a mi servidor mi rama master 
+                    # me pide la clave
+                    #recapitulacion
+                    #comandos avenzados: 
+git reset 
+git blame 
+git bisect
+git stash           : para parar el trabajo actual                    
+git branch           : crear ramas
+git checkout        : crear ramas 
+git merge             : fusionar ramas
+git rebase            : fusionar ramas 
+cherry picking        : fuaionar cosas concretas no ramas completas 
+work flow local       : vajarme los cambios hacer mis cambios revisar mis cambios comitear a mi repositorio local los cambios 
+working flow work     : tipoco en empresas  y proyectos Open source , como clonar un repositorio de un tercero utilizando github (FORK)
+                      : vajarnos nuestro repositorio clonandolo 
+                      #hacer nuestros cambios 
+                      #hacer un commit
+                      #hacer un push 
+                      # y luego abrir un pull request
+                      #main teiner desarrollador autorizado podra aplicar esos cambios aceptando el pull request
+                      # y como esos cambios se integran mediante un merge en la rama final de desarrollo de este repositorio
+                      #por ultimo hemos visto los git hooks 
+                      # nos permiten alterar el comportamiento tanto local como server sate de git 
+                      #debes profundizar por vuestra cuenta en esto para poder hacer comandos mas potentes
+                      #emos terminado por ahora esta sesion 
+                      #video: 4 Repositorio local 2 - Curso Git - OpenBootcamp 2:14:09 / 2:20:47                      
+                      #
+                      # este es el commit de esta session de estudio:
+                      #
+docs(GIT): :memo: Curso Git - OpenBootcamp
+
+#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47
+                      #
+                      #
+# Este es elcommit "antes de el contenido de arriba (pre commit)"  
+# :33) 29/08/2023 , hora de inicio: 8:00 pm, hora de fin: 9:00 pm,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                             PRE COMMT:
                             Cómo crear tu PERFIL de GITHUB desde cero *muy sencillo* (Curso de Github) #3
                             Agradecimientos al Autor: canal de youtube "Programa Con Jorge."
