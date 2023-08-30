@@ -34,6 +34,7 @@ List any breacking changes or issues closed
                                                       #
                                                       #en linea de comandos seria:
 git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion longer' -m 'List any breacking changes or issues closed'               : Insertando linea de espaciado en un commit descripcion                                                      
+                                                      #gerando cambio para probar
 
 
 
