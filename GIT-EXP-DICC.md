@@ -15,13 +15,25 @@ Lo mas antiguo en lo profundo del fondo.
 git commit -m "My head line" -m "My content line."   : Si sólo quieres, por ejemplo, una línea de encabezamiento y una de contenido, puedes utilizar Fuente: https://www.iteramos.com/pregunta/6513/anadir-salto-de-linea-a-git-commit--m-desde-la-linea-de-comandos 
 git commit -m $'first line\nsecond line'             : Insertando linea de espaciado en un commit descripcion
 
-git commit  -m "docs(GIT): :memo: Curso Git - OpenBootcamp" -m $'#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47'               : Insertando linea de espaciado en un commit descripcion
+git commit  -m "docs(GIT): :memo: Curso Git - OpenBootcamp" -m '#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47'               : Insertando linea de espaciado en un commit descripcion
 
+                                                      #
+                                                      #
+                                                      docs(GIT): :memo: Curso Git - OpenBootcamp
 
+                                                      #video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47
+                                                      #
+                                                      #
+                                                      #ejemplo de commit mas detallado en sus seis partes
+                                                      #
+docs(GIT): :memo: Descripcion corta inperative
 
-docs(GIT): :memo: Curso Git - OpenBootcamp
+Drecripcion longer
 
-#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47
+List any breacking changes or issues closed                                                      
+                                                      #
+                                                      #en linea de comandos seria:
+git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion longer' -m 'List any breacking changes or issues closed'               : Insertando linea de espaciado en un commit descripcion                                                      
 
 
 
