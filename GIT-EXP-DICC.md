@@ -40,9 +40,8 @@ git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion 
                                                       # test OK, aparentemente igual
                                                       # testear otra forma
 git commit -m "docs(GIT): :memo: Descripcion corta inperative 
-> Drecripcion longer 
-> List any breacking changes or issues closed 
-"
+>Drecripcion longer 
+>List any breacking changes or issues closed"         : 1 file changed, 15 insertions(+), 1 deletion(-)
 
 
 
