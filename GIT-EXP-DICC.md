@@ -42,6 +42,20 @@ git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion 
 git commit -m "docs(GIT): :memo: Descripcion corta inperative 
 >Drecripcion longer 
 >List any breacking changes or issues closed"         : 1 file changed, 15 insertions(+), 1 deletion(-)
+                                                       # no le agrego >
+                                                       #otra prueba
+git commit -m "docs(GIT): :memo: Descripcion corta inperative 
+Drecripcion longer 
+List any breacking changes or issues closed"               
+                                                        # el editor lo pasa a:
+git commit -m "docs(GIT): :memo: Descripcion corta inperative   
+>> Drecripcion longer
+>> List any breacking changes or issues closed"         
+                                                        # en espera de la tecla enter.                                                                                                
+                                                        # 1 file changed, 2 insertions(+), 3 deletions(-)
+                                                        # no introdujo linea de espacio, otra prueba
+
+
 
 
 
