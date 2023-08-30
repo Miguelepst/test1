@@ -8,42 +8,67 @@ Lo mas antiguo en lo profundo del fondo.
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
-
+          
 
 ->>>
 
-# :34) 30/08/2023 , hora de inicio: --:--, hora de fin: --:--,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+git commit -m "My head line" -m "My content line."   : Si sólo quieres, por ejemplo, una línea de encabezamiento y una de contenido, puedes utilizar Fuente: https://www.iteramos.com/pregunta/6513/anadir-salto-de-linea-a-git-commit--m-desde-la-linea-de-comandos 
+git commit -m $'first line\nsecond line'             : Insertando linea de espaciado en un commit descripcion
+
+git commit  -m "docs(GIT): :memo: Curso Git - OpenBootcamp" -m $'#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47'               : Insertando linea de espaciado en un commit descripcion
+
+
+
+docs(GIT): :memo: Curso Git - OpenBootcamp
+
+#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47
+
+
+
+
+#
+# Este es elcommit "antes de el contenido de arriba (pre commit)"  , commit: tipo doc, repaso dia anterior 
+#
+
+docs(GIT): :memo: Curso Git - OpenBootcamp
+
+#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47
+
+#
+# :34) 30/08/2023 , hora de inicio: 07:00 am, hora de fin: 08:00 am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                   #haciendo un fork
                   # primer paso    :  crear el fork.
                   # segundo paso   : obtener el fork.  
                   # el tercero enviar cambios mios al repositorio
-                  # el cuarto paso va a ser crearme la PULL REQUEST PR (open pulrequest) 
+                  # el cuarto paso va a ser crearme la PULL REQUEST PR (open pull request) 
+                  #ejemplo solicitud de pull request:
                   # mensaje es necesario crearme ficheros README.md
-                  # create pullrequest
+                  # create pull request
                   # despues el que tiene permisos sobre todo el reposositorio, puedo ver todas las pull request 
                   # veria el commit de quien hiso la pull request 
-                  # vale como me parece bien lo que ha hecho este señor
-                  #le doy al boton merge pul request, antes de darle click veo que no hay ningun fichero readme.md 
+                  # vale como me parece bien lo que ha hecho este señor : creo el archivo README.md
+                  #le doy al boton merge pul request, antes de darle click veo que no hay ningun fichero readme.md en mi repositorio
                   #confirmo lo que estoy haciendo otro boton, pull request close 
-                  # si voy a pull reques ya no me pone que halla alguna abierta 
-                  # puedo ponerle close , para ver todas las que estan cerradas(PR).
-                  #ahora si me voy al repositorio me aparece el fichero README.md quien fue creado en un commit por otro programador y a el cual yo permito al hacer un merge de su solicitud despues de revisar su codigo.
+                  # si voy a pull reques ya no me pone que tenga alguna otra PR abierta 
+                  # puedo ponerle close , para ver todas las que estan cerradas(PR) , filtro de busqueda.
+                  #ahora si me voy al repositorio me aparece el fichero README.md quien fue creado en un commit por otro programador a el cual yo le he permitido, al hacer un merge de su coomit en mi repositorio, claro despues de revisar su codigo y asegurarme que no rompa el codigo.
                   #Si miro mi historial de commits pone:
-                  # merge.roman "ha creado un commit para hacer el merge." y ademas me pone verificado con firma digital, cosas que garantizan la autenticidad.
-                  # este work flow es super tipico en el desarroyo tanto para empresas como para proyectos Open source
+                  # merge.vroman "ha creado un commit para hacer el merge." y ademas me pone verificado con firma digital, cosas que garantizan la autenticidad.
+                  # este work flow es super tipico en el desarroyo tanto para empresas como para proyectos Open source.
                   #
-                  #Git permete que alteremos el compirtamiento de lo que hace.
-                  # lo hace en local site o server site
+                  #Git permete que alteremos el compirtamiento de lo que hace (con los hooks "son script ejecutables ya sea en repo local o remoto").
+                  # lo hace en local site o server site (remoto)
                   # hay una cositas que se llaman HOOKs estos se ejecutan en ciertos momentos 
                   # estan escritos en un leguaje de programacion que nosotros queramos. 
-                  # pero que se tiene que poder ejecutar en nuestro S.Operativo
+                  # pero que se tiene que poder ejecutar en nuestro Sistema Operativo
                   # en windows: ficheros .cmd, .ps (power shell) 
                   # en linux fricheros: SH, PY, perl, PHP 
                   # los hook estan dentro de mi repo local en:
                   # .git/hooks
 ls                 : veo todo lo que tiene adentro  
                    # y todos son .sample, lo que evita que se dispare automaticamente.
-                   # en que orden se ejecutan: primero hook de pre commts            
+                   # en que orden se ejecutan: primero 
+                   #hook de pre commts            
                    #el siguiente es prepare-commit.smg  # elimina una de las lineas del rm
                    #commit msg : manipula las cosas el mensaje, cuando guardo es que este hook se dispara.
 git commit -s fix3.txt  : -s mete la linea de firma de quien esta haciendo el commit, cambio firmado por mi, sos vos realmente el autor de ese codigo 
@@ -59,28 +84,28 @@ git commit -s fix3.txt  : -s mete la linea de firma de quien esta haciendo el co
 ssh 185.142.62.4    : este es un servidor de verdad 
                     #username
                     #password                 
-git --bare init repo-central  : he inicializado un repositorio en este servidor remoto                 
+git --bare init repo-central  : he inicializado un repositorio en este servidor remoto del tipo bare                
                     #trabajaremos con este repo
-git clone git+ssh://vroman@185.142.62.4:/home/vroman/repo-central 
-password                    #me pide la cntraseña de su servidor                         
+git clone git+ssh://vroman@185.142.62.4:/home/vroman/repo-central       : equipo local
+password            #me pide la cntraseña de su servidor                         
                     # y lo hemos clonado aqui en repo central
                     #ahora quiero que cada vez que halla un cambion el servidor remoto de la repo 
-                    #me mande un correo a la cuenta de email o lo pudes configurar con tuiter
+                    #me mande un correo a la cuenta de email o lo pudes configurar para que publique en tus redes sociales con las apis tuiter,face,etc.
                     #lo hago un un HOOk que se llama 
                     #post-receive
                     # lo voy a crear
-                    # me creo el post receiber con nano
+                    # me creo el post receiber con el editor nano
                     # hago copi y paste es un script vastante grande.
                     #le doy los permisos de ejecucion a este script 
 chmod                     
-nano config        # configuro hook , email 
+nano config         # configuro hook , email 
                     # esto tiene que funcionar
                     #video: 4 Repositorio local 2 - Curso Git - OpenBootcamp 2:14:09 / 2:20:47
                     #este hook se va a ejecutar cuando yo haga un push
 git push origin master : voy a enviar a mi servidor mi rama master 
                     # me pide la clave
                     #recapitulacion
-                    #comandos avenzados: 
+                    #comandos avanzados: 
 git reset 
 git blame 
 git bisect
@@ -90,19 +115,20 @@ git checkout        : crear ramas
 git merge             : fusionar ramas
 git rebase            : fusionar ramas 
 cherry picking        : fuaionar cosas concretas no ramas completas 
-work flow local       : vajarme los cambios hacer mis cambios revisar mis cambios comitear a mi repositorio local los cambios 
-working flow work     : tipoco en empresas  y proyectos Open source , como clonar un repositorio de un tercero utilizando github (FORK)
-                      : vajarnos nuestro repositorio clonandolo 
+work flow local       : Metodo: bajarme los cambios, hacer mis cambios, revisar mis cambios, comitear a mi repositorio local los cambios 
+working flow work     : tipico en empresas  y proyectos Open Source su metodo:
+                      #clonar un repositorio de un tercero utilizando github (hacer un FORK)
+                      : bajarnos nuestro repositorio clonandolo 
                       #hacer nuestros cambios 
                       #hacer un commit
                       #hacer un push 
-                      # y luego abrir un pull request
-                      #main teiner desarrollador autorizado podra aplicar esos cambios aceptando el pull request
+                      # y luego abrir un pull request (PR)
+                      #mainteiner desarrollador autorizado podra aplicar esos cambios aceptando el pull request, es quien puede hacer el meger de los pull request en el repo original.
                       # y como esos cambios se integran mediante un merge en la rama final de desarrollo de este repositorio
                       #por ultimo hemos visto los git hooks 
                       # nos permiten alterar el comportamiento tanto local como server sate de git 
                       #debes profundizar por vuestra cuenta en esto para poder hacer comandos mas potentes
-                      #emos terminado por ahora esta sesion 
+                      #hemos terminado por ahora esta sesion 
                       #video: 4 Repositorio local 2 - Curso Git - OpenBootcamp 2:14:09 / 2:20:47                      
                       #
                       # este es el commit de esta session de estudio:
