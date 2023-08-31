@@ -9,23 +9,19 @@ Lo mas antiguo en lo profundo del fondo.
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
 
-
-
 ->>>
 
-fix: prevent racing of requests
+                    #
+git commit -m "
+docs(GIT): :memo: Descripcion corta inperative
 
-Introduce a request id and a reference to latest request. Dismiss
-incoming responses other than from latest request.
+Drecripcion longer
 
-Remove timeouts which were used to mitigate the racing issue but are
-obsolete now.
-
-Reviewed-by: Z
-Refs: #123    
-
-
-git commit -m "     :" Sin cerrar comillas te da la opcion de formatear el commit a tu gusto o imitacion de otro.
+List any breacking changes or issues closed"
+                    # commit menos detallado
+                    #commit mas detallado
+                    :Sin cerrar comillas te da la opcion de formatear el commit a tu gusto o imitacion de otro.
+git commit -m "
 fix: prevent racing of requests
 
 Introduce a request id and a reference to latest request. Dismiss
@@ -36,13 +32,27 @@ obsolete now.
 
 Reviewed-by: Z
 Refs: #123
-"                   :" Cierre de commillas   
+"                   
+                     #Cierre de commillas   
+                     #su traduccion 
+                     #
+fix: Prevenir la Carrera de Solicitudes
 
+Introduce un ID de solicitud y una referencia a la solicitud más reciente. 
+Descarta las respuestas entrantes que no provengan de la solicitud más reciente.
+
+Eliminar los tiempos de espera que se utilizaban para mitigar el problema de la competencia, 
+pero que ahora son obsoletos.
+
+Reviewed-by: Z
+Refs: #123                     
+                    #
+                    #
                     #git commit   -m "docs(GIT): :memo: Descripcion corta inperative"   -m "Drecripcion longer"   -m "List any breacking changes or issues closed"         
                     :pre-commit(antes de) "espacificacion conventionals commits"         
 # :35) 31/08/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+                                                    #
 git commit -m "My head line" -m "My content line."   : Si sólo quieres, por ejemplo, una línea de encabezamiento y una de contenido, puedes utilizar Fuente: https://www.iteramos.com/pregunta/6513/anadir-salto-de-linea-a-git-commit--m-desde-la-linea-de-comandos 
-git commit -m $'first line\nsecond line'             : Insertando linea de espaciado en un commit descripcion
 git commit  -m "docs(GIT): :memo: Curso Git - OpenBootcamp" -m '#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47'               : Insertando linea de espaciado en un commit descripcion
                                                       #
                                                       #
@@ -59,14 +69,9 @@ Drecripcion longer
 
 List any breacking changes or issues closed                                                      
                                                       #
-                                                      #en linea de comandos seria:
+                                                      #varios -m de un commit por linea de comandos seria:
 git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion longer' -m 'List any breacking changes or issues closed'               
                                                       : Insertando linea de espaciado en un commit descripcion                                                      
-                                                      #gerando cambio para probar
-                                                      # 1 file changed, 1 insertion(+)
-                                                      # test OK, aparentemente igual
-                                                      # testear otra forma
-                                                      #
 git commit -m "docs(GIT): :memo: Descripcion corta inperative 
 Drecripcion longer 
 
@@ -92,8 +97,6 @@ docs(GIT): :memo: Curso Git - OpenBootcamp
 #video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47
                                                       #
                                                       #
-
-git commit -m "first line\nsecond line\ntercera linea"
 # :34) 30/08/2023 , hora de inicio: 07:00 am, hora de fin: 08:00 am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                   #haciendo un fork
                   # primer paso    :  crear el fork.
@@ -211,7 +214,7 @@ docs(GIT): :memo: Curso Git - OpenBootcamp
 4.crear tu PERFIL de GITHUB  :write a short, imperactive tense descrition of the change. "los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"
 5.Cómo crear tu PERFIL de GITHUB desde cero *muy sencillo* (Curso de Github) #3          "los commits siguientes pueden ser(en proceso) o detallar tematica nueva dependiente de este -new tip de la tematica"                 
                              :provide a longer description of the change.
-6.link. https://www.youtube.com/watch?v=nrMSM3NleUM                             
+6.link: https://www.youtube.com/watch?v=nrMSM3NleUM                             
                             cuando ejecutas el commit 
                             1. Si el video es corto, enseñansa es corta  cuando lo termines.
                             2. Si el video es largo y requieres varias sessiones o dias de trabajo y estudio, creas sub-commit, es hacer el mismo commit indicando el prograso del mismo (el avence, por que parte del video vaz) tiempo de estudio, lineas de redaccion, pausas de la actividad: pueden ser variables que te direccionen a hacer un sub-commit de una commit no terminado.
@@ -287,7 +290,6 @@ pasos para escribir mejores mensajes de confirmación
                               #
 git add .                    : 
 git commit -am "docs(GIT): :memo: practicas git pasos para escribir mejores mensajes de confirmación"
-
                               #
                               #
 # :33) 29/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
@@ -348,9 +350,8 @@ El pie del commit   :podemos decir que PULL REQUEST (PS) estamos cerrando
                     #entonces ese SCOPE se pone entre parentesis (api) y el commit es del tipo feat
 feat(api)!: send an email to the customer when a product is shipped 
                     :Commit message with scope and ! to draw attention to breaking change                    
+                    #
                     #mensaje de commit mucho mas elaborado:                     
-                    #
-                    #
 fix: prevent racing of requests
 
 Introduce a request id and a reference to latest request. Dismiss
@@ -379,17 +380,17 @@ Reviewed-by: Z
 
 Refs: #123
                     #
-                    #                    
+                    # otra forma de formatear un commit al gusto desde la ninea de comandos                    
 git commit -m "     :" Sin cerrar comillas 
                     #
-git commit -m "fix: prevent racing of requests   
->> 
->> Introduce a request id and a reference to latest request. Dismiss incoming responses other than from latest request.   
->> 
->> Remove timeouts which were used to mitigate the racing issue but are obsolete now.
->> 
->> Reviewed-by: Z
->> Refs: #123"      : cierras comiilas y enter, el resultado es igual al del ejemplo
+                    git commit -m "fix: prevent racing of requests   
+                    >> 
+                    >> Introduce a request id and a reference to latest request. Dismiss incoming responses other than from latest request.   
+                    >> 
+                    >> Remove timeouts which were used to mitigate the racing issue but are obsolete now.
+                    >> 
+                    >> Reviewed-by: Z
+                    >> Refs: #123"      : cierras comiilas y enter, el resultado es igual al del ejemplo
                     #
                     #Resutado igual:
                     #
@@ -412,7 +413,7 @@ Refs: #123
                     #
                     #tambien puede estar un BREAKING CHANGE en esta seccion de pie del commit y coresponde a SemVer digito primero cambio MAJOR, se suve la version porque esta habiendo cambios vastante importantes con respecto a versiones anteriores del proyecto
                     #
-                    #PORQUE USAR CONVENCIONAL COMMITS
+->                  #PORQUE USAR CONVENCIONAL COMMITS
                     #varia ventajas: 
                     #1. unificar la forma de escribir esos mensajes dentro del equipo. 
                     #2. Siguendo este estandar o especificacion: podemos configurar herramientas de automatizacion y tener un fichero change-log de forma automatica.
@@ -437,6 +438,7 @@ scopes              : conventionalCommits.scopes : "GI", "UI" nombre de paquetes
                     #y si es asi el commit se realizara.
 gitmoji             :https://gitmoji.dev/ # es un proyecto estandarrizar imagenes en el area de git commit descriptions.        
                     #un ejemplos:
+:memo:              :documentacion                    
 :art:               :Improve structure / format of the code.
 :zap:               :Improve performance.
 :fire:              :Remove code or files.
@@ -469,12 +471,14 @@ npm i -D husky
                         "husky": "^8.0.3"
                       }       
                      #añadiriamos el script-prepare que lo que hace es llamar "husky install" dentro del packjson
-npm set-script [<script>] [<command>]                     
+                     #npm set-script [<script>] [<command>]                     
 npm set-script prepare 'husky install'      #no funciono el comando en windows               
-npm config set script-shell "d:\\D-Program Files\\git\\bin\\bash.exe"   : no soluciono
-npm set-script prepare 'husky install'  # no funciona
-npm config delete script-shell                                          : revertir el proceso
-set-script           :has been deprecated as per documentation, se procede hacerlo manual en el archivo package.json
+npm config set script-shell "d:\\D-Program Files\\git\\bin\\bash.exe"   
+                                            : no soluciono
+npm set-script prepare 'husky install'      # no funciona
+npm config delete script-shell              :revertir el proceso que no funciono
+set-script                                  :has been deprecated as per documentation, se procede hacerlo manual en el archivo package.json
+                                            #se hace directamente desde el archivo packge.json
                     "scripts": {
                         "prepare": "husky install"
                       },
@@ -490,7 +494,8 @@ npm run prepar       : husky - Git hooks installed
                      #hay distintos githubs, no confundir con los reacts hub
                      #pre-commit y pre-push : son hook o script que se van ajecutar antes de hacer commit o antes de hacer un push ala rama principal o a la rama origen de nuestro repositorio
                      # el hook commit-message lo que va a verificar es el mensaje de commit                     
-npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}" : enter y ya se nos habra creado este escript, solo se tiene que hecer en este momento                     
+npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}" 
+                     : enter y ya se nos habra creado este script, solo se tiene que hecer en este momento                     
                      #husky - created .husky/commit-msg  : y ya se nos ha creado este script
                      #esto solo lo tienen que hacer en este momento no tienes que hacerlo cada vez que haces un commit
                      #esta es la gracia de husky que automatiza todo este script y no tienes que hacerlo cada vez que ejecutas un commit
@@ -528,8 +533,6 @@ tipo chore                        : es commit del tipo chore, no tiene scope
                                   #nos permite generar ese fichero de cambios entre versiones (change-log) 
                                   #si seguimos las normas de estilo de conventional commit
                                   #se instalar de forma global la libreria conventionalchangelog-cli, tambien se puede instalar de forma local en tu propio proyecto
-npm install -g conventional-cahngelog-cli : error ortografico
-                                  :npm ERR! 404 Not Found - GET https://registry.npmjs.org/conventional-cahngelog-cli 
 npm install -g conventional-changelog-cli  :https://www.npmjs.com/package/conventional-changelog-cli
                                   : added 86 packages in 11s :ok
                                   #y el comando a utilizar seria 
@@ -555,7 +558,7 @@ chore:release a pach version     :y añadiriamos un pequeño commit que seria CH
 npm version patch                 # he indicar de que tipo sera este cambio de version, y el automaticamente se va a encargar de subir de version nuestro paquete.
 npm version major                 #pues vemos que sube la version 1.0.0                                  
 npm version major                 #pues vemos que sube la version 2.0.0                                  
-npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git] 
+                                  #npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git] 
                                   : https://docs.npmjs.com/cli/v9/commands/npm-version
 npm version minor                 #pues vemos que sube la version 2.1.0
                                   #este comando te crea un commit automaticamente al cambio de version
@@ -574,6 +577,8 @@ npm version minor                 #pues vemos que sube la version 2.1.0
                     #La anatomía de un mensaje de compromiso
 git commit -m <message>                   :Básico
 git commit -m <title> -m <description>    :Detallado
+git commit -m <title> -m <description> -m <description>   
+                                          :mas detallado en tres lineas
                     #tipos de commits  
 chore               :cambios que no se relacionan con una solución o característica y no modifican archivos src o de prueba (por ejemplo, actualización de dependencias)
 refactor            :código refactorizado que no corrige un error ni agrega una característica                        
@@ -599,19 +604,21 @@ Closes D2IQ-12345
                     #
                     #Comparaciones de mensajes de confirmación
                     #Revise los siguientes mensajes y vea cuántas de las pautas sugeridas marcan en cada categoría.
-                    #Bien
+                    #ejemplo de buenas practicas de commit 
 feat: improve performance with lazy load implementation for images          :Bien
 chore: update npm dependency to latest version                              :Bien   
 Fix bug preventing users from submitting the subscribe form                 :Bien
 Update incorrect client phone number within footer body per client request  :Bien                 
+                    #
                     #Mal
 fixed bug on landing page         :Mal
 Changed style                     :Mal
 oops                              :Mal
 I think I fixed it this time?     :Mal
 mensajes de confirmación vacíos   :Mal           
+                      #
                       #Natalia Pina  Ingeniero UX en D2iQ. Entusiasmado por CSS, React, JavaScript, TypeScript, sistemas de diseño, UX y diseño de UI.                
-                    -#            
+                     -#            
 -#
 # :31) 27/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
           #-------
@@ -619,7 +626,7 @@ mensajes de confirmación vacíos   :Mal
           # confirmado (committed), modificado (modified), y preparado (staged).
           #--------
           #-
-          # Comandos básicos en la terminal de Git Bash en Windows
+->         # Comandos básicos en la terminal de Git Bash en Windows
             La ruta principal en Windows es c:/, en UNIX es solo /.
             Windows no hace diferencia entre mayúsculas y minúsculas, pero UNIX si.
             Git Bash usa la rua /c para dirigirse al disco c:/ en Windows. 
@@ -657,7 +664,7 @@ git push
 git add
 git commit
 git branch                
-#-
+         #-
          #Un proyecto GIT consta de tres secciones principales: 
          #WORKING DIRECTORY   : el directorio de trabajo, 
          #STAGING (INDEX)     : el área de preparación, 
@@ -694,43 +701,70 @@ git remote -v                   :git remote te permite ver todos los repositorio
 git remote add origin <host-or-remoteURL>
                                 :Para conectar el repositorio local a un servidor remoto, usa este comando
 git remote <nombre-del-repositorio>
-                                :Por otro lado, el siguiente comando borrará una conexión a un repositorio remoto especificado 
+                                :Por otro lado, el siguiente comando borrará una conexión 
+                                #a un repositorio remoto especificado 
 git branch                      :git branch se usa para listar, crear o borrar ramas. Por ejemplo, si quieres listar todas las ramas presentes en el repositorio, el comando debería verse así 
-git branch -d <branch-name>     :Si quieres borrar una rama, usa
-git pull                        :git pull fusiona todos los cambios que se han hecho en el repositorio remoto con el directorio de trabajo local
+git branch -d <branch-name>     :Si quieres borrar una rama, usa -d
+git pull                        :git pull fusiona todos los cambios que se han hecho 
+                                 #en el repositorio remoto con el directorio de trabajo local
 git merge <branch-name>         :git merge se usa para fusionar una rama con otra rama activa
-git diff --base <file-name>     :git diff se usa para hacer una lista de conflictos. Para poder ver conflictos con respecto al archivo base, usa  
+git diff --base <file-name>     :git diff se usa para hacer una lista de conflictos. 
+                                #Para poder ver conflictos con respecto al archivo base  
 git diff <source-branch> <target-branch>
-                                :El siguiente comando se usa para ver los conflictos que hay entre ramas antes de fusionarlas 
-git diff                        : Para ver una lista de todos los conflictos presentes usa
+                                :El siguiente comando se usa para ver los conflictos que hay 
+                                #entre ramas antes de fusionarlas 
+git diff                        : Para ver una lista de todos los conflictos presentes 
 git tag 1.1.0 <instert-commitID-here>
-                                : git tag marca commits específicos. Los desarrolladores lo usan para marcar puntos de lanzamiento como v1.0 y v2.0.
-git log                         :git log se usa para ver el historial del repositorio listando ciertos detalles de la confirmación. Al ejecutar el comando se obtiene una salida como ésta    
+                                : git tag marca commits específicos. 
+                                #Los desarrolladores lo usan para marcar puntos de lanzamiento 
+                                #como: v1.0 y v2.0.
+git log                         :git log se usa para ver el historial del repositorio 
+                                #listando ciertos detalles de la confirmación. 
+                                #Al ejecutar el comando se obtiene una salida como ésta    
                                 #commit 15f4b6c44b3c8344caasdac9e4be13246e21sadw
                                 #Author: Alex Hunter <alexh@gmail.com>
                                 #Date:   Mon Oct 1 12:56:29 2016 -0600
-git reset - -hard HEAD          :git reset sirve para resetear el index y el directorio de trabajo al último estado de confirmación                                
-git rm filename.txt             :git rm se puede usar para remover archivos del index y del directorio de trabajo.
-git stash                       :git stash guardará momentáneamente los cambios que no están listos para ser confirmados. De esta manera, pudes volver al proyecto más tarde.
+git reset - -hard HEAD          :git reset sirve para resetear el index y el directorio de trabajo 
+                                #al último estado de confirmación                                
+git rm filename.txt             :git rm se puede usar para remover archivos del index 
+                                #y del directorio de trabajo.
+git stash                       :git stash guardará momentáneamente los cambios 
+                                #que no están listos para ser confirmados. De esta manera, pudes volver al proyecto más tarde.
 git show                        :git show se usa para mostrar información sobre cualquier objeto git.
-git fetch origin                :git fetch le permite al usuario buscar todos los objetos de un repositorio remoto que actualmente no se encuentran en el directorio de trabajo local.
-                                #cuales son los objetos de un repositorio:  
-git ls-tree HEAD                :git ls-tree te permite ver un objeto de árbol junto con el nombre y modo de cada ítem, y el valor blob de SHA-1. Si quieres ver el HEAD, usa:
+git fetch origin                :git fetch le permite al usuario buscar todos 
+                                #los objetos de un repositorio remoto que actualmente
+                                #no se encuentran en el directorio de trabajo local.
+                                #cuales son los objetos de un repositorio?  
+git ls-tree HEAD                :git ls-tree te permite ver un objeto de árbol junto con el nombre
+                                #y modo de cada ítem, y el valor blob de SHA-1. Si quieres ver el HEAD, usa:
 git cat-file –p d670460b4b4aece5915caf5c68d12f560a9fe3e4
-                                :git cat-file se usa para ver la información de tipo y tamaño de un objeto del repositorio. Usa la opción -p junto con el valor SHA-1 del objeto para ver la información de un objeto específico, por ejemplo:
-git grep “www.hostinger.com”    :git grep le permite al usuario buscar frases y palabras específicas en los árboles de confirmación, el directorio de trabajo y en el área de preparación. Para buscar por www.hostinger.com en todos los archivos, usa:
-gitk                            :gitk muestra la interfaz gráfica para un repositorio local. Simplemente ejecuta
-git instaweb –http=webrick      :git instaweb te permite explorar tu repositorio local en la interfaz GitWeb. Por ejemplo:
-git gc                          :git gc limpiará archivos innecesarios y optimizará el repositorio local.
+                                :git cat-file se usa para ver la información de tipo 
+                                #y tamaño de un objeto del repositorio. 
+                                #Usa la opción -p junto con el valor SHA-1 del objeto 
+                                #para ver la información de un objeto específico (id-commit)
+git grep “www.hostinger.com”    :git grep le permite al usuario buscar frases 
+                                #y palabras específicas en los árboles de confirmación, 
+                                #el directorio de trabajo y en el área de preparación. 
+                                #Para buscar por www.hostinger.com en todos los archivos
+gitk                            :gitk muestra la interfaz gráfica para un repositorio local. 
+                                #Simplemente ejecuta
+git instaweb –http=webrick      :git instaweb te permite explorar tu repositorio local 
+                                #en la interfaz GitWeb. no funciono.
+git gc                          :git gc limpiará archivos innecesarios 
+                                #y optimizará el repositorio local.
 git archive - -format=tar master
-                                :git archive le permite al usuario crear archivos zip o tar que contengan los constituyentes de un solo árbol de repositorio. Por ejemplo:
-git prune                       :git prune elimina los objetos que no tengan ningún apuntador entrante.                            
-git fsck                        :git fsck realiza una comprobación de integridad del sistema de archivos git e identifica cualquier objeto corrupto
+                                :git archive le permite al usuario 
+                                #crear archivos zip o tar que contengan los constituyentes 
+                                #de un solo árbol de repositorio.
+git prune                       :git prune elimina los objetos que 
+                                #no tengan ningún apuntador entrante.                            
+git fsck                        :git fsck realiza una comprobación de integridad 
+                                #del sistema de archivos git e identifica cualquier objeto corrupto
 git rebase master               :git rebase se usa para aplicar ciertos cambios de una rama en otra. Por ejemplo.
 .                                # fuente: https://www.hostinger.es/tutoriales/comandos-de-git  
-#-
-#-
-                  #10 Comandos de Git Que Todo Desarrollador Debería Saber
+                                 #-
+                  #-
+->                #10 Comandos de Git Que Todo Desarrollador Debería Saber
                   #fuente: https://www.freecodecamp.org/espanol/news/10-comandos-de-git-que-todo-desarrollador-deberia-saber/
                   #Git es una parte importante de quien programa a diario 
                   #(especialmente si estás trabajando con un equipo) 
@@ -910,7 +944,7 @@ https://github.com/search/advanced       # busqueda avanzada
 #----------------------------------------------------
 #- GitHub despues de crear un repositorio #
 #----------------------------------------------------
-…or create a new repository on the command line
+                      #…or create a new repository on the command line
 echo "# primer" >> README.md
 git init
 git add README.md
@@ -918,13 +952,10 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/okmiguel/primer.git
 git push -u origin main
-
-…or push an existing repository from the command line
-
+                      #…or push an existing repository from the command line
 git remote add origin https://github.com/okmiguel/primer.git
 git branch -M main
 git push -u origin main
-
                     # Creando un repositorio en gitHub y vinculandolo con un repositorio local
                     # Configuracion rapida si ya has hecho este tipo de cosas antes
                     # Quick setup — if you’ve done this kind of thing before
@@ -951,7 +982,7 @@ git init                    # inicializando el repositorio Te ubica en la rama M
 git add .                   # agregar contenido staged
 git commit -m "mi tarea"    # Insertar cambios 
 git remote add origin https://github.com/Miguelepst/git-exp-dicc.git   # vincular repositorio local con el remoto, si ya estaba definido da error
-git push   origin master    # enviamos el contenido al remoto
+git push origin master      # enviamos el contenido al remoto
                             # si mostrara un error 
                             # es porque no estas en una rama diferente, puede ser en vez de master la rama "main" o en otra diferente.     
                             # git push   origin main    # enviamos el contenido al remoto de la rama main
@@ -1080,7 +1111,7 @@ git version                                    # git version 2.38.1.windows.1
 #------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------
                       # <tipo>[alcance opcional]: <descripción>
-                    ### Haz tus mensajes de GIT Commit PROFESIONALES con CONVENTIONAL COMMITS
+->                    # Haz tus mensajes de GIT Commit PROFESIONALES con CONVENTIONAL COMMITS
                       # El porque estandarizar, el porque de su importancia:
                       # La estructura completa del mensaje de confirmación COMMIT
                       # en Conventional Commits ayuda a estandarizar y categorizar 
@@ -1115,7 +1146,7 @@ git version                                    # git version 2.38.1.windows.1
                       # BREAKING CHANGE: `extends` key in config file is now used for extending other config files
 #-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------
-                      # EXP EXPERIENCE:
+                       # EXP EXPERIENCE:
 git remote add origin https://github.com/Miguelepst/test1.git  # Error: ya existe
 git branch -M main            # Rename your local master branch into main with the following command
 git push -u origin main       # To let others see the new main branch, you need to push it to the remote. This makes the renamed branch available on the remote.               
