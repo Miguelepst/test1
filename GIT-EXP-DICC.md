@@ -13,8 +13,32 @@ Lo mas antiguo en lo profundo del fondo.
 
 ->>>
 
+fix: prevent racing of requests
 
-git commit   -m "docs(GIT): :memo: Descripcion corta inperative"   -m "Drecripcion longer"   -m "List any breacking changes or issues closed"         
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123    
+
+
+git commit -m "     :" Sin cerrar comillas te da la opcion de formatear el commit a tu gusto o imitacion de otro.
+fix: prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123
+"                   :" Cierre de commillas   
+
+                    #git commit   -m "docs(GIT): :memo: Descripcion corta inperative"   -m "Drecripcion longer"   -m "List any breacking changes or issues closed"         
                     :pre-commit(antes de) "espacificacion conventionals commits"         
 # :35) 31/08/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git commit -m "My head line" -m "My content line."   : Si sólo quieres, por ejemplo, una línea de encabezamiento y una de contenido, puedes utilizar Fuente: https://www.iteramos.com/pregunta/6513/anadir-salto-de-linea-a-git-commit--m-desde-la-linea-de-comandos 
@@ -356,6 +380,31 @@ Reviewed-by: Z
 Refs: #123
                     #
                     #                    
+git commit -m "     :" Sin cerrar comillas 
+                    #
+git commit -m "fix: prevent racing of requests   
+>> 
+>> Introduce a request id and a reference to latest request. Dismiss incoming responses other than from latest request.   
+>> 
+>> Remove timeouts which were used to mitigate the racing issue but are obsolete now.
+>> 
+>> Reviewed-by: Z
+>> Refs: #123"      : cierras comiilas y enter, el resultado es igual al del ejemplo
+                    #
+                    #Resutado igual:
+                    #
+fix: prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123
+                    #
+                    #
                     : Commit message with multi-paragraph body and multiple footers
                     #Se trata de un fix, no posee scope, aqui vemos la descripcion, vemos un resumen un poco mas detallado.
                     # y final mente en el pie de pagina podemos ver que esta revisado o se ha hecho per programin (progrmacion entre dos perdonas par) junto con otra persona
