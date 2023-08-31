@@ -339,7 +339,8 @@ Refs: #123
                     #
                     #Y en una sola linea seria:
                     #
-git commit -am "fix: prevent racing of requests\nIntroduce a request id and a reference to latest request. Dismiss incoming responses other than from latest request.\nRemove timeouts which were used to mitigate the racing issue but are obsolete now.\nReviewed-by: Z \nRefs: #123"  
+git commit -m "fix: prevent racing of requests\nIntroduce a request id and a reference to latest request. Dismiss incoming responses other than from latest request.\nRemove timeouts which were used to mitigate the racing issue but are obsolete now.\nReviewed-by: Z \nRefs: #123"  
+                    : en una sola linea
                     : Commit message with multi-paragraph body and multiple footers
                     #Se trata de un fix, no posee scope, aqui vemos la descripcion, vemos un resumen un poco mas detallado.
                     # y final mente en el pie de pagina podemos ver que esta revisado o se ha hecho per programin (progrmacion entre dos perdonas par) junto con otra persona
