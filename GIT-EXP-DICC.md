@@ -2422,7 +2422,7 @@ docs(GIT): :memo: Descripcion corta inperative
 
 Drecripcion longer
 
-List any breacking changes or issues closed"
+Piee del commit: List any breacking changes or issues closed"
                     # commit menos detallado
 
 git commit -m "
