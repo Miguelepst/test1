@@ -8,7 +8,8 @@ Lo mas antiguo en lo profundo del fondo.
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
 
-          
+
+
 
 ->>>
 
