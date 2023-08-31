@@ -2,7 +2,7 @@ la instantánea de los cambios
 Lo mas reciente arriba "HEAD"
 Lo mas antiguo en lo profundo del fondo.
 (#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor 
-# :28) 24/08/2023 ,  # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+
 
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "ENTENDIENDO GIT"
 {
@@ -12,11 +12,13 @@ Lo mas antiguo en lo profundo del fondo.
 
 ->>>
 
+
+git commit   -m "docs(GIT): :memo: Descripcion corta inperative"   -m "Drecripcion longer"   -m "List any breacking changes or issues closed"         
+                    :pre-commit(antes de) "espacificacion conventionals commits"         
+# :35) 31/08/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git commit -m "My head line" -m "My content line."   : Si sólo quieres, por ejemplo, una línea de encabezamiento y una de contenido, puedes utilizar Fuente: https://www.iteramos.com/pregunta/6513/anadir-salto-de-linea-a-git-commit--m-desde-la-linea-de-comandos 
 git commit -m $'first line\nsecond line'             : Insertando linea de espaciado en un commit descripcion
-
 git commit  -m "docs(GIT): :memo: Curso Git - OpenBootcamp" -m '#video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47'               : Insertando linea de espaciado en un commit descripcion
-
                                                       #
                                                       #
                                                       docs(GIT): :memo: Curso Git - OpenBootcamp
@@ -39,58 +41,39 @@ git commit  -m "docs(GIT): :memo: Descripcion corta inperative" -m 'Drecripcion 
                                                       # 1 file changed, 1 insertion(+)
                                                       # test OK, aparentemente igual
                                                       # testear otra forma
-git commit -m "docs(GIT): :memo: Descripcion corta inperative 
->Drecripcion longer 
->List any breacking changes or issues closed"         : 1 file changed, 15 insertions(+), 1 deletion(-)
-                                                       # no le agrego >
-                                                       #otra prueba
+                                                      #
 git commit -m "docs(GIT): :memo: Descripcion corta inperative 
 Drecripcion longer 
 
-List any breacking changes or issues closed"               
-                                                        # el editor lo pasa a:
-git commit -m "docs(GIT): :memo: Descripcion corta inperative   
->> Drecripcion longer
->> List any breacking changes or issues closed"         
-                                                        # en espera de la tecla enter.                                                                                                
-                                                        # 1 file changed, 2 insertions(+), 3 deletions(-)
-                                                        # no introdujo linea de espacio, otra prueba
-git commit -m "docs(GIT): :memo: Descripcion corta inperative 
-Drecripcion longer 
-
-List any breacking changes or issues closed"               
-                                                        #  1 file changed, 14 insertions(+)
-                                                        # test ok
-
-
-
-
-
-
-#
-# Este es elcommit "antes de el contenido de arriba (pre commit)"  , commit: tipo doc, repaso dia anterior 
-git commit  
- -m "docs(GIT): :memo: Descripcion corta inperative" 
- -m 'Drecripcion longer' 
- -m "" 
- -m 'List any breacking changes or issues closed'         
+List any breacking changes or issues closed"           
+                                                      #    
+                                                      #  1 file changed, 14 insertions(+)
+                                                      # test ok
+                                                      #
+                                                      # Este es elcommit "antes de el contenido de arriba (pre commit)"  , commit: tipo doc, repaso dia anterior 
+git commit   -m "docs(GIT): :memo: Descripcion corta inperative"   -m "Drecripcion longer"   -m "List any breacking changes or issues closed"         
+                                                                    #          
                                                                     # or
+                                                                    #
 git commit -m "docs(GIT): :memo: Descripcion corta inperative 
 Drecripcion longer 
 
 List any breacking changes or issues closed"               
-#
-
+                                                      #
+                                                      # para que resulte asi:
+                                                      #
 docs(GIT): :memo: Curso Git - OpenBootcamp
 
 #video: 4 Repositorio local 2 - Curso Git - OpenBootcamp, seccion video 2:14:09 / 2:20:47
+                                                      #
+                                                      #
 
-#
+git commit -m "first line\nsecond line\ntercera linea"
 # :34) 30/08/2023 , hora de inicio: 07:00 am, hora de fin: 08:00 am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
                   #haciendo un fork
                   # primer paso    :  crear el fork.
                   # segundo paso   : obtener el fork.  
-                  # el tercero enviar cambios mios al repositorio
+                  # el tercero enviar mis cambios al repositorio
                   # el cuarto paso va a ser crearme la PULL REQUEST PR (open pull request) 
                   #ejemplo solicitud de pull request:
                   # mensaje es necesario crearme ficheros README.md
@@ -107,7 +90,7 @@ docs(GIT): :memo: Curso Git - OpenBootcamp
                   # merge.vroman "ha creado un commit para hacer el merge." y ademas me pone verificado con firma digital, cosas que garantizan la autenticidad.
                   # este work flow es super tipico en el desarroyo tanto para empresas como para proyectos Open source.
                   #
-                  #Git permete que alteremos el compirtamiento de lo que hace (con los hooks "son script ejecutables ya sea en repo local o remoto").
+                  #Git permete que alteremos el comportamiento de lo que hace (con los hooks "son script ejecutables ya sea en repo local o remoto").
                   # lo hace en local site o server site (remoto)
                   # hay una cositas que se llaman HOOKs estos se ejecutan en ciertos momentos 
                   # estan escritos en un leguaje de programacion que nosotros queramos. 
@@ -219,18 +202,15 @@ docs(GIT): :memo: Curso Git - OpenBootcamp
 6.link: https://es.stackoverflow.com/questions/4144/en-que-momento-debo-realizar-un-commit-en-git
                             #-
                             nuevas lecturas: nuevos commits:  3. cuando no hacer commit
-
                             ¿En que momento debo realizar un commit en git? (https://es.stackoverflow.com/questions/4144/en-que-momento-debo-realizar-un-commit-en-git)
-
                             Sobre la elaboración de salchichas (https://sethrobertson.github.io/GitBestPractices/)
                             A algunas personas les gusta ocultar la fabricación de salchichas¹ , o en otras palabras pretender ante el mundo exterior que sus confirmaciones surgieron completamente formadas y perfectamente en su repositorio de git. Ciertos grandes proyectos públicos exigen esto, otros exigen concentrar todo el trabajo en un gran compromiso y a otros no les importa.
-
                             Una buena razón para ocultar la elaboración de salchichas es si cree que puede estar seleccionando muchos compromisos (aunque esto también suele ser una señal de un mal flujo de trabajo). Tener una o una pequeña cantidad de confirmaciones para elegir es mucho más fácil que tener que encontrar una confirmación aquí, otra allá y la mitad de esta otra. Este último enfoque hace que el problema sea mucho más difícil y normalmente dará lugar a conflictos de fusión cuando finalmente se fusione la rama donante.
                             Ejemplo de elaboracion de salchicha, repo de un documento:
                             https://github.com/SethRobertson/GitBestPractices/commit/2dfa39600061a3ef6d48f721ea8e442eeb51cddf
-
                             #commit 3 de ejemplo, descriocion  de varias teaticas
                             5 pasos para escribir mejores mensajes de confirmación link: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
+                            #
                             Resumamos las pautas sugeridas:
                             1.Capitalización y puntuación: escriba en mayúscula la primera palabra y no termine en puntuación. Si utiliza confirmaciones convencionales, recuerde usar todo en minúsculas.
                             2.Estado de ánimo: utilice el modo imperativo en la línea de asunto. Ejemplo – Add fix for dark mode toggle state. El modo imperativo da el tono con el que estás dando una orden o petición.
@@ -286,16 +266,19 @@ git commit -am "docs(GIT): :memo: practicas git pasos para escribir mejores mens
                               #
                               #
 # :33) 29/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
-
 # :32) 28/08/2023 , # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 #-
                     #CONVENTIONAL COMMITS
                     #estructura de mensaje de confirmación consistente:
+                    #
+                    #
 <type>[optional scope]: <description>
 
 [optional body]
 
 [optional footer(s)]
+                    #
+                    #
                     #-    
                     #SISTEMA DE VERSIONES SEMVER 
                     #El versonamiento semantico (SemVer.org)
@@ -340,7 +323,7 @@ El pie del commit   :podemos decir que PULL REQUEST (PS) estamos cerrando
                     #entonces ese SCOPE se pone entre parentesis (api) y el commit es del tipo feat
 feat(api)!: send an email to the customer when a product is shipped 
                     :Commit message with scope and ! to draw attention to breaking change                    
-                    #mensaje de commit mucho mas elaborado                     
+                    #mensaje de commit mucho mas elaborado:                     
                     #
                     #
 fix: prevent racing of requests
@@ -354,7 +337,9 @@ obsolete now.
 Reviewed-by: Z
 Refs: #123                    
                     #
+                    #Y en una sola linea seria:
                     #
+git commit -am "fix: prevent racing of requests\nIntroduce a request id and a reference to latest request. Dismiss incoming responses other than from latest request.\nRemove timeouts which were used to mitigate the racing issue but are obsolete now.\nReviewed-by: Z \nRefs: #123"  
                     : Commit message with multi-paragraph body and multiple footers
                     #Se trata de un fix, no posee scope, aqui vemos la descripcion, vemos un resumen un poco mas detallado.
                     # y final mente en el pie de pagina podemos ver que esta revisado o se ha hecho per programin (progrmacion entre dos perdonas par) junto con otra persona
