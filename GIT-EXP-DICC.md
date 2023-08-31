@@ -2414,6 +2414,40 @@ START
 
 
 
+```json  "CONVENTIONAL COMMIT MAS DETALLADO"
+{
+                    #
+git commit -m "
+docs(GIT): :memo: Descripcion corta inperative
+
+Drecripcion longer
+
+List any breacking changes or issues closed"
+                    # commit menos detallado
+
+git commit -m "
+fix(FOCUS): :memo: Descripcion corta inperative
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123
+"              
+                  # commit mas detallado
+
+}
+
+
+
+```
+
+
+
+
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "conceptos"
 
 El Manual Esencial de Git
