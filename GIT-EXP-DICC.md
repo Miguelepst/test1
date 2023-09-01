@@ -11,7 +11,16 @@ Lo mas antiguo en lo profundo del fondo.
 
 ->>>
 
-                    #
+
+                    
+# :36) 01/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+cd Proyectos
+FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rm -rf "%d"       
+                           :eliminar carpeta node_modules desde windows
+cd ~/Proyectos
+find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;  
+                           :eliminar carpeta node-modules desde windows
+# :35) 31/08/2023 , hora de inicio: 7:-- pm, hora de fin: 8:-- pm,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git commit -m "
 docs(GIT): :memo: Descripcion corta inperative
 
@@ -2440,7 +2449,13 @@ Refs: #123
                   # commit mas detallado
 
 }
+                  # commits hechos
+ docs(GIT): 📝 practicas git
 
+Ejecucion de diversos comados
+
+Miguel Gutierrez session de una hora diaria
+                  #
 
 
 ```
