@@ -1,51 +1,108 @@
-la instantánea de los cambios
-Lo mas reciente arriba "HEAD"
-Lo mas antiguo en lo profundo del fondo.
-(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor 
-Comando               |Explicaion -->  (alt+z: linea sin salto de linea)
-git init              #col 23 #inicializar repositorio local
+instantáneas de los cambios
+Lo mas reciente arriba "HEAD" - Lo mas antiguo en lo profundo al fondo.
+(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor (donde estoy), (>) pausas
+Comando               #Explicaion -->  (alt+z: linea sin salto de linea)
+
 
 ```json COMMITS ABIERTOS, estoy trabajado en los siguientes commits:
----------------------------------------------------------------------------------------------
--APERTURA DE COMMIT CV ID:1 :
-Conventional commit:
-      #
-      docs(GIT): :memo: Git OpenBootcamp
-      
-      Apertura: Video #5, curso de Introducción a Git, Repositorios remotos
-      #
-+info:
-    link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
-    youtuber: OpenBootcamp
-    duraccion del video: 1:20:36
-----------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------
--CIERRE DE COMMIT CV ID:1 :
-Conventional commit:
-      #
-      docs(GIT): :memo: Git OpenBootcamp
-      
-      cierre: Video #5, curso de Introducción a Git, Repositorios remotos
-      #
-+info:
-    link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
-    youtuber: OpenBootcamp
-    duraccion del video: 1:20:36
-    
-----------------------------------------------------------------------------------------------
+                      #commit que represente unidad no dos(apertura y cierre)
+                      #---------------------------------------------------------------------------------------------
+                      -APERTURA DE COMMIT CV ID:1 :
+                      Conventional commit:
+                      #
+git commit -m "                       
+docs(GIT): :memo: Git OpenBootcamp
+
+Apertura: Video #5, curso de Introducción a Git, Repositorios remotos
+"
+                      #
+                      +info:
+                      link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
+                      youtuber: OpenBootcamp
+                      duraccion del video: 1:20:36
+                      -#---------------------------------------------------------------------------------------------
+                      #---------------------------------------------------------------------------------------------
+                      -CIERRE DE COMMIT CV ID:1 :
+                      Conventional commit:
+                      #
+git commit -m "                      
+docs(GIT): :memo: Git OpenBootcamp
+     
+cierre: Video #5, curso de Introducción a Git, Repositorios remotos
+"
+                      #
+                      +info:
+                      link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
+                      youtuber: OpenBootcamp
+                      duraccion del video: 1:20:36
+                      -#---------------------------------------------------------------------------------------------
+                      #---------------------------------------------------------------------------------------------
+                      -SESSION DE COMMIT CV ID:1 :
+                      Conventional commit:
+                      #
+git commit -m "                      
+docs(GIT): :memo: Git OpenBootcamp #:37)
+     
+session: estudio/practica #:37) 
+Video #5, curso de Introducción a Git, Repositorios remotos
+"
+                      #
+                      +info:
+                      link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
+                      youtuber: OpenBootcamp
+                      duraccion del video: 1:20:36
+                      -#---------------------------------------------------------------------------------------------
 
 
 ```
 
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "ENTENDIENDO GIT"
 {
-  {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
-  -COMIT ABIERTO CV ID:1 
-                    ->>>
+  {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
+                      (:#)
 
 
 
-# :37) 02/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:   
+#:38) 03/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:     
+
+
+
+                      #
+->>>
+#:37) 02/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:   
+                      #cuando yo trabajo con una rama nueva GitLab me sugiere 
+                      #si la quiero mergear con mi rama principal 
+git:(main)            #estamos ubicados en la rama principal          
+git checkout -b fix-doc2                     
+                      :creamos rama nueva y cambiamos a ella 
+git:(fix-doc2)                      
+vi readme.md
+:wq                   :guardar los cambios y salir del editor vi lista de comandos en(https://docs.oracle.com/cd/E19620-01/805-7644/6j76klopr/index.html)
+ZZ                    :guardar los cambios y salir del editor vi
+:q!                   :salir sin guardar cambios del editor vi
+echo "rellenar" > docs/indice.md 
+                      :crear archivo indice.md, introducirle "rellenar" dentro de la carpeta docs
+git add docs          :añadimos la carpeta docs a git de forma recursiva                      
+git commit -a         :para que muestre los cambios y poder digitar el mensaje de confirmacion + enter
+                      :error no muestra el editor de texto
+git config --global core.editor "code --wait"
+                      :solucion: no muestra el editor de texto, link: https://stackoverflow.com/questions/52195877/how-can-i-fix-git-commit-error-waiting-for-your-editor-to-close-the-file-wi   
+git commit -a
+"Empiezo a trabajar en la documentacion"
+                      :Mensaje de commit mas tecla enter, creacion de commit
+vi readme.md          :sigo trabajando en la documentacion
+                      :adicion de texto "aqui debemos esplicar todo muy claro"                      
+:wq
+git commit README.md -m "es un pequeño cambio"                      
+git push              :error
+                      #la rama actual no tiene rama -u (--set-upstream) origin fix-docs
+git push origin fix-docs      
+                      :solucion: Quiero decirle que mi remote de nombre origin, 
+                      #quiero crearle una nueva rama que se llame fix-docs
+                      #y cual va a ser el contenido: mi rama actual en la que estoy ubicado (fix-docs)+ tecla enter.
+>                     #video time: 24:18 / 1:20:36, link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5 
+                      #Titulo: 5 Repositorios remotos - Curso Git - OpenBootcamp
+#:37) 02/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:   
                       #5 Repositorios remotos - Curso Git - OpenBootcamp
                       #link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
 clone                 #Vamos a clonar el repositorio recien creado en gitLAB
@@ -87,9 +144,9 @@ error                 :tenque que usar un TOKEN de acceso personal, para usar gi
                       #como usar este token en gitlab
                       #como password voy a pegar el token
 git push -u origen main       
-pide usuario          :gitLAb                           
-pide contraseña       #pegar token                      
-ok                    :ok, funciona de esta forma, es sencillo de utilizar 
+                      #pide usuario          :gitLAb                           
+                      #pide contraseña       #pegar token                      
+                      #ok                    :ok, funciona de esta forma, es sencillo de utilizar 
                       #como contraseña se utiliza el token
 gitlab.com            :recargo la pagina de gitLab y ya aparece mi repositorio
                       #hacemos un clone como si fueramos un usuario distinto
@@ -128,10 +185,9 @@ git push origen feacture-demo
 gitlab.com           #Si aparece la rama
                       #y nos da la opcion de crear un merge request 
                       #un MERGE REQUEST en git lab es lo mismo que un PULL REQUEST en GITHUB                     
-                      #video time: 21:44 / 1:20:36, link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5 
+>                     #video time: 21:44 / 1:20:36, link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5 
                       #5 Repositorios remotos - Curso Git - OpenBootcamp
-                
-# :36) 01/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
+# :36) 01/09/2023 , hora de inicio: 7:-- am, hora de fin: 8:-- am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 cd Proyectos
 FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rm -rf "%d"       
                            :eliminar carpeta node_modules desde windows
