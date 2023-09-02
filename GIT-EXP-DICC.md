@@ -2,24 +2,144 @@ la instantánea de los cambios
 Lo mas reciente arriba "HEAD"
 Lo mas antiguo en lo profundo del fondo.
 (#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor 
+Comando               |Explicaion -->  (alt+z: linea sin salto de linea)
+git init              #col 23 #inicializar repositorio local
 
+```json COMMITS ABIERTOS, estoy trabajado en los siguientes commits:
+---------------------------------------------------------------------------------------------
+-APERTURA DE COMMIT CV ID:1 :
+Conventional commit:
+      #
+      docs(GIT): :memo: Git OpenBootcamp
+      
+      Apertura: Video #5, curso de Introducción a Git, Repositorios remotos
+      #
++info:
+    link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
+    youtuber: OpenBootcamp
+    duraccion del video: 1:20:36
+----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+-CIERRE DE COMMIT CV ID:1 :
+Conventional commit:
+      #
+      docs(GIT): :memo: Git OpenBootcamp
+      
+      cierre: Video #5, curso de Introducción a Git, Repositorios remotos
+      #
++info:
+    link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
+    youtuber: OpenBootcamp
+    duraccion del video: 1:20:36
+    
+----------------------------------------------------------------------------------------------
+
+
+```
 
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "ENTENDIENDO GIT"
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   
+  -COMIT ABIERTO CV ID:1 
+                    ->>>
 
 
-->>>
 
-
-                    
+# :37) 02/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:   
+                      #5 Repositorios remotos - Curso Git - OpenBootcamp
+                      #link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
+clone                 #Vamos a clonar el repositorio recien creado en gitLAB
+cd                    #vamos a entrar dentro del repositorio
+git switch -c main    #vamos a cambiar a la rama main 
+                      #por defecto en git viene como rama master 
+                      #hoy en dia por razones de inclusion 
+                      #se prefiere utilizar el lenguaje MAIN
+                      #en lugar de master, por las connotaciones negativas que pueda traer la palabra maestro
+                      #asi que vamos a seguir las convenciones hoy en dia de inclusion
+touch README.md       #creo un fichero                        
+add README.md       
+git commit -m "Meto README.md"
+                      :Hago la confirmacion   
+                      #aun no aparece en gitlab, para poder enviar a un repositorio remoto necesito hacer el famoso PUSH
+                      #hacerl un push  
+                      #la primera vez que haga un push tengo que enviar mi ramam MAIN al repositorio 
+                      #porque no la va a conocer 
+git push              #error no la conoce el repositorio remoto (git push --set-upstream origen main )                      
+                      #como puedo ver yo cual es mi remote 
+cat .git/config       #[remote "origin"]
+                      # url = https://github.com/Miguelepst/test1.git
+                      #[remote "exp-git"]
+                      #url = D:/acumulacion-ftp/repositorios/exp-git/
+                      #como nuestro repositorio remoto no conoce esta rama main 
+git push -u origen main                      
+                      #tengo que decirle que la cree por primera vez 
+pide usuario          :gitLAb 
+pide contraseña       :gitlab
+error                 :tenque que usar un TOKEN de acceso personal, para usar git sobre SSH
+                      #esto sale cuando tienes el segundo factor de autenticacion activado
+                      #si no lo tines ya lo habria empujado a gitLab los cambios 
+                      :al tener el doble factor de autenticacion me obliga a tener un token de acceso
+                      # y el me dice a que direccion link debo de ir.               
+                      #para entrar un nuevo token, que expire, caduque mañana.
+                      #activar dos scopes: read repositori y write repositori
+                      #le damos en crear token 
+                      #copiamos el numerito
+                      #como usar este token en gitlab
+                      #como password voy a pegar el token
+git push -u origen main       
+pide usuario          :gitLAb                           
+pide contraseña       #pegar token                      
+ok                    :ok, funciona de esta forma, es sencillo de utilizar 
+                      #como contraseña se utiliza el token
+gitlab.com            :recargo la pagina de gitLab y ya aparece mi repositorio
+                      #hacemos un clone como si fueramos un usuario distinto
+git clone [link...] demogit            
+                      #y lo clono en otra carpeta.
+cd demogit            :entro en el repositorio clonado
+ls                    :voy hacer cambios commits                      
+vi readme.md          :cambios desde el editor vi
+git commit README.md -m "Empiezo a escribir en readme.md"
+git push              : lo envio el cambio al reposotorio remoto o central 
+gitlab.com            #si ya estan los datos 
+git fetch             #como podria yo saber si ha habido cambios en mi repositorio remoto
+                      #sin bajarme estos cambios 
+git log                       
+git pull              #bajas los cambios y los metadatos de fetch
+git checkout -b feature-demo 
+                      #crear una nueva rama y entramos en esa rama tambien
+git status            # me informa en que rama estoy
+                      #voy a trabajar sobre ella
+touch branch1.txt                      
+git add branch1.txt
+git commit -am "branch1.txt"
+touch branch2.txt                      
+git add branch2.txt
+git commit -am "branch2.txt"
+git checkout master  #volver a mi rama master
+error                #estas trabajando con la rama main
+git checkout main    #
+git commit           #working tree clean, me dice que no hay nada que commitear.
+git push             #me dice que todo esta actualizado
+gitlab.com           #solo me aparece la rama main, no me aparecen todas las ramas que yo tengo 
+                     # porque las ramas tambien debemos enviarlas a nuestro remoto
+git push origen [nombre_de_nuestra_rama]   
+                     #
+git push origen feacture-demo
+gitlab.com           #Si aparece la rama
+                      #y nos da la opcion de crear un merge request 
+                      #un MERGE REQUEST en git lab es lo mismo que un PULL REQUEST en GITHUB                     
+                      #video time: 21:44 / 1:20:36, link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5 
+                      #5 Repositorios remotos - Curso Git - OpenBootcamp
+                
 # :36) 01/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 cd Proyectos
 FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rm -rf "%d"       
                            :eliminar carpeta node_modules desde windows
 cd ~/Proyectos
 find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;  
-                           :eliminar carpeta node-modules desde windows
+                           :eliminar carpeta node-modules desde linux
+PS c:\Users\equipo> C:\windows\System32\wsl.exe --install -d Ubuntu-20.04    
+                           :Instalando Ubuntu 20.04 LTS                           
 # :35) 31/08/2023 , hora de inicio: 7:-- pm, hora de fin: 8:-- pm,  sesion de estudio/practica: GIT, Descripcion:   # time video, Start: 1:50:56 , Stop: --:--:-- , Link: https://www.youtube.com/watch?v=PBk7OjXcQ2E&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=4 , Title: Curso Git - Sesión 4 - OpenBootcamp
 git commit -m "
 docs(GIT): :memo: Descripcion corta inperative
