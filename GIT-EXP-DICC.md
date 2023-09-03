@@ -1,5 +1,4 @@
-instantáneas de los cambios
-Lo mas reciente arriba "HEAD" - Lo mas antiguo en lo profundo al fondo.
+instantáneas de los cambios, Lo mas reciente arriba "HEAD" - Lo mas antiguo en lo profundo al fondo.
 (#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor (donde estoy), (>) pausas
 Comando               #Explicaion -->  (alt+z: linea sin salto de linea)
 
@@ -63,13 +62,95 @@ Video #5, curso de Introducción a Git, Repositorios remotos
 
 
 
-#:38) 03/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:     
-
-
-
-                      #
 ->>>
-#:37) 02/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:   
+#:39) 03/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:     
+                      #
+git push origin fix-docs      
+gitlab.com            #ahoora si pyedo ver la rama en el repositorio remoto
+                      #ademas me pregunta si la quiero mergear (hacerle un merge)
+                      #porque no como he trabajado esta rama vamos a unirla 
+                      #adicionar 
+                      #Titulo
+                      #descripcion: he estado preparando la documentocion
+                      #asignado: me lo puedo asignar a mi mismo, se lo podemos asignar a cualquier persona del equipo
+                      #reviewers: por si alguien tubiera que revisar el cambio
+                      #milestone
+                      #label: fix color rojo definirle una etiqueta
+                      #opcion eliminar la rama cuando sea mergeada: es algo commun: on
+                      #squash commit option: off: coje varios commits y lo convierte en uno unico 
+                      #hay ciertos proyectos en donde prefieren que todos estos commits se los envien como uno unico
+                      #pagina de gitLab
+on: squash commit option
+                      # tengo varios commit veamos que es lo que ocurre
+                      #solo va adicionar un commit porque va a fusionar todos los commits que pertenecen a esa rama 
+                      #antes de meterlo
+create merge request  #gitLab          
+                      #las ramas mergeadas ya no estan 
+                      #esas ramas desaparecidas se han mergeado (fusionado) en mi rama principal 
+                      #eliminar una rama que ya ha sido mergeda y qeu no fue eliminada en su merge o fusion con la rama principal 
+graph                 # nos permite ver la evolucion de nuestro proyecto en la pagina de git lab
+tags                  #podemos crear etiquetas de versiones: v1.0.0                       
+                      #una revision de commit es un ID commit 
+cd .. 
+~rm -rf demo-curso-git
+~git clone url-git-lab
+cd demo-curso-git 
+git branch 
+git checkout          #your branch is up to date with 'origin/main'
+git checkout -l       #your branch is up to date with 'origin/main'
+                      #como puedo yo cambiar a una tag "eqtiqueta"
+git tag               # v1.0     
+git checkout v1.0     #de esta forma ya he cambiado al tag
+git status            #HEAD datached at v1.0
+                      #nothing to commit tree clean
+                      #no colo ca el tag, porque el tag hace referencia a un commit concreto (a una confirmacion concreta)
+                      #los tag es una forma de humanisar nosotros mismos los id de commit al que hace referencia el tag
+git log                      
+git checkout main     #volvemos a la rama main, que tiene mas historia
+git tag -a v1.1 -m "Version 1.1" IDCOMMIT
+                      # si no hay id commit primeros 6 digitos no es necesario completo el numero de id commit
+                      #el tag sera asignado al commit en el que me encuentro
+git tag               #listar los tags que existen
+                      #v1.0
+                      #v1.1                      
+gitLab.com            #en el git remoto no me aparece ese tag v1.1                    
+                      #hace falta publicar esa etiqueta en el repositorio remoto, ya lo hiciste en el local
+git push origin v1.1  #asi la publicamos en el repo remoto gitlab  + enter                    
+                      #origin hace referencia a un remote 
+gitlab.com            # recargo la pagina y por arte de magia si que tenemos ya etiqueta v1.1
+                      #
+                      #El origin es un: remote
+                      #podemos tener multiples remotes con diferentes nombres
+cat .git/config                      
+                      #otro ejemplo: importar proyecto en gitlad de github
+                      #repo by url, si el proyecto esta abierto en github
+                      #al clonar simpre debes colocar .git  al final de la ruta url                     
+                      #mirror repository
+                      #los cambios en el repositorio externo de github 
+                      #los va a meter automaticamente al repositorio de gitlab
+                      #como un espejo
+                      #gitlab va a sincronizar los dorepositorios cada cierto tiempo
+gitignore.io          #en gitlab.com, cuanda haga una serie de cambios esos cambios no los tenga encuenta.            
+                      #a nivel de ficheros de mi repositorio
+.gitignore            #a nivel local          
+git add -f hola.c     #si estoy seguro uso -f, sin importar que este archivo este ignorado por git.
+session_10/*c         #aqui solo se aplicarian los cambios y recursiva, definido en .gitignore 
+git add session_10/hola.c
+                      #me dice que no puede hacerlo
+git add hola.c        #si me permite hacerlo, si nos ha dejado
+!saluda.c             :ignorar tolos los archivos .c, execto saluda.c
+doc/cosas
+doc/cosas/*.mp[3|4]   :ademas puedes usar experesioones regulares
+*/bin/*               :concuerda con todas las carpetas bin dentro de varios subdirectorios para ignorar  
+bin/                  :concuerda dentro de mi directorio actual
+**/node_modules/      :concuerda en todos los directorios, 
+                      #significa todo lo que sea dentro de node_modules ignoralo
+                      #es tipico de ANGULAR   
+*/dist                # tambien es tipico de angular                      
+>                     #video time: 56:55 / 1:20:36, link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5 
+                      #Titulo: 5 Repositorios remotos - Curso Git - OpenBootcamp
+                      #
+#:38) 02/09/2023 , hora de inicio: 8:00 pm, hora de fin: 9:00 pm,  sesion de estudio/practica: GIT, +Descripcion:   
                       #cuando yo trabajo con una rama nueva GitLab me sugiere 
                       #si la quiero mergear con mi rama principal 
 git:(main)            #estamos ubicados en la rama principal          
@@ -102,6 +183,7 @@ git push origin fix-docs
                       #y cual va a ser el contenido: mi rama actual en la que estoy ubicado (fix-docs)+ tecla enter.
 >                     #video time: 24:18 / 1:20:36, link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5 
                       #Titulo: 5 Repositorios remotos - Curso Git - OpenBootcamp
+                      #
 #:37) 02/09/2023 , hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:   
                       #5 Repositorios remotos - Curso Git - OpenBootcamp
                       #link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
@@ -2597,8 +2679,6 @@ START
 
 ```
 
-
-
 ```json  "CONVENTIONAL COMMIT MAS DETALLADO"
 {
                     #
@@ -2636,9 +2716,6 @@ Miguel Gutierrez session de una hora diaria
 
 ```
 
-
-
-
 ```json DICCIONARIO DE EXPERIENCIAS practicas    "conceptos"
 
 El Manual Esencial de Git
@@ -2659,11 +2736,6 @@ Area de preparacion (Lo que sea a añade al repositorio creado) Agregando archiv
 
 
 ```
-
-
-
-
-
 
 ```json EXP 30, Video 10: Angular Avanzado sesión 9, keyword: A2v9  "proyecto: AngularAvanzadoSesion9"
  // Libreria RXJS     //PIPES 
@@ -2696,8 +2768,6 @@ ng g application AngularAvanzadoSesion9 --routing --style scss    :1) ",
 }
 
 ```
-
-
 
 ```HTML EXP 29, Video 9: Angular Avanzado sesión 8, keyword: A2v9
 <!-- A2v9 -->
