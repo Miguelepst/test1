@@ -4,6 +4,22 @@ Comando               #Explicaion -->  (alt+z: linea sin salto de linea)
 
 
 ```json COMMITS ABIERTOS, estoy trabajado en los siguientes commits:
+                      #---------------------------------------------------------------------------------------------
+                      -SESSION DE COMMIT CV ID:1 :
+                      Conventional commit:
+                      #
+git commit -m "
+docs(GIT): :memo: Git OpenBootcamp #:37)
+     
+session: estudio/practica #:37) 
+Video #5, curso de Introducción a Git, Repositorios remotos
+"
+                      #
+                      +info:
+                      link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
+                      youtuber: OpenBootcamp
+                      duraccion del video: 1:20:36
+                      -#---------------------------------------------------------------------------------------------
                       #commit que represente unidad no dos(apertura y cierre)
                       #---------------------------------------------------------------------------------------------
                       -APERTURA DE COMMIT CV ID:1 :
@@ -35,23 +51,6 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
                       youtuber: OpenBootcamp
                       duraccion del video: 1:20:36
                       -#---------------------------------------------------------------------------------------------
-                      #---------------------------------------------------------------------------------------------
-                      -SESSION DE COMMIT CV ID:1 :
-                      Conventional commit:
-                      #
-git commit -m "                      
-docs(GIT): :memo: Git OpenBootcamp #:37)
-     
-session: estudio/practica #:37) 
-Video #5, curso de Introducción a Git, Repositorios remotos
-"
-                      #
-                      +info:
-                      link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5
-                      youtuber: OpenBootcamp
-                      duraccion del video: 1:20:36
-                      -#---------------------------------------------------------------------------------------------
-
 
 ```
 
@@ -63,7 +62,109 @@ Video #5, curso de Introducción a Git, Repositorios remotos
 
 
 ->>>
-#:39) 03/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:     
+
+
+#:40) 04/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                           
+                      #
+                      #gitignore examples
+https://github.com/github/gitignore                      
+                      #gitignore templates
+https://www.toptal.com/developers/gitignore/api/angular
+                      #gitignore para angular                      
+                      #-
+                      #Angular es la evolucion de AngularJS ("Angular JavaScript"), no son compatibles.
+                      #es un framework, su lanzamiento inicial fue 14 sep 2016 
+                      #desarollado en TypeScript (JavaScript pero con esteroides "permite el tipado")
+                      #SPA "single page aplication ("aplicaciones de una sola pagina")"
+                      #su objetivo: aumentar las aplicaciones en el navegador 
+                      #su arquitectura de trabajo: MVC ("Modelo vista controlador")
+                      #alngunas caracteristicas:
+                      -#
+https://github.com/angular/angular/blob/main/.gitignore
+                      #:.gitignore para angular
+gitlab.com            #eliminar un repositorio
+                      #como le hago para tener multiples remotes:
+git remote add github https://github.com/repositorio-miguel.git                       
+cat .git/config       #me sale el remote origin y el remote github
+git log               #
+(origin/main, origin/head)  
+                      #este es el repositorio remoto
+                      #como puedo cambiar de un remoto a otro remoto 
+git remote set-url github https://github.com/repositorio-miguel.git
+git remote -v         #mirar eue remotes tengo
+                      #me lista varios remotes
+                      #como puedo yo hacer un push a ambos 
+git reset --hard      #Voy a resetear un poquito el tema.
+git log
+touch demo.txt        #creamos un nuevo fichero
+git add demo.txt
+git remote set-url --add origin --push all              
+git remote set-url --add github --push all              
+                      #ya he creado los remotes
+git push all          #
+error                 # no has creado en los remotes la rama main
+                      #salio mal era un imprevisto 
+                      #vamos a crearnos un tag 
+git tag -a v1.1 -m "Version 1.0" b23b43a4b5
+                      :id del commit (b23b43a4b5) al que etiquetearemos                     
+git push origin v1.0  #
+vi .git/config        #elimina pushurl: all
+git push origin v1.0  #lo estoy enviando a gitlab
+usuario               :gitlab
+contraseña            :gitlab
+error                 #no tengo el token, lo habia eliminado
+                      #pero ahora si me esta dejando enviar a los diferentes destinos de remotos
+git push github v1.0  #enviar el repo al remoto diferente de gitlab                      
+                      #si se puede trabajar con multiples remotes 
+                      #pero no es lo mas normal
+                      #clonar repo privado de github en gitlab, solo con credenciales.
+rm -rf .git           #desgitializar un proyecto: es un proyecto no git.    
+ls -altr              #
+git init --initial-branch=main .
+                      #convertir un proyecto no git en un proyecto git
+                      #si no le ponemos (--inicial-branch=main) nos va aponer una rama master
+error                 #la version de git es antigua no me dejo                      
+git init .            #gitializar un proyecto
+git switch -c main    #es axatamente igual al que dio error
+git remote add origin https//reporeciencreadoGitLab.git 
+                      #meter un nuevo remote por norma general es origin 
+                      #va a ser el origen de todos los cambios en un servidor central 
+git add .
+git commit -m "Meto todo en git"                      
+git log
+git push -u origen main 
+                      #a mi rama main de mi repositorio remoto
+                      #en la que estoy actualmente
+user_name             :Gitlab
+password              :GitLab :TOKEN-ACCES, pongo mi token de acceso personal en gitlab.
+                      #copiar y pegar 
+                      #y ya esta
+                      #he conseguido poner en gitlab un codigo fuente que no estaba gieitizado.
+                      #despues de hacer esto ya puedo trabajar con esto 
+                      #ya tengo aui toda la historia
+                      #recapitulacion:
+                      #creamos cuenta en gitlab
+                      #creamos varios repositorios remotos 
+                      #usando url, en blanco, identificandonos directamente en github
+                      #Hemos explorado repositorio github desde gitlab
+                      #hemos clonado los repositorios a nuestra maquina usando la lines de comandos
+                      #hemos subido un proyecto nuevo al repositorio (fecth, pull)
+                      #hemostrabajado con ficheros gitignore.
+                      #nos quedaria
+                      #como trabajar con un cliente grafico un repositorio remoto
+                      #con la herramienta FORK
+                      #para esto el token debe tener mas permisos
+                      #opciones: API, y las de mas en: on
+                      #desde fork, ahora si.
+                      #visual estudio code tambien lo puedes usar como cliente git.
+                      #estos conceptos son extrapolables a cuanquier otro servidor
+                      #gitbucket, gitgea, gitlab, github, etc.
+                      #un github instalado de manera local mediante doker.
+                      #a practicar mucho y sobretodo a disfrutarlo.
+>                     #final del video time: 1:20:36 / 1:20:36 , link: https://www.youtube.com/watch?v=sTUC6G_UZ3A&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=5 
+                      #Titulo: 5 Repositorios remotos - Curso Git - OpenBootcamp
+                      #
+#:39) 03/09/2023      #, hora de inicio: 8:-- am, hora de fin: 9:-- am,  sesion de estudio/practica: GIT, +Descripcion:     
                       #
 git push origin fix-docs      
 gitlab.com            #ahoora si pyedo ver la rama en el repositorio remoto
