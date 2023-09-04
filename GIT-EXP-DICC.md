@@ -58,13 +58,151 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
-
+                      #
 
 
 ->>>
-
-
-#:40) 04/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                           
+                      # 
+#:41) 05/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                           
+                      #
+                      #CONFLICTOS en git
+                      #cambios que se hacen en git 
+                      #que no nos permiten hacer un merge
+                      #como recuperar versiones anteriores
+                      #como manipular parcialmete el historial para llegar a una version previa al estado en donde nos encontremos 
+                      #vamos a generar los conflictos de tres formas 
+                      #repositorio local 
+                      #lugo en el repsositorio remoto 
+                      #veremos como generar y como resolver conflictos tanto en github como en gitlab (son los principales esenarios de uso)
+                      #creo una serie de commits(3) en la rama main
+                      #y en un momento determinado decido crear una rama posterior al ultimo commit
+mkdir repositories   
+cd    repositories   
+git init --bare miapp
+cd ..
+git clone /users/vroman/repositories/miapp
+cd miapp              :ya estoy en el repositorio
+git:(master)         
+touch mensaje.txt 
+git add mensaje.txt
+git commit -am "mensaje.txt" 
+git log --oneline | cat   
+                      #Hemos partido de nuestra ramo inicial de la cual no tenemos nada 
+                      #ahora ya estamos en el segundo commit en el que ya tenemos 
+                      #mensaje.txt
+vi mensaje.txt        :
+hola mundo            :linea de texto
+adios personitas      :otra linea de texto                      
+git commit -am "añado texto"
+git log               : ya estoy en mi tercer commit
+git checkout -b minuevaRama 
+                      :por alguna razon decido crear mi nueva rama
+vi mensaje.txt        :hola mundo amorozo
+git commit -am "modifico el texto" 
+git push              :lo envio al repositorio remoto, al central "--bare"
+error                 :
+git push --set-upstream origin minuevaRama
+                      :hacemos esto porque no hemos fijado la rema principal 
+git checkout master   :vuelvo a la rama master 
+git merge minuevaRama :y la rema se ha vuelto a fusionar 
+                      #y no hay ningun conflicto(problema)                      
+                      #CUANDO SE GENERA EL CONFLICTO
+git checkout -d minuevaRama 
+                      :hemos borrado la rama                      
+git checkout -b rama2
+vi mensaje.txt        :hola mundo amorozo hoy hace frio, lo midifico en mi rama2
+git commit -am "mas cambios"                      
+git checkout master 
+ls
+vi mensaje.txt        :con el texto previo al de la rama 
+                      #y lo voy a modificar en mi rama master
+                      #hola mundo bonito 
+git commit -am "mensaje mas dulce"                       
+                      #que pasa ahora si yo hago un git merge.
+git merge rama2                       
+                      #CONFLICTO (PROBLEMA)
+                      #tenemos un conflicto porque en dos ramas diferentes hemos modificado el mismo fichero 
+                      #y no solamente hemos modificado el mismo fichero 
+                      #sino que dentro del mismo fichero 
+                      #hemos modificado la misma linea
+                      #los conflictos ocurren cuando:
+                      #Modificamos las mismas lineas de los mismos ficheros 
+                      #en dos o mas ramas 
+                      #o bien: no hemos obtenido los ultimos cambios  
+                      #de nuestro origin si estamos utilizando remote
+                      #y modificamos cirtas lineas de ciertos ficheros 
+                      #que ya han sido modificados mas arriba en nuestro origin osea tienen mas avance que el repo local 
+                      #como se solventa un conflicto de este tipo
+git status            :nos identifica cuales son los que tienen el conflicto 
+                      #ambas ramas han modificado el mismo fichero 
+                      #para soventar el conflicto 
+                      #voy a tener que editar el fichero 
+vi mensaje.txt        #muestra lineas ===========
+                      #y <<<<<<<<<< HEAD
+                      #Y >>>>>>>>>> RAMA2
+                      #aqui yo tengo que decidir con que cambios me voy a quedar 
+                      #con cual cambios me quedo con los de arriba rama HEAD
+                      #o con los de la rama RAMA2, los de abajo
+                      #esta es la forma en la que git nos presenta los conflictos 
+                      #como eligo una de otra, segun mi criterio
+                      #yo tendre que eliminar todos los cambios que no quiera
+                      #desde la linea de simbolo ============
+                      #hasta donde termina esta rama
+                      #es decir solo tengo que dejar el cambio que me interece
+:set nu               :instruccion en vi para enumerar lineas
+                      Borraremos las siguientes lineas
+1 <<<<<<<<< HEAD
+2 hola mundo bonito
+3 =========
+4 hola mundo cruel, hoy hace frio 
+5 >>>>>>>>> RAMA2                     
+6 adios personitas
+                      #Lineas aborrar: 1,3,4 y la linea 5  
+                      #solo dejo el cambio que me interesa
+1 hola mundo bonito
+2 adios personitas                      
+:wq                   :guardar y salir de vi
+git commit -amm "solvento el conflicto"
+git log               : ya se solvento el conflito 
+git push              :lo mando al origin, mi repositorio remoto
+                      #este promeblema se pude dar tambien en el caso:
+                      #que este trabajando con un repo remoto origin
+                      #en el cual hay cambios 
+                      #pero que yo no tengo en el mio 
+                      #y en el mio he modificado las mismas lineas de los mismos ficheros 
+                      #cuyos cambios esta en el remoto que no he obtenido 
+git branch -a         : visualizar las ramas que tengo 
+                      #voy a eliminar la rama2                      
+git branch -d rama2   :eliminar rama2
+                      #vuelvo a clonar este repo pero en otra carpeta, usando dos ventanas, simulando dos usurios
+clear                       
+git clone /users/vroman/repositories/miapp miapp2
+cd miapp2
+clear
+vi mensaje.txt        : hola mundo
+git commit -am"quito texto"
+git push              : lo envio a un repositorio general
+                      #ahora en mi primera copia de trabajo usuario 1, ventana 1
+                      #en la que no he obtenido los ultimos cambios del origin (pull)
+                      #no he hecho ni un fetch ni un pull
+ls      
+vi mensaje.txt        #edito el mismo mensaje que esta: hola mundo bonito 
+                      #y le pongo hola mundo cruel    
+:wq                    
+git commit -am "puedo commitearlo"    
+                      #no me suelta ningun problema 
+                      #hay dos faces en git, 
+                      #cuando enviamos a nuestro repositorio local 
+                      #y la otra face cuando enviamos a nuestro repositorio remoto 
+git fetch             #obtenemos metadatos del origin, servidor remoto del repo 
+cat mensaje.txt       #sigo obteniendo el mismo mensaje en ambos usiarios 
+                      #pero si hago un git push
+git push              #CONFLICTO
+error                 #merge CONFLIC, no me deja hacer el git push
+>                     #final del video time: 12:27 / 2:03:15 , link: https://www.youtube.com/watch?v=FaHQpX32rjs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=6 
+                      #6 Conflictos - Curso Git - OpenBootcamp
+                      #
+#:40) 04/09/2023      #, hora de inicio: 4-:-- pm, hora de fin: 5-:-- pm,  sesion de estudio/practica: GIT, +Descripcion:                           
                       #
                       #gitignore examples
 https://github.com/github/gitignore                      
