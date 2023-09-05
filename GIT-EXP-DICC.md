@@ -61,9 +61,123 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
                       #
 
 
+
 ->>>
-                      # 
-#:41) 05/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                           
+                      #
+#:42) 05/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                           
+                      #
+                      #Conflictos en git 
+git push                      
+                      #cambios han sido rechasados 
+                      #porque su rama actual esta detras de su contraparte.
+                      #tus cambios se han rechasado 
+                      #porque tu ramam master actual 
+                      #esta por detras de la ramam master del repositorio central
+                      #tu rama esta desactualizada
+                      #porque otro señor ya habia hecho un push al repositoio previamente
+clear                      
+                      #para obtener nuestros cambios del remoto
+                      #la situacion es que primero debemos hacer un git pull primero
+                      #para obtener los ultimos cambios del repo
+git pull              #ha intentado auto merger el mensaje.txt 
+error                 #pero ha fallado
+                      #que arreglemos los conflictos
+                      #y luego enviemos el resultado 
+vi mensaje.txt        #lo mismo de antes:                      
+1 <<<<<<<<< HEAD
+2 hola mundo bonito
+3 =========
+4 hola mundo cruel, hoy hace frio 
+5 >>>>>>>>> RAMA2                     
+6 adios personitas   
+                      #Voy a quedarme con este cambio:
+1 hola mundo bonito
+2 adios personitas                         
+:wq                   #guardar cambios y salir del editor VI
+git push              #intento hacer un git push
+error
+git pull
+error                 #tengo que arreglarlos en mi repositorio actual
+cat mensaje.txt
+1 hola mundo bonito
+2 adios personitas    #ya esta hecho
+git add mensaje.txt   #es lo que hacia falta
+git status            #ahora me dice que las ramas han diferido 
+git commit -am "arreglo el conflicto" 
+git push             #y ahora si que me deja. 
+ok
+                     #
+git pull             #conflicto 
+git status           # me mustra cual es el que tiene el conflicto 
+vi mensanje.txt      #dos conflictos en dos partes diferentes 
+                     #es lo mismo simplememte eliges cual quieres de los confictos 
+git commit -am "arreglo de los conflictos(problema)"                     
+git push
+                     #otro ejemplo
+vi mensaje.txt       :hago cambios
+git commit -am "test"
+git push             :ok
+vi mensaje.txt       :en el otro cliente, hago cambios 
+git commit -am "cambios"
+git push             :error has primero un git pull y a qui tenemos 
+                      #un merge conflic
+touch hola.c
+git add hola.c
+git commit -am "meto hola.c"
+git push               #teniendo un merge config y funciono.
+                       #como podemos abortar los merge conflic
+git status             #nos ha dejado, no tenia porque dejarnos 
+vi mensaje.txt         #sigue el conflicto en el archivo                        
+git merge --abort      #eliminar el merge de conflicto, el caso es que no debio de habernos comiteado
+git pull
+ls
+vi mensaje.txt         #hago los arreglos de todas formas 
+git commit -am "merge"
+git push 
+                        #cambio los datos en el otro cliente
+vi mensaje.txt
+git commit -am "test"                        
+git push                #error
+git pull                #error conflicto 
+                        #en este caso vamos a abortar el merge.
+git status              #tienes cosas que no estan fusionadas
+git merge --abort 
+ls 
+git mensaje.txt         #se va a quedar como estaba (resetea borra los cambios recientes)
+git pull                :conflicto 
+git add mensaje.txt 
+git pull                #error no has terminado tu merge
+                        #has metido algo a tu stage area pero no has commiteado
+                        #porfavor commitea tus cambios 
+git commit -am "arreglo esto"                        
+git push                #ok 
+                        #no pedemos dejar un merge
+                        #pero ya no es un merge conflic y el usuario tiene que corregirlo a mano
+                        #si no esncotramos con esto lo mas normal es arreglarlo
+                        #escoger los cambios que queremos y listo el lio
+vi mensaje.txt          #
+git commit -am "arreglo lio de merge sin conflicto"                         
+                        #cuando git nos dice que tenemos un conflicto 
+                        #tenemos dos opciones 
+                        # 1 arreglarlo 
+                        # 2 arreglarlo 
+                        # no se contempla otra opcion
+                        #si no cuando otro usuario entre al repositorio se va encontrar con estos problemas
+                        #que han sido ignorados y no resueltos 
+                        #y a a tener que editarlos 
+                        #y se va a enfadar 
+                        #Estos son los conflictos en git resultos en la linea de comandos 
+github y gitlab.com     #haremos lo mismo en gitlab usando la herramienta grafica
+compare and pull request
+                        # es la opcion de fusionar esos cambios en github, merge
+gitlab.com              #merge request es igual a un pull request
+                        #el editor de gitlab es ma visual mas comodo
+                      #seleccionas lo cambios que te interesan con clic
+                      #y ahora ya se habilita el boton merge
+>                     #final del video time: 51:17 / 2:03:15 , link: https://www.youtube.com/watch?v=FaHQpX32rjs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=6 
+                      #6 Conflictos - Curso Git - OpenBootcamp
+                      #
+#:41) 04/09/2023      #, hora de inicio: 8-:-- pm, hora de fin: 9-:-- pm,  sesion de estudio/practica: GIT, +Descripcion:                           
                       #
                       #CONFLICTOS en git
                       #cambios que se hacen en git 
