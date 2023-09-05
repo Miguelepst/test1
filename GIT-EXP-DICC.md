@@ -59,10 +59,139 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
                       #
-
+#:44) 06/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                       
+                      #
 
 
 ->>>
+#:43) 05/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                 
+                      #como veis 
+                      #RESOLVER CONFLICTOS 
+                      #"es mucho menos complicado"
+                      #de lo que apriori puede parecer 
+                      #tenemos dos versiones 
+                      #esas dos versiones 
+                      #de esas dos versiones elegimos la que nos interese 
+                      #eliminando el contenido intermedio de la que no
+                      #una vez que lo hemos hecho simplemente hacemos un commit 
+                      #hacemos un push 
+                      #y estaria resulelto.
+                      #no es complicado 
+                      #hay muy mala fama respecto a esto "a que es muy dificil resolver sonflictos en git"
+                      #pero no, para nada 
+                      #boton commit merge solo aparece hasta que resuelvas todos los conflictos
+                      #Recuperar versiones anteriores de algunos cambios 
+git log               #lista los cambios en la rama en la que estoy
+git branch -a         #lista las ramas que hay 
+git checkout rama3    #me cambio a la rama 3
+git log               # git log de la rama 3                      
+git checkout main 
+git log --branches='*' 
+                      :desde la rama main ver todos los cambios de todas las ramas
+git log --branches='rama2'
+                      :desde la rama main solo quiero ver los cambios de la rama2
+git log --branches='*' --oneline
+                      :visuliza en formato mas corto los cambios de todas las ramas 
+                      #es importante que el titulo sea bien descriptivo del commit
+                      #para poderlo identificar facilmente en una sola linea desde el la bandera --oneline
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+                      :formatear la presentacion del listado de cambios 
+git log --graph --pretty
+                      :Hechale una mirada 
+git log --graph --pretty=format:'%an' 
+                      #listar autor del codigo                      
+git log --graph --pretty=format:'%an %ae'
+                      #listar autor del codigo con su email
+git log --graph --pretty=format:'%an <%ae>'                      
+                      #mas formato <email del autor>
+                      # para mos trar los logs de la forma que mas hoz guste
+clear 
+pwd
+git log --oneline
+open .                #abrir carpeta entorno gracifo linux                      
+git checkout id_commit_concreto 
+                      :me cambio de rama, he ido a un commit previo 
+detaHEAD              :significa que mi commit principal esta en otro sitio 
+                      #que me he ido a otra parte del repositorio en el pasado diferente al HEAD en mi repositorio local 
+                      #cual quier cosa que yo haga en una ubicacion detaHEAD
+                      #sera eliminada por el recolector de basura de git 
+                      #es decir yo yo hago commits o añado ficheros en un detahead 
+                      #eso no va ir a ninguna parte se considererian commits huerfanos 
+                      #si yo quiro tener un repositorio como estaba en este commit del pasado detahead
+git checkout id_commit_concreto 
+                      #debo de checquearlo 
+git(id_commit_concreto)                      
+git checkout -b ramaprevia_al_fallo                       
+                      :y acontinuacion crear una rama como la queramos llamar                       
+git(ramaprevia_al_fallo)                      
+git checkout main 
+git(main)              :aqui nos aparece el fichero 
+                       #no borra el error, pero si sobre pone un commit con la correccion de este commit
+                       #pero el error sigue estando en el historico de git 
+fork .                 :veamoslo con el entorno grafico git de fork
+                       #Suposiciones cuando yo me he equivocado en algun commit 
+                       #como lo corrijo 
+                       #como revertir un cambio o un commit
+git(miramita)                       
+git log --oneline 
+cat demo.py                       
+git revert id-commit   #Update demo.py
+error                  :no puedo revertirlo porque tengo un conflicto
+vi demo.py             :elijo la version con la que me quiero quedar
+git log
+git commit -am "test"
+                        #con el git revert 
+                        #puedes desacer hacia atras todos los commits 
+                        #revertir un commit no elimina informacion tampoco 
+                        #desacer los cabios que ha introducido ese commit 
+                        #pero ese commit seguira existiendo
+                        #se genera un contra commit un commit nuevo 
+                        #que cotiene lo opuesto al commit que quiero revertir 
+git pull                         
+git checkout main
+git(main)
+git log --oneline | cat | head -n 5 
+                        #listar los ultimos cinco commits
+git revert id-commit    #revierto el commit deseado 
+git log --oneline | cat | head -n 5 
+                        #el commit sigue existiendo pero hay un commit revert 
+                        #con la correccion del rivert que le sobre pone.                        
+                        #cuando trbajamos en open source 
+                        #lo normal es que se haga un git revert 
+                        #se pueden desacer multiples commits con el git revert 
+                        #siempre del ultimo hacia atras
+                        #desde el posterior al anterior 
+git revert id-comit7 id-commit6 id-cimmit5 -n 
+                        #(-n) a un no ha generado el commit de reversion                          
+                        #pero los cambios se han aplicado 
+                        #como ya estoy seguro de lo que quiero hacer 
+                        #ahora si hago un git commit
+git commit -am "termino la reversion"                        
+                        #git revert desase a nivel de ficheros 
+                        #pero los cambios siguen existiendo, los commits siguen existiendo  
+                        #es decir la informacion sigue sin eliminarse
+                        #esto nos permite tener un historial completo y asi saber que ha pasado 
+                        #si lo que queriamos era eliminar el fichero clave.txt 
+                        #no esta no es la forma 
+                        #esta es la forma de desacer cambios no de eliminar ficheros 
+                        #en git habitualmente decimos lo que se mete en el index 
+                        #se queda en el index 
+                        #lo que se mete en git  
+                        #se queda en git
+                        #podemos reverti cosas pero no es tan sencillo eliminarlos 
+git commit --amend      #puedo cambiar el ultimo mensaje
+                        #puedo modificar los datos del ultimo commit 
+git config --local user.name "pepe botellas"                        
+git commit --amend --reset-autor
+                        # lo comiteo
+git log                 # ma ha actualizado el autor del ultimo commit                         
+git push https://$TOKEN...   nombre-de-la-rama
+                        #cuando haces un push a la rama main
+                        #no es necesario colocar el nombre de la rama al final                      
+git push https://$TOKEN...   
+                        :push a la rama main
+>                     #final del video time: 1:28:37 / 2:03:15 , link: https://www.youtube.com/watch?v=FaHQpX32rjs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=6 
+                      #6 Conflictos - Curso Git - OpenBootcamp
                       #
 #:42) 05/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                           
                       #
