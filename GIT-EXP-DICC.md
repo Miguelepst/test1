@@ -1,5 +1,10 @@
 instantáneas de los cambios, Lo mas reciente arriba "HEAD" - Lo mas antiguo en lo profundo al fondo.
-(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor (donde estoy), (>) pausas
+(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (
+  
+
+
+
+) cursor (donde estoy), (>) pausas
 Comando               #Explicaion -->  (alt+z: linea sin salto de linea)
 
 
@@ -58,12 +63,270 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
-                      #
-#:44) 06/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                       
-                      #
+
 
 
 ->>>
+#:45) 07/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                             
+git flow              #FLUJO DE TRBAJO MAS COMUNMENTE UTILIZADO EN GIT "GIT FLOW"
+                      #7 Gitflow - Curso Git - OpenBootcamp
+                      #link:https://www.youtube.com/watch?v=JwxpG5weehs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=7
+                      #¡Bienvenido al curso de Introducción a Git!
+                      #
+                      #¿Te gustaría aprender a manejar tus proyectos 
+                      #de desarrollo de software de manera eficiente y colaborativa? 
+                      #Git es la herramienta que necesitas. 
+                      #En este curso, te guiaremos a través de los fundamentos de Git, 
+                      #el sistema de control de versiones más popular y ampliamente utilizado.
+                      #
+                      #Aprenderás cómo configurar y utilizar Git en tus proyectos, 
+                      #controlando el historial de cambios, 
+                      #creando ramas, fusionando código 
+                      #y colaborando con otros desarrolladores de manera efectiva. 
+                      #Ya sea que trabajes en proyectos personales o en equipos grandes, 
+                      #Git te permitirá mantener un flujo de trabajo ordenado 
+                      #y facilitar la colaboración en tus proyectos.
+                      #Con ejemplos prácticos y escenarios reales, 
+                      #adquirirás las habilidades necesarias 
+                      #para gestionar tus repositorios y proyectos como un profesional. 
+                      #Además, aprenderás a utilizar plataformas de alojamiento 
+                      #como GitHub o GitLab para compartir tu trabajo 
+                      #y contribuir a proyectos de código abierto.
+                      #                      
+                      #¿Listo para dar el control total a tus proyectos de desarrollo? 
+                      #¡Únete ahora y descubre cómo Git 
+                      #puede optimizar tu flujo de trabajo 
+                      #y hacer que trabajar en equipo 
+                      #sea más sencillo que nunca! 🚀📂💻
+                      #
+                      #Autor: Víctor Román Archidona
+                      #Canal oficial:   
+                      #
+                      #/ @victorromanarchidona  
+                      #Twitter: https://twitter.com/@vroman
+                      #Web: https://www.victorroman.es
+git flow              #flujo de trabajo(modelo, especificacion)
+                      #Tiene muchisimas ramas
+1.master              :este modelo, esta especificacion inicia de una rama inicial llamada master(hoy en dia MAIN)
+                      #inicia con la etiqueta (tag) v0.0.1
+5.hotfixes            :son ramas especiales, son creadas cuando hay un bug en la rama MAIN(master)
+                      #cuando nuestro codigo a salido a produccion y de repente nos damos cuanta que hay un bug importante
+                      #y no podemos seguir todo el work-flow, en estos momentos un hot-fix 
+                      #es un cambio urgente, los cambios urgentes se bifurcan de la rama MAIN tambien 
+                      #creamos una nueva rama de la rama main hot-fix-1
+                      #corregimos en la rama de hot-fix-1 el fallo  
+                      #y este fallo lo vamos a enviar a dos partes 
+                      #tanto a la rama develop para que se integre nuestra correcion al modelo de desarrollo (flujo normal)
+                      #y lo enviaremos a la rama MAIN para que se integre en la cadena de produccion
+                      #y automaticamente debemos tagearlo al fusionarlo con nuestra rama principal v1.0.1
+                      #el paso siguiente al git merge va a ser el git tag, siempre tenemos que tagear (tag, etiquetar) 
+4.release branches    :para paso a produccion, cuando vamos a lanzar una version al exterior del proyecto, v1.0.0
+                      #es el momento en donde tenemos que estabilizar el codigo 
+                      #en esta rama solo vamos a meter bug-fixes, no vamos a meter nueva funcionalidad 
+                      #el codigo de esta rama es un codigo que esta prerandose para su salida al mercado 
+                      #para produccion, si encontramos un fallo en la rama de release 
+                      #este fallo se corrige inmediatamente en esta rama release 
+                      #y al mismo tiempo lo comitearemos en nuestra rama develop 
+                      #es decir lo que arreglamos en la rama release 
+                      #tambien se integra en la rama develop, por ejemplo con cherry pick
+                      #nuestra rama develop sigue avanzando, nuestra rama release sigue avanzando tambien 
+                      #llega un momento en el que nuestra rama release 
+                      #es lo sificientemente estable como para considerarlo listo 
+                      #en este momento fusionamos nuestra rama release con nuestra rama MAIN
+                      #y en este momento que se produce esta fusion en la rama master 
+                      #automaticamente debemos tagearlo ponerle una etiqueta v1.0.0 
+2.develop             :es la segunda rama creada inmediatamente despues de la etiqueta (tag) v0.0.1 de la rama main
+                      #su origen es la tag v0.0.1
+                      #apartir de este momento en la rama develop 
+                      #es donde va a ocurrir todo el grueso de nuestro desarrllo
+                      #cada vez que hagamos commit lo vamos hacer en nuetra rama de desarrollo
+                      #es la rama de desarrollo continuo 
+                      #es donde vamos a ir haciendo cosas continuamentes 
+                      #de esta rama develop salen otras ramas:feature branches 
+3.feature branches    :Es la tercera y cuarta rama creada apartir de la rama develop 
+                      #y son las ramas de caracteristicas 
+                      #ejemplo: estamos haciendo un portal web, 
+                      #un portal web es muy basico y de un momento a otro 
+                      #queremos implementar autenticacion en nuestro portal (un sistema de login)
+                      #creamos un rama feature-lo-quesea (feacture-login) 
+                      #esta rama surge de devolop y se desarrolla en paralelo a la rama develop
+                      #llegar un omento en el que nuestra rama feacture-login 
+                      #sea lo demasiado madura para poder fusionarla con nuestra rama develop
+                      #ojo siempre la fusionaremos con nuestra rama develop, nunca sobre nuestra rama principal 
+                      #una nueva feacture que implementara un registro de auditoria 
+                      #feacture-audi, trabajamos almismo tiempo que develop 
+                      #llega un momento en el que volveremos a fusionar feacture-audi con la rama develop 
+                      #llegara el momento en el que tendremos que prepararnos 
+                      #para el lanzamiento de una version 
+                      #en este momento de la rama develop saldra una nueva rama
+                      #se crea una nueva rama llamada release 
+                      #en el momento en el que vamos a realizar 
+                      #el lanzamiento de una version del portal web
+                      #estas ramas release se utilizan 
+                      #para preparar una salida de version 
+                      #un paso a produccion si queres decirlo de esta forma
+                      #
+                      #el paso es el siguiente:
+                      #desarrollamos en la rama develop 
+                      #añadimos las nuevas feactures a develop desde las ramas feactures 
+                      #la rama develop la convertimos en una rama de release 
+                      #si ubiera cambios en release fusionamos los cambios con la rama develop nuevamente
+                      #cuando nuestra rama release esta lista la fucionamos en la rama MAIN (master)
+                      #y al fusionarla con la rama master creamos un tag con el nuemro de commit de la fusion v1.0.0
+                      #
+                      #en que casos crearemos unas ramas adicionales "hotfixes"
+                      #
+                      #-
+                      #git-flow (el modelo de ramificación presentado en este artículo) 
+                      #se ha vuelto enormemente popular en muchos equipos de software 
+                      #hasta el punto en que la gente ha comenzado a tratarlo como una especie de estándar
+                      #Un modelo de ramificación de Git exitoso
+                      -#
+                      #
+                      #este modelo alprincipiopuede asustar un poco 
+                      #pero realmente es muy sencillo de entender 
+                      #
+                      #git permite utilizar este flujo de trabajo 
+                      #utilizando la extension git flow
+                      #se puede instalar en windows, mac, linux
+                      #no ostante si no quieres usar la herramienta git flow
+                      #se puede crear y usar git work flow con los comandos que ya conocemos
+                      #verificar si tienes git flow integrado en windows 
+git flow  
+git flow version      #1.12.3 (AVH Edition), si esta incomporado en git              
+>                     #video time: 13:06 / 53:56 , link: https://www.youtube.com/watch?v=JwxpG5weehs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=7 
+                      #7 Gitflow - Curso Git - OpenBootcamp
+                      #
+bck-i-search:         #(Ctrl + r) busqueda de comandos en historial consola, auto completa comando ya ejecutados del historico 
+                      #se activa co las teclas (Ctrl + r)                      
+bck-i-search: gi_     :ejemplo
+                      #
+#:44) 06/09/2023      #, hora de inicio: 5-:-- am, hora de fin: 6-:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                       
+                      #
+git clean -n          #limpiar zona de trabajo 
+                      #flag(-n) me visualiza que va a eliminar, sirve para probar que pasaria 
+git clean -f          #si lo quiero eliminar de verdad  
+                      #(-f) para forzar 
+git clean -f          # (-i) atravez de un mensaje te texto nospermite decidir que borramos y que no borramos                                           
+                      # opcion 3, elimino la opcion 1
+git reset             # el comando de comandos el mas peligroso de todos, este si manipula el historial
+                      #nos mueve un punto atras en el tiempo pero machacando a el historial 
+                      #similar a los checkout y los revert pero estos no machacan a el historial
+                      #las tres opciones de git reset 
+--soft                #trabaja afuera del stage area        
+--mixed               #trabaja en el stage area 
+--hard                #trabaja dentro del repositorio  
+                      #coniciden con los arboles de git 
+                      #primer arbol es el: HEAD 
+                      #segundo arbol de git: stage area 
+                      #y el tercer arbol es el repositorio en si (donde estan los commits)
+git ls-files --stage  : para ver lo que hay en el stage area 
+git reset --hard      :es la mas usada de todas 
+                      #vuelve a la carpeta en el estado en el que estaba, cuando hise mi ultimo pull
+git reset --hard      #tambien podemos destruir la historia                       
+git log --oneline 
+git pull 
+git reset --hard id-commit 
+                      :este reset ha destruido ficheros con su historial posteriores a el.
+                      #ubicandoce en el commit principal el id-commit 
+                      #los otros que estaban mas recientes al head se han elimidado 
+                      #y este commit se ha convertido en el HEAD de mi repositorio
+                      #ha destruido todo lo que ha pasado posteriormente a ese id-commit 
+                      #esto esta muy mal visto en un repositorio remoto 
+git push https://repo.git
+error                 :cambios han sido rechazados porque la cima de tu rama actual 
+                      #esta por detras de su contraparte remota 
+                      #esto es: mi ultimo commit es muy inferior al ultimo commit que tengo en github
+git push https://repo.git  -f 
+                      :como soy un tio listo ledigo que lo fuerce 
+                      #hacer que un commit se haga de manera forzada                      
+git clone             #repositorio nuevamente
+                      #el head es el mismo del id-commit
+                      #tambien he destruido las cosas remotas que han pasado en el local 
+                      #he podido destruir fusiones de ramas, commits de reverts, 
+                      #commits que tengan funcionalidad 
+                      #por eso es muy peligroso que utilicemos el: 
+git reset --hard      #sobre un repo remoto no se utiliza
+                      #situacion exepcional eliminar un fichero 
+                      #que no queriamos que estubiera en un repositorio publico 
+                      #ejemplo el repositorio de claves.txt
+                      #y no seria tan sencillo de hacer
+                      #loprimero es que hiciera 
+                      #un checkout despues de ese checkout a ese commit 
+                      #hiciera un cherry py de todos los commits posteriores 
+                      #que crease una nueva rama la fusionase 
+                      #y luego resetease la principal  
+                      #es jaladillo 
+                      #pero de existir existe
+                      #hay otros git reset
+git reset --mixed     #es el segundo mas potente 
+                      #es equivalente al hacer el gir reset por defecto
+git reset             :es igual a: git reset --mixed
+                      #es el git reset por defecto  
+                      #este trabaja sobre nuestra stage area 
+git reset                       
+                      #ya no aparece como stageado 
+                      #elimina todo lo que esta en el stage area, es lo contrario add . que no este confirmado
+                      #su ventaja es que no elimina mi trabajo en mi carpeta
+git reset --soft      :el menos utilizado: no toca el stage area y no toca el directorio de trabajo                      
+                      :el --HARD, tacaba el repositorio el disco y el stage area 
+                      #el mixed solo tocaba el stage area
+                      #el soft es el mas debil no toca el estage area, no toca el disco, no toca el repositorio con sus commits
+git ls-files -s       #visualiza lo que tengo en mi stage area 
+git reset --soft id-commit     
+                      #solo mueve el commit de head(cabecera) al commit actual         
+                      #y nos muestra el estado del commit al que nos hemos movido 
+                      #es como mover el historico ahi pero sin cambiar de ramas 
+                      #su uso es raro
+                      #en git podemos hacer limpieza de multiples tipos 
+                      #una vez esta en el historico de confirmaciones 
+                      #se queda en el historico de confirmaciones 
+                      #si nos equivocamos 
+                      #un git reset hard va a ser casi nuestra unica opcion 
+                      #git nos permite dejar de trazar un fichero 
+                      #como le digo a git que no quiero seguir trazando un fichero 
+git rm mensaje.txt
+git status            #pone delete
+                      #este fichero ya esta marcado para eliminacion
+git commit -am "elimino mensaje.txt"                                            
+                      #ahora si el fichero ha sido eliminado 
+                      #ya no esta en mi disco duro y tampoco esta en git
+                      #aun esta en el remoto porque no se ha hecho un push
+git push 
+                      #ahora si ya esta eliminado tambien en el repo remoto 
+                      #git aunque ya no trace ese fichero si lo habia trazado previamente 
+                      #y posee el contenido del fichero en su historico 
+                      #solo que aqui murio este archivo ya no se seguira publicando 
+                      #recapitulando:
+                      #hemos generado conflictos 
+                      #clonamos un repositorio en dos carpetas diferentes 
+                      #en cada una de esas carpetas hemos editado el mismo fichero
+                      #en esos mismos ficheros hemos editado las mismas lineas 
+                      #merge conflic
+                      #git reset --hard no expande el historial, lo elimina y su contenido el todas las areas 
+                      #los diferentes a este si expanden el historial, 
+                      ej git revert, es como uns especia de contra commit que anula a el commit anterior
+                      #Si quisieramos eliminar realmente un fichero en un repositorio:
+                      #git reset --hard para restablecer todos aquellos commits que insertenficheros que no querramos 
+                      #por ejemplo un fichero de claves, seria vastante compiclado de eliminar
+                      #priemro se haria un git checkout al commit 
+                      #que insetaba esa fichero de claves a nuestro repositorio 
+                      #dentro de nuestra rama hacer un git cherry pick 
+                      #para escojer todos los commits posteriores (haciendo una especide backup de estos commits)
+                      #al commit que introdujo ese fichero 
+                      #por ultimo irnos a la rama principal 
+                      #hacer un git reset --hard hasta el commit 
+                      #sobre el cual previamente hemos bifurcado 
+                      #y por ultimo vamos hacer una fusion de ramas 
+                      #con un git merge, sobre la rama que hemos creado 
+                      #del commit anterior al que contenia el fichero de claves 
+                      #y que hemos creado en el primer paso de este hito 
+                      #no lo hemos hecho podemos dejarlo como un ejercicio vastante interesante 
+                      #para que intenteis resolver 
+                      #en git es facil meter pero sacar eliminar realmente no es su fuerte no es su mision.
+>                     #final del video time: 2:03:14 / 2:03:15 , link: https://www.youtube.com/watch?v=FaHQpX32rjs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=6 
+                      #6 Conflictos - Curso Git - OpenBootcamp
+                      #
 #:43) 05/09/2023      #, hora de inicio: --:-- am, hora de fin: --:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                 
                       #como veis 
                       #RESOLVER CONFLICTOS 
