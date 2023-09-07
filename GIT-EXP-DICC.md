@@ -1,10 +1,5 @@
 instantáneas de los cambios, Lo mas reciente arriba "HEAD" - Lo mas antiguo en lo profundo al fondo.
-(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (
-  
-
-
-
-) cursor (donde estoy), (>) pausas
+(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor (donde estoy), (>) pausas
 Comando               #Explicaion -->  (alt+z: linea sin salto de linea)
 
 
@@ -63,11 +58,107 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
-
-
+                      #integracion continua, deve estar versionado
 
 ->>>
-#:45) 07/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                             
+#:46) 07/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                             
+                      #
+git flow init 
+main                  #com ose va a llamar la rama master, la rama principal: main "es lo comun"
+develop               #como se va a llamar la rama de desarrollo
+feactura              #rama de caracteristicas nuevas                      
+realease              #como vamos a llamr la rama de release, la de versiones publicas 
+hotfix                #como vamos a llamar la rama de hotfixes 
+sopport               #como vamos a llamr las ramas de sopor
+prefix:               #que prefijo para las versiones vamos a utilizar: v, o no " "
+git(develop)         #ya ha creado el work flow, al crear esa seria de ramas o brances 
+git flow feacture start nombre_de_mi_feacture-login
+git (feature/nombre_de_mi_feacture-login)
+git flow feacture finish nombre_de_mi_feacture-login
+                      #para cuando termine, y automaticamente me dice que va a ser un merge
+                      #ha hecho un merge a la rema develop
+                      #ha eliminado a la rama feacture 
+                      #y me ha vuelto a ubicar en la rama develop
+                      #
+                      #Tambien lo puedes hacer sin guit flow, de manera manual con git 
+git checkout -b feacture/feacture_login
+                      #dentro de la rama feacture creo una nueva rama que se llame feacture-login                      
+vi index.php          #
+git add .             #
+git commit -am "version inicial"                       
+                      #una vez que he terminado 
+git checkout main/develop 
+git checkout -b develop 
+git(develop)
+git merge feacture/feacture-login
+                      #listo de manera manual 
+                      #gerencia nos dice que tenemos que empezar a trabajar la version 0.1
+git flow release start 0.1
+                      #instalacion de git flow en linux 
+sudo apt searchgit-flow
+sudo apt install git-flow
+                      #instalacion en ubuntu
+                      #instalarlo en un mac
+brew.sh               #pagina para instalar este instalador de app                      
+brew install git flow 
+                      #en el git bash de windows el git flow ya viene incluido 
+git log --oneline graph
+                      #visualiza el flujo entero que hemos hecho
+                      #tambien se puede utilizar este flujo de trabajo sin la extencion de git flow 
+git init . 
+git(master)                                                                                        
+git switch -c main   #la rama master no esta estandarizada para el uso.
+                     #esta mas estandar la rama MAIN
+                     #renombro la rama master a main.
+git(main)             
+git checkout -b develop 
+                    Comienzo a desarrollar las ramas del flujo work flow...
+git(develop) git checkout -b release/0.1
+git(release/0.1)                            
+                    debes tener el modelo grafico del work flow muy definido en tu cabeza.
+                    #
+git revert          #por si te has equivocado
+                    #un buen ejemplo para hacer un git reset --hard
+git reset --hard id_commit
+                    #porque he metido cambios que no tenian que estar
+                    #hemos vuelto hacia tras
+git branch -D hot-fix_1                    
+git branch --help   :la D mayuscula es un force, es igual que poner -df --delete --force 
+                    #ventajas de git flow
+                    #usa merges vastantes grandes 
+                    #entre versiones hay un monton de cambios, hay un monton de commits 
+                    #al main habitualmente le llamamos el tronco 
+                    #que lo armas ramas mas pequeñas 
+                    #llega un problema al hacer un merge tan grande 
+                    #llaga a ser vastante problematico, merge conflicos y hay que resolverlos a mano
+                    #cada dia esta mas en desuso hacer fusiones grandes 
+                    #hoy en dia lo que se intenta hacer es fuciones pequeñitas 
+                    #por el tema de continues delivery y continuos integrations (CI/CD)
+                    #consiste en integracion y despliegue continuos 
+                    #al yo tener merges grandes va a ser 
+                    #muy dificil que una herramienta automatizada 
+                    #pueda fusionarlos correctamente 
+                    #y por obligacion voy a tener que parar el cliclo de desarrollo
+                    #cuando son cambios pequeños estas fusiones 
+                    #son muy sencillas de hacer de forma automatica 
+                    # y al hacerlas van a poder ejecutar una serie de pipelines 
+                    #puedes usar el glit flow con pequeños feactures 
+                    #en lugar de trabajar en la rama develop 
+                    #podemos trabajar en la rama feacture 
+                    #y hacer continuamente merges y merges 
+                    #en lugar de hacer un merge enorme al final 
+                    #auque se romperia un poco el principio de trabajo de git flow
+                    #git flow tuvo mucho uso, aun se usa muchisimo
+                      #pero en proyectos que requieren integracion continua
+                      #sequeda algo corto git flow, esta en decadencia 
+                      #re-capitulacion
+work flow git flow    #maximo exponente de desarrollo en paralelo
+                      #hemos terminado la pequeña session de introduccion a git hub
+git flow version      #1.12.3 (AVH Edition), si esta incomporado en git              
+>                     #video time: 53:48 / 53:56 , link: https://www.youtube.com/watch?v=JwxpG5weehs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=7
+                      #7 Gitflow - Curso Git - OpenBootcamp
+                      #                    
+#:45) 06/09/2023      #, hora de inicio: 8-:-- am, hora de fin: 9-:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                       
 git flow              #FLUJO DE TRBAJO MAS COMUNMENTE UTILIZADO EN GIT "GIT FLOW"
                       #7 Gitflow - Curso Git - OpenBootcamp
                       #link:https://www.youtube.com/watch?v=JwxpG5weehs&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=7
