@@ -58,9 +58,103 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
-                      #integracion continua, deve estar versionado
+                      #8 Introducción a CI/CD - Curso Git - OpenBootcamp
+                      #link: https://www.youtube.com/watch?v=5WDVGB6PsEk&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=8
+                      Time:34:23 / 1:43:58    
+                      #
 
-->>>
+
+->>>                  #    
+#:47) --/--/20--      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:
+
+                      #8 Introducción a CI/CD - Curso Git - OpenBootcamp
+                      #link: https://www.youtube.com/watch?v=5WDVGB6PsEk&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=8
+                      Time:0:00 / 1:43:58    
+                      #integracion continua, debe estar versionado
+                      #despliegues continuos 
+                      #Estan por debajo de este mundo del desarrollo web
+CI                    #que es la integracion continua
+                      #es el proceso por el cual nosotros continuamente
+                      #estamos integrando en un proyecto todos nuestros cambios (commits)
+                      #es unproceso automatizado habitualmente 
+                      #este es un proceso que es ejecutado cada x tiempo
+                      habitaulmente cada 15 minutos o cada 1 hora
+                      #depende del tamaño del proyecto 
+                      #un proyecti muy grande realizar una integracion continua cada 5 minutos es muy arcaico 
+                      #en proyectos pequeños que no tenemos muchos cambios si es totalmente factible
+                      #un pilar de la integracion continuan nuestro codigo debe estar versionado
+                      #este quiere decir que nuestro repositorio tiene que estar bajo:
+                      CVS, git, version, quirial, 
+                      #por, al hacer un push o coomit, ese sera el codigo a integrar  
+CD                    #continius delivery, o entrega continua, nacio despues 
+                      #es un enfoque en los cales nosotros vamos a pasar a produccion 
+                      #rapidamente nuestros cambios 
+CI problem            #el problema de CI los cambios deben ser pequeñitos 
+                      #si uso el modelo git flow debe cambiar su paredicma de al finar mergear un cambio grande
+                      #git flow tiene muchos cambios, muchos commits de una version de produccion a otra 
+                      #un cambio henorme es la suma de muchos cambios de muchos commits 
+                      #La sugerencia hacer cambios pequeñitos que se puedan fusionar constante mente 
+CI                    #verifica todos esos cambios 
+CD                    #envia esos cambios verificados correctos al servidor final 
+                      #es muy habitual que se use en eplicaciones WEB, tanto a nivel de FrontEen como anivel de BackEnd.
+                      #en proyectos de escritorio no se suele hacer delivery tan cotinuos 
+                      #de una version a otra suele pasar un año. 
+                      #y no estamos publicando constantemente
+                      #en cambio en un servicio web si estamos publicando constantemente 
+                      #ejemplo, esa pagina que nos gusta, YOUTUBE, Whatsapp, google, de la noche a la mañana ha metido una cosa nueva.
+pupeline              :continuamente Intregracion y despliegue                       
+cd                    #se hace en etapas 
+                      :usiarios comunes, usuarios no comunes que pueden ver los nuevos flags 
+                      #que se van a integrar para los usuarios communes 
+                      #publicar a produccion pero que no todo mundo vea esos cambios
+                      #sino una gran muestra de usuarios especiales 
+                      #que pueda testear esos cambios para despues poder lanzar esa flag o bandera de cambios nuevos de la aplicacion
+                      #a todos los usurios de la appweb en su totalidad
+                      #son usuarios a los que yo les puedo dar ese flag para que puedan usar esas nuevas opciones 
+flag a nivel de servidor
+                      #recomienda tenerlo para poder desactivar inmdiatamente esa feacture 
+                      #para que no pase nada raro 
+test de acceptances   :son los famosos test de funcionalidad, usas herramientas como celinium, postman 
+                      #es un proceso de acceptacion
+                      despues de CI haria mi CD que esta tambien automatizado
+                      #1. copiar ficheros resultantes a al servidor de produccion 
+                      #2. re ejecutar el programa en cuestion                                                                     
+ventajas CI/CD        #la automatizacion 
+                      #hay varios pasos que se dejarian de hacer, estarian automatizados 
+                      #el hacerlo ama es algo arcaico 
+                      #son pasos cortos pero muchos que son vastante tediosos 
+                      #y hoy en dia esto esta bastante  automatizado 
+                      #Los software mas habituales para esto:
+hanquis                      
+travis ci
+cirle ci
+yan city
+githab con sus actions 
+gitlab 
+teamcity              #iniciamos con este for ser herramienta muy facil de utilizar 
+                      #despues veremos heanquis
+                      #es super trivial montarse un hanquis en nuestra propia maquina 
+teamcity              #version pro gratuito por 15 dias, se puede instalar en vuestro propio pc 
+pipeline              :Crear un pipeline es crear una serie de pasos a ejecutar 
+                      #los ajentes ejecutan los pipelines 
+                      #queue lo que esta en la cola cuantas cosas tengo pendientes para ejecutar 
+                      #crear un proyecto
+                      desde github.com
+                      #connecion con VCS (repositorio) ha sido verificada, 
+                      #se ha podido conectar al repositorio publico 
+                      #nombre del proyecto
+                      #nombre para la build 
+                      #ruta desde donde se obtiene codigo fuente
+                      #cual es mi rama principal antes era master ya es main 
+instal github hooks   #cuando hago elgo en github, el puede ejecutar unas cosas que se llaman hooks
+                      #cuando yo mande algo a github
+hook es:              #github le va a decir a teamcity que haga cx cosa, cualquier cosa
+                      #instalar el hook para un proyecto en teamcity
+                      #hooks que se disparan 
+github.com hook       #cuando hay un pulrequest u on push 
+>                     #video time: 34:23 / 1:43:58 , link: https://www.youtube.com/watch?v=5WDVGB6PsEk&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=8
+                      #8 Introducción a CI/CD - Curso Git - OpenBootcamp
+                      #                    
 #:46) 07/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                             
                       #
 git flow init 
