@@ -58,14 +58,94 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
+                      #
+#:49) --/--/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                            
+                      #
+                      #9 Github Actions - Curso Git - OpenBootcamp
+                      #video time: 0:02 / 59:30 , link: https://www.youtube.com/watch?v=d_DkZQmdHgU&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=9
+
+->>>
+                      #    
+#:48) --/--/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                      
                       #8 Introducción a CI/CD - Curso Git - OpenBootcamp
                       #link: https://www.youtube.com/watch?v=5WDVGB6PsEk&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=8
                       Time:34:23 / 1:43:58    
                       #
-
-
-->>>                  #    
-#:47) --/--/20--      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:
+                      #puedes tener tu propio teamCity en tu localhost
+                      #pero para que quiero tener mi propio teamcity
+                      #teamcity profesional lo puedo descargar en mi maquina  
+                      #lo puedo ejecutar con docker
+                      #o bajarme un target para windows o mac o linux
+                      #gratis para siempre, los usuario que quieras 
+                      #es por el tema delos costos en los planes 
+$$$                   #por eso mucha gente tiene su propio teamcity
+curso de docker       #sesion informativa 
+                      #lo malo que tien es que no voy a poder configurarme 
+                      #un githook de github, porque lo estoy ejecutando en mi maquina local y no en internet
+                      #github no puede enviarme una conexion a este dominio local 
+                      #porque este dominio solo existe en mi pc.   
+                      #trabaja con la rama master por defecto teamcity
+                      #no poner localhost para acceder al teamcity en su instalacion
+                      #puedes colocar la ip de tu maquina
+                      #require una session aparte para configurar teamcity con docker.
+teamcity              #es uno de los mas usados hoy en dia 
+https://www.jetbrains.com/
+                      #    
+                      #no es dificil de configurar
+                      #esta herramient es muy visual
+                      #todas estas herramientas funcionan igual 
+                      #otra herramienta muy usada antes que saliera git actions 
+JENKINS               #tiene una gran cantidad de plugins 
+                      #es menos visual que teamcity
+                      #podemos montar nuestro propio jenkins
+                      #se puede preparar para levantarlo con docker 
+https://www.jenkins.io/ 
+                      #
+Generic Java package (.war)
+                      #instalador par todos los sistemas operativos 
+                      #en todos los sistemas de CI/CD hay que programar 
+                      #yo soy el encargado de definir los pasos en un pipeline 
+                      #el no sabe que es lo que yo quiero hacer 
+                      #hay un lenguaje completo de JENKINS
+JENKINS pipeline syntax
+                      #en google 
+https://www.jenkins.io/doc/book/pipeline/syntax/
+                      #su sintaxys es declarativa
+pipeline {
+    /* insert Declarative Pipeline here */
+}                                                                  
+                      #
+                      #hello word jenkins pipeline
+                      #github Maven
+                      #try simple pipeline : para ejecutar comandos del sistema operativo
+                      #todas la heramientas se basan en pipeline
+                      #pipeline script 
+                      #porque ha fallado mi pipeline en su ejecucion 
+                      #maven es una herramienta 
+                      #de forma automatica 
+                      #se ha bajado el codigo fuente
+                      #ha ejecutado los test 
+                      #lo ha compilado 
+                      #me ha generado un .jar para descargar 
+                      #esta es la parte de intagracion continua an JENKINS
+                      #otra herramienta 
+https://circleci.com/ #no lapuedes instalar en local                      
+                      #tiene opcion gratuita 
+                      #ejecutar un hola mundo en circle 
+                      #la ultima herramienta a ver travis
+https://www.travis-ci.com/
+                      #tiene plan gratis 
+                      #no es raro que tengas mulotiples provedores de este tipo de herramientas 
+                      #se integra con github muy bien                       
+                      #otros:
+                      bomboo
+                      Apache Hudson
+                      #git crear fichero de configuracion travis.yml
+github.com hook       #cuando hay un pullrequest u on push 
+>                     #video time: 1:43:582 / 1:43:58 , link: https://www.youtube.com/watch?v=5WDVGB6PsEk&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=8
+                      #8 Introducción a CI/CD - Curso Git - OpenBootcamp
+                      #    
+#:47) 07/09/20--      #, hora de inicio: 8-:-- am, hora de fin: 9-:-- am,  sesion de estudio/practica: GIT, +Descripcion:
 
                       #8 Introducción a CI/CD - Curso Git - OpenBootcamp
                       #link: https://www.youtube.com/watch?v=5WDVGB6PsEk&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=8
