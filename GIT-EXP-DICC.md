@@ -59,14 +59,120 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
                       #
-#:49) --/--/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                            
+#:50) --/--/20--      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                  
+
+
+
+
+->>>                      
+#:49) 09/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                            
                       #
                       #9 Github Actions - Curso Git - OpenBootcamp
                       #video time: 0:02 / 59:30 , link: https://www.youtube.com/watch?v=d_DkZQmdHgU&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=9
+                      #Github Actions, es la respuesta de Github al crecimiento de los sistemas CI/CD externos
+                      #cuando no existia los desarrolladores estaban en travis, 
+                      #circle CI y otros mas pequeños como Teamcity
+Github Actions        #es el CI/CD hecho dentro del propio github
+                      #asi que ya tenemos la solucion completa
+                      #1. alojamiento de fuente 
+                      #2. CI integracion continua
+                      #3. CD Despliegue continuo
+                      #sin salir de GitHub
+https://github.com/okmiguel/primer/actions/new
+                      #aqui es donde se configuran las acciones 
+                      #acciones son respuestas a eventos que pasan dentro de github
+                      #ventos en github:
+                      #se crea una issue en nuestro proyecto,
+                      #se resiba un pull request
+                      #o se realice un merge 
+GitHub Actions        #Automatiza, personaliza y ejecuta tus flujos de trabajo de desarrollo de software 
+                      #directamente en tu repositorio con GitHub Actions. 
+                      #Puedes descubrir, crear y compartir acciones para realizar cualquier tarea que desees, 
+                      #incluyendo CI/CD, y combinar acciones en un flujo de trabajo completamente personalizado.
+                      #
+                      #GitHub Actions es una plataforma de integración continua y entrega continua (CI/CD) 
+                      #que te permite automatizar tu proceso 
+                      #de construcción, prueba e implementación. 
+                      #Puedes crear flujos de trabajo que construyan y prueben 
+                      #cada solicitud de extracción en tu repositorio, 
+                      #o implementar las solicitudes de extracción fusionadas en producción.
+                      #GitHub Actions va más allá de DevOps 
+                      #y te permite ejecutar flujos de trabajo cuando ocurren otros eventos en tu repositorio. 
+                      #Por ejemplo, puedes ejecutar un flujo de trabajo 
+                      #para agregar automáticamente las etiquetas apropiadas 
+                      #cada vez que alguien crea un nuevo problema en tu repositorio.
+                      #GitHub proporciona máquinas virtuales 
+                      #Linux, Windows y macOS 
+                      #para ejecutar tus flujos de trabajo, 
+                      #o puedes alojar tus propios ejecutores autohospedados 
+                      #en tu propio centro de datos o infraestructura en la nube.
+                      #las acciones de git actions se dividen en el siguiente orden 
+                      #Workflows: fichero yamel, generar un work flow cuando quiero que suceda algo 
+                        #Events
+                          #Jobs
+                            #Steps :pasos 
+                              #Actions : podria ser un Maven
+                                #Runners : Agentes lo llaman los otros CI/CD
+github publicos       #version gratuita Github para proyectos Open Source 
+                      #no hay ningun limite
+                      #y github nos provee sus propios runners 
+github privados       #tenemos solo un maximo de 2000 minutos 
+                      #al mes para usar las Actions de github.
+                      #los Runner se ejecutaran 
+                      #de forma gratuita 2000 minutos al mes.
+                      #al tener un proyecto que tarda 2 horas en compilarse 
+                      #estariamos utilizando 120 minutos.
+                      #si lo volvemos a ejecutar 
+                      #consumiriamos otros 120 minutos, 
+                      #y asi sucesivamente va sumando  
+                      #hasta que superasemos la cuota de los 2000 minutos al mes.
+                      #ficheros YML definen el workflow 
+                      #dentro de yml
+                      #1 nombre
+                      #2 seccion de eventos on: 
+                      #jobs : se ejecutan los trabajos, ubuntu-latest, puede que git use docker por debajo
+                        #permisos 
+                          #steps
+                            #uses : actions : acciones, que hacen estas acciones 
+                             #with: parametros para uses 
+                              #secrets.GITHUB_TOKEN
+                      #las acciones de github actions son:
+                      #repositorios de codigo 
+https://github.com/actions
+                     #es como meterse en cualquier otro repositorio de codigo fuente 
+https://github.com/actions/first-interaction
+https://github.com/actions/first-interaction@v1
+                    #es un tag: @v1
+https://github.com/actions/first-interaction/releases/tag/v1
+                    #vamos a usar una accion que esta en este repositorio 
+                    #la indexacion en los archivos yaml se debe respetar 
+                    #sino de error 
+                    #esta accion hace:
+                    #la primera vez que un usuario nos hace un pull request 
+                    #o nos crea una incidencia, le mandemos un mensaje de bienvenida                       
+                    #las acciones las podes programas vosotros tambien 
+                    #esta escrito en TS typeCgript
+                    #main.ts
+                    #uses vienen de un repositorio de github
+                    #cuenta de git hub que es actions 
+                    #elijo el que quiero:
+Greetings
+By GitHub Actions
 
-->>>
+Greets users who are first time contributors to the repo
+
+Automation
+                    #se va a disparar el CI/CD
+                    #ante una incidencia del usuario 
+                    #action greetings solo se dispara 
+                    #la primera vez que el usuario crea la incidencia 
+                    #workflow greetins es quien detecta la incidencia "es una actions de github"
+                    #el codigo de first interation 
+https://github.com/actions/first-interaction/blob/main/src/main.ts
+>                     #video time: 23:39 / 59:30 , link: https://www.youtube.com/watch?v=d_DkZQmdHgU&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=9
+                      #9 Github Actions - Curso Git - OpenBootcamp
                       #    
-#:48) --/--/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                      
+#:48) 08/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                      
                       #8 Introducción a CI/CD - Curso Git - OpenBootcamp
                       #link: https://www.youtube.com/watch?v=5WDVGB6PsEk&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=8
                       Time:34:23 / 1:43:58    
