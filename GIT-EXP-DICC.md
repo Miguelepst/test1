@@ -59,12 +59,49 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
                       #
+#:51) --/--/20--      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
+
+->>>                                            
 #:50) --/--/20--      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                  
-
-
-
-
-->>>                      
+                      #https://github.com/actions/first-interaction/blob/main/src/main.ts
+                      #video time: 23:39 / 59:30 , link: https://www.youtube.com/watch?v=d_DkZQmdHgU&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=9
+                      #
+                      #9 Github Actions - Curso Git - OpenBootcamp
+                      #on: son muchisimos los eventos que los pueden disparar 
+github actions events :busquemolo en goolge                          
+                      #
+https://docs.github.com/es/actions/using-workflows/events-that-trigger-workflows
+                      #eventos que desencadenan el flujo de trabajo
+                      #aveces no necesitas aprender a hacerlo el workflow ya te lo dan hecho 
+MAVEN                 #workflow que tengan que ver con la herramienta MAVEN
+                      #hay uno que tiene 75 estrellas debe estar bien este workflou
+                      #
+                      #Marketplace de git action
+                      #Search for apps and Actions 
+https://github.com/marketplace?type=actions                       
+                      #Maven, 
+https://github.com/marketplace?type=actions&query=maven+
+                      #flow Actions script .yml
+El nombre
+cuando se dispara                                             
+los trabajos que se ejecutan
+  Sobre que se va a ejecutar
+                     :Sobre una imagen de ubuntu latest "un servidor con ubuntu"
+                     #Que pasos tiene mi face de compilacion 
+                     #estraer codigo fuente
+                     #configurar JAVA depende del proyecto 
+MAVEN                #es un compilador de codigo fuente de JAVA 
+                     #contruyo un contenedor de Doker y lo empujo 
+                     #secrets : usuarios y contraseñas dentro de git hub
+                     #es como programacion sobre programacion
+                     #muchos fallos al final 
+                     #los workflows son ficheros yml 
+                     #dentro de nuestro repositorio en la carpeta workflow
+                     #buena teoria pero la practica nole resulto 
+                     #
+                     https://github.com/actions/first-interaction/blob/main/src/main.ts
+>                    #video time: 59:26 / 59:30  , link: https://www.youtube.com/watch?v=d_DkZQmdHgU&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=9
+                     #                     
 #:49) 09/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                            
                       #
                       #9 Github Actions - Curso Git - OpenBootcamp
