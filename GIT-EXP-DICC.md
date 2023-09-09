@@ -58,15 +58,120 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
+                       #10 Gitlab CI - Curso Git - OpenBootcamp
+                       #video time: 9:00 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+                       #                                 
+.xml                   # no es .xml es .yml
+                       #quitar los comentarios del yamel .yml
+                       #identificar sus seccion del archivo yamel 
+                       #session yamel image
+variables:             #se definen variables que se uaran durante todo el ciclo de vide de nuestro pipeline
+                       #variables de trabajo global 
+                       #hay otra series de variables definidas por GitLab que tambien podemos utilizar 
+                       #session yamel image
+image:                 #todas estas centencias se van a ejecutar en contenedores docker por debajo 
+                       #aqui es donde le digo que imagen voy a utilizar para ejecutar este pipeline
+                       #puedo usar cual quier estandar, en el ejemplo uso: maven:3.3.9-jdk-8
+maven:3.3.9-jdk-8      #estas imagenes las podes encontrar el el registro de docker 
+                       #en un registro privado en gitlab
+dockerhub.com                       
+www.docker.com                       
+hub.docker.io
+hub.docker.com          #por si queres ver otras imagnines diferentes                                                   
+                        #session yamel image
+cache:                  #configuracion especifica para maven: dependencias que se guardan en carpeta M2
+ls $HOME/.m2            #repository JAVA, son todas las dependencias descargadas 
+                        #a la hora de compilar proyectos java
+                        #para que los pipelines sean mas rapidos debemos cachear lo que sabemos que se puede cachear
+                        #sin cache es mas lento que con cache
+                        #session yamel image, luego empezamos con nuestros famosos trabajos JOBs
+                        #que los poder llamasr como quieras
+trajabos
+jobs
+.verify: &verify         
+                        #hay cosas que se van a ejecutar por debajo de la imagen 
+                        #si quieres ver lo que puede hacer esa imagen en vuestra maquina 
+                        #podes hacer 
+docker run -it maven:3.3.9-jdk-8
+                        #para bajarte la imagen, y esto es lo mismo que va a hacer GitLab
+                        #por debajo en su sistema en su plataforma 
+                        #y vosotros podes reproducir exactamente 
+                        #lo que va hacer el pipeline de Githuhb 
+                        #en tu ordenador y no es raro que lo hallamos hecho primero en local  
+                        #son imagenes pesadas 
+                        #session yamel image
+script:                 #el lenguaje del script es "shell script"
+                        #esta escrito en BASH
+                        #o en SH
+                        #puedo escribirlo en cualquier lenguaje 
+                        #que soporte el contenedor subyasente                         
+                        #Seguramente el contenedor subyasente MAVEN
+                        #este montado sobre linux, es algo vastante habitual (alpine)
+                        #cualquier commandos que soporte la maquina virtual subyasente, 
+                        #si fuera windows, pues serial los comandos del shell de windows 
+parar los contenedores  #esta tardando mucho                         
+.gitlab-ci.yml
+                        #documentacion GitLab para MAVEN
+https://docs.gitlab.com/ee/user/packages/maven_repository/                        
+                        #Add the following section to your settings.xml file.
+env                     #comando para ver las variables de entorno en la terminal linux                        
+                        #son uns series de vsariables globales de la terminal 
+                        #en gitlab tambien hay una serie de variables
+                        #y accedemos asi, ej:
+${{ env.ProgramData}}
+gitlab CI variables    #google, hay un monton
+gitlab                 #ellos mismos se hacen CI y CD
+                       #cuando esta instalado en mi maquina o server de mi empresa 
+                       #si me debo fijar en el numero de versiones y sus compatibilidades 
+                       #auque yo puedo actualizarla.
+                       #las variables y en que versiones fueron introducidas.
+                       #los banners deben soportar tambien estas variables 
+RUNERS                 #los pipeline se ejecutan atraves de los RUNNERS
+                       #son programas instalados en diversas maquinas 
+                       #que estan constantemente mirando que se tenga que ejecutar un pipeline 
+                       #y cuando se este ejecutando el pipeline el runners que este libre
+                       #pueden ser 200, 1, o dos runners libres 
+                       #y hay un trabajo pendiente el sera el encargado 
+.gitlab-ci.yml         #de bajarse el famoso fichero  .gitlab-ci.yml
+                       #procesarlo y disparar las cosas 
+>                      #10 Gitlab CI - Curso Git - OpenBootcamp
+                       #video time: 35:12 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+                       #                                                       
+->>>                                                                  
+#:51) 09/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
                       #
-#:51) --/--/20--      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
-
-->>>                                            
-#:50) --/--/20--      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                  
+                       #10 Gitlab CI - Curso Git - OpenBootcamp
+                       #video time: 2:19 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp
+                       #usar gitlab como plataforma de CI/CD
+PIPELINES              #realizar trabajos de integracion utilizando pipelines
+                       #son una serie de especificaciones 
+                       #que deben cumplirse para que un proyecto:
+                       #descargue su codigo fuente
+                       #valide el codigo fuente 
+                       #y haga otras cosas que nosotros queramos 
+                       #ejemplo generar un artefacto, un fichero descargable 
+                       #o copiarse a un servidor de produccion
+                       #mejor aun instalate vuestro propio GitLAb 
+                       #en lo cal con Docker 
+                       #o sitenes acceso a cualquier servidor 
+                       #lo podes instalar en cualquier servidor   
+                       #la forma mas sencilla es instalarlo mediante Docker 
+Auto DevOps            #Son los Git actions de gitlab, crea pipelines por mi. 
+                       #templates de pipelines
+                       #me dan un monton de trabajo hecho, al igual que git actions 
+gitlab-ci.xml          #fichero de configuracion
+                       #puedes usar el asistente 
+                       #al ser un proyecto de Java hecho con MADEN
+MAVEN                  #escojeremos la plnatillas de MAVEN                                       
+                       #
+>                      #10 Gitlab CI - Curso Git - OpenBootcamp
+                       #video time: 9:00 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+                       #                                 
+#:50) 08/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                  
                       #https://github.com/actions/first-interaction/blob/main/src/main.ts
+                      #9 Github Actions - Curso Git - OpenBootcamp
                       #video time: 23:39 / 59:30 , link: https://www.youtube.com/watch?v=d_DkZQmdHgU&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=9
                       #
-                      #9 Github Actions - Curso Git - OpenBootcamp
                       #on: son muchisimos los eventos que los pueden disparar 
 github actions events :busquemolo en goolge                          
                       #
