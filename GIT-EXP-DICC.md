@@ -58,19 +58,187 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
+                      
 
+
+
+->>>
+>                                                                            
+#:54) 00/09/2023      # hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
                       #
                       #10 Gitlab CI - Curso Git - OpenBootcamp
                       #video time: 1:15:53 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
                       #                                                       
+                      #como lo hacemos con docker 
+docker run -rm -it -v gitlab-runner-config:/etc/gitlab-runner gitlab/gitlab-runner:latest register 
+                      #antes de hacerlo debo si tengo ese volumen creado 
+                      #me vuelve a preguntar lo mismo 
+                      #alphine imagen por defecto para esta maquina 
+                      #vuelvo a recargar la pagina de gitlab.com 
+                      #y ya me deben aparecer 2 runners specificos 
+                      #me aparecen que no estan conectados 
+                      #eso es porque no tengo IP publica 
+                      #al no tener IP publica dificilmente me va a funcionar 
+                      #voy a intentan hacerlo en un servidor con linux 
+                      #que si tiene IP publica 
+                      #para ver si podemos levantar un runners y utilizarlo desde gitlab.com 
+ssh vroman@185.142.62.4
+password 
+sudo su -
+contraseña 
+                      #antes de hacer nada miro si esto tiene cortafuegos levantado 
+iptables -L -v -n 
+                      #cero chain up, no lo tiene levantado, only sub-titles  
+clear                                     
+                      #me bajo el paquete 
+                      #copy y paste de las instrucciones 
+                      #crear usurio git.runner 
+                      #instalar el servicio 
+                      #registrar el servicio
+                      #arrancar el el servicio con start  
+                      #and the same enters registration TOKEN
+                      #entar a descripcion for the runner 
+                      #linux
+                      #and What kind 
+                      #shell
+                      #"We are going to execute it." vamos a ejecutarlo
+                      #start 
+ps auxw | grep -i gitlab 
+                      #se esta ejecutando, "it's executing" 
+                      #vamos a esperar un poquito , "we're going to wait a few minutes"  
+                      #volvemos a la pagina de gitlab seccion runners specificos "we are come back to the page of gitlab setion runners specifit"
+                      #los otros dos runnes no estan disponibles porque pertenecen a IP privada mi red LAN 
+                      #vamos a ejecutar nuetro trabajo nuestro pipeline, haber que pasa 
+                      #y ejecutamos el pipeline 
+                      #muestra error porque es un servidor en donde no he instalado docker y tampoco he montado MAVEN de java 
+                      #osea que el comando MAVEN no existe en el servidor, no existe en el runner 
+                      #voy a simular el comando maven 
+                      #creando un script warrior en linux 
+vi /usr/bin/mvn/      #no debes hacerlo nunca, pero es pra test 
+                      #contenido del archivo 
+!#/bin/bash 
 
+echo "
+Soy el comando 'mvn' (MAVEN), ejecutandome en el gitlab-runner de tipo shell.
+Esta es mi configuracion IP:
+"
+echo ""
 
-->>>
+IP addr show  
 
-
+echo ""               #muestra lineas vacias  
+echo "adios y gracias por utilizarme"
+                      #me he creado un script en shell 
+chmod -x  /usr/bin/mvn/
+                      #ejecuto MAVEN para que me muestre el script shell
+mvn                                          
+                      #vualvo a ejecutar mi pipeline 
+                      #y me debe mostrar el script shell
+                      #yo puedo cambiar la configuracion del runner 
+                      #cambiarle el nombre 
+cat /var/log/gitlab-runner.err 
+                      #es el log de errores 
+                      #docker machine no puede hacerlo, al no estar instalado 
+                      #pense que me lo iba a poner en el fichero de log
+cat /var/log/gitlab-runner.log
+                      #pero no lo puso en el fichero de error .err                                              
+                      #retrocedemos  y lodejamos funcionando como antes 
+/usr/local/bin/gitlab-runner stop
+/usr/local/bin/gitlab-runner start
+                      #ya, volvemos ajecutar nuestro CI/CD, nuestro pipeline
+                      #quiero que se ejecute automaticamente 
+                      #fallara porque no tengo MAVEN instalado 
+                      #run pipeline "Que se ejecuten todos los trabajos"
+                      #son seecuencias de trabajos como pueden ser script 
+                      #build secction pipeline 
+                      #deploy secction pipeline
+                      #vamos a parar los runnes del del mac
+/usr/local/bin/gitlab-runner stop
+                      #y los desistalamos 
+/usr/local/bin/gitlab-runner uninstall
+                      #configurar un runner es sencillo pero reuiere saber lo que estamos configurando 
+                      #para que me puede interesar tener multiples runners en multiples maquinas 
+                      #no todos los desarrollos son web 
+                      #y no todos los desarrollos se tienen que ejecutar en linux 
+                      #esposible que tengamos que ejecutar nuestros trabajos(repos)
+                      #en otros sistemas operativos como windows 
+                      #cvsd 
+                      #cada runner acorde a lo que vamos a hacer
+                      #tenner un monton de runners es algo habitual 
+                      #es muy sencillo de configurar 
+                      #de hecho cuando estamos en nuestra propia empresa 
+                      #tenesmos todos los servidores en el mismo rango de red 
+                      #todos tiene ips privadas y todos se van a poder comunicar 
+                      #y no estar que si es un servidor publico o un servidor privado ni cosas asi.
+                      #incluso ejecutandoles en maquinas virtuales que es bastante normal 
+                      #share runners los podria tener asignado a multiples proyectos los de gitlab 
+                      #como puedo decirle a gitlab que ejecute un ranner share concreto uno que tenga windows 
+                      #con las etiquetas: windows1809 
+                      #vamos al repositorio y edito 
+.gitlab-ci.yml        #con el pipeline editor y en la fase de deploy adiciono: 
+                      tags -windows  -windows 1809                      
+                      Estas tags me permiten elegir un runner u otro runners 
+error                 #                      
+                      tags docker 
+                      #cuando se ejecutan los pipelines te envian un correo por cada uno 
+                      #en que proyecto, en que commit,  en que rama cual ha sido el autor 
+                      #que jobs han fallado 
+                      #cuando las cosas funcionas tambien nos lo dicen 
+                      #referencia gitlab pipelines yml 
+https://docs.gitlab.com/ee/ci/yaml/                    
+SECRETS               #aqui en gitlab tambien tenemos secretos 
+                      #En la parte variables de CI/CD, añadir variable 
+                      #proteger la variable 
+                      #esta variable solo se podra utilizar 
+                      #dentro de los pipelines que se ejecuten en ramas protegidas y cin cierta etiquetas 
+                      #otra opcion enmascarar variable, para que no se muestre en un log esa informacion 
+pipeline triger       #para ejecutarlos a mano 
+rollbacks             #por si nos hemos equivocado 
+git pull 
+git rm .gitlab-ci.yml 
+git commit -am "elimino .gitlab-ci.yml la integracion continua and && git push"
+git push 
+                      #en gitlab.com
+Auto DevOps           #opcion auto devOps online 
+                      #esto se ejecuta solo si no hay un fichero de fonfiguracion yml de gitlab CI
+                      #es muy automatico
+                      #esto de que tenga mucha magia por debajo no me convence 
+                      #porque hay muchas cosas que no vemos             
+                      #ejemplos de CI/CD de github
+https://docs.gitlab.com/ee/ci/examples/
+                      #How to deploy Maven projects to Artifactory with GitLab CI/CD
+https://gitlab.com/gitlab-examples/maven/simple-maven-example
+Python on Heroku      #	Test and deploy a Python application with GitLab CI/CD.
+                      #How to publish Android apps to the Google Play Store with GitLab and fastlane
+https://about.gitlab.com/blog/2019/01/28/android-publishing-with-gitlab-and-fastlane/
+                      #
+PHP with Laravel, Envoy	
+                      #Test and deploy Laravel applications with GitLab CI/CD and Envoy                                            
+                      #CI/CD templates
+goland                #Go lenguaje de programacion template
+                      #si quisieramos hacer un proyecto con Go goland
+                      #con solo hacer un copi y paste de esta template nos funcionaria este pipeline 
+                      #nos funcionaria todo el tema de formatear y compilar 
+Artifacts:            #se va a generar un binario                       
+                      #me va a dejear el binario dentro del resultado del pipeline 
+                      #si yo genero un artefacto al igual que JENKINS yo me lo puedo bajar 
+                      #gitlab pricing
+                      #Cuales son los limites de gitlab                      
+https://about.gitlab.com/pricing/feature-comparison/
+https://about.gitlab.com/pricing/
+                      #
+Free features:
+5GB storage [1]
+10GB transfer per month [2]
+400 compute minutes per month [3]
+5 users per top-level group [4]
+                      #
+                      #cada 1000 minutos por 10 dolares si se acaban los 400minutos 
+                      #60 dolares por cada 10GB de espacio 
+                      #recapituacion
                       #
 >                     #10 Gitlab CI - Curso Git - OpenBootcamp
-                      #video time: 1:15:53 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+                      #video time:  1:56:27 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
                       #                                                       
 #:53) 10/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
                       #
