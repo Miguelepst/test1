@@ -1,5 +1,5 @@
 instantáneas de los cambios, Lo mas reciente arriba "HEAD" - Lo mas antiguo en lo profundo al fondo.
-(#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando, (->>>) cursor (donde estoy), (>) pausas
+(->>>) cursor (donde estoy), (#-) : apertura nuevo tema o subtema, (-#) : cierre nuevo tema o subtema, (#) comentario, (:) explicacion de comando,  (>) pausas
 Comando               #Explicaion -->  (alt+z: linea sin salto de linea)
 
 
@@ -58,9 +58,107 @@ cierre: Video #5, curso de Introducción a Git, Repositorios remotos
 {
   {"comandos FIFO": 04/08/2023"   *--------# Start (HEAD):   " #-COMITS ABIERTOS IDs: 1 -#"
                       (:#)
+
+                      #
+                      #10 Gitlab CI - Curso Git - OpenBootcamp
+                      #video time: 1:15:53 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+                      #                                                       
+
+
+->>>
+
+
+                      #
+>                     #10 Gitlab CI - Curso Git - OpenBootcamp
+                      #video time: 1:15:53 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+                      #                                                       
+#:53) 10/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
+                      #
+                      #10 Gitlab CI - Curso Git - OpenBootcamp
+                      #video time: 35:12 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+Runners               #Son los qu ejecutan el trabajo 
+                      #Como montrar nuestro propio runner, es muy sencillo
+                      #yo puedo trabajar con mis runners y no con los runners de gitlab
+                      #si no tengo runners los pipelines no se ejecutan 
+                      #si tienes muy poquitos ranner posiblemente tengas muchos encolamientos "muy lento"
+14096 [error] Failed to execute...                     
+                      #arreglar un proyecto maven para que funcione el CI y CD y no nos peleemos con maven
+                      #Hacer un CI/CD de un proyecto angular 
+                      #pipeline editor mas util 
+https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/
+anchors:              #Copia una parte de codigo del pipeline y la inserta en otra parte del codigo 
+                      #para no tener que volver a copiar lo mismo 
+                      #sin anchor queda mas limpio mas sencillo 
+                      #el template viene sin anchors 
+vi pon.xml            
+env                   #como uso las variables de entorno del S.O. dentro del pipeline
+                      #dentro de un area de script ejecuto el comando env
+git pull              #antes hago un git pull para que no me diga que estoy por detras       
+MERGE REQUEST         #en un pipelines puedes decidir que se va a producir cuando hagas merge reuest
+Scheduling Pipelines  :ejecutan un pipeline cuando yo quiera 
+Gitlab                :Shared Runners, son 42 disponibles, dice que 
+                      #son gratuitos para proyectos open source 
+                      #y limitados a 400 minutos CI por mes por grupo de pryectos privados. 
+                      #si mi repo fuera privado yo no podria pasarme de 400 minutos al mes
+                      #el tiempo que el pipeline tarda en ejecutarse 
+                      #el un proyecto privado es lo tipico cuando trabajamos en empresa 
+CI/CD Analitics       #reportes de analisis
+                      #puedo utilizar mis propios runners tanto en gitlab.com 
+                      #como en la app de gitlab local 
+                      #como me puedo montar un runner specific
+https://docs.gitlab.com/runner/install/                                             
+                      #te lo puedes instalar tanto windows como en linux, mac 
+                      #lo puedes instalar con un binario
+                      #o lo puedes instalar con docker 
+                      #50 megas 
+                      #despues de instalarlo debo registrarlo 
+sudo chmod -x ruta-de-descarga/gitlab-runner 
+ruta-de-descarga/gitlab-runner register
+                      #linux   
+                      #me comienza ha hacer algunas preguntitas 
+                      #donde esta gitlab, que tipo de ejecucion quieres 
+                      #pudes usar la instancio publica de gitlab para esto 
+                      #en el caso de no tener un gitlab instalado en tu maquina local 
+                      #introduce su url:
+http://gitlab.com/
+                      #pide un register TOKEN 
+                      #en los runners de la pagina de git los specific ahi esta un token especifico 
+                      #un runner es una maquina con S.O.
+                      #no le pones tag , le das enter tecla 
+                      #te informa que se ha registrado 
+                      #te dice con cual identificador se ha registrado                                          
+                      #te dice que introduzcas un ejecutar 
+                      #cuando mi runner se baje un pipeline 
+                      #yo tengo que decirle como va a ejecutar ese pipeline
+                      #yo puedo decirle que lo ejecute en un contenedor de docker 
+                      #o que lo ejecute nativamente en un sistema operativo 
+                      #o que ejecute con maquina virtual de paralex 
+                      #o que utilice virtual docker machine  "uno de los mas tipicos"
+                      #lo que sea
+she                   #le ponemos: shell
+                      #que lo ejecute en el mac directamente 
+                      #me dice que el runner ya se ha registrado 
+ruta-de-descarga/gitlab-runner start 
+                      #para ejecutar el runner 
+                      #se debe crear el servicio primero 
+ruta-de-descarga/gitlab-runner install         
+ruta-de-descarga/gitlab-runner start 
+                      #para ejecutar el runner 
+                      #ahora recargo la pagina de gitlab                
+                      #me voy a runners specificos 
+                      #y ahi debe de estar el runner y como se llama
+                      #te puedes montor los runner que quieras en los specificos 
+                      #pero esta vez lo hare con docker 
+                      #
+>                     #10 Gitlab CI - Curso Git - OpenBootcamp
+                      #video time: 1:15:53 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
+                      #                                                       
+#:52) 09/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
+                      #
                        #10 Gitlab CI - Curso Git - OpenBootcamp
                        #video time: 9:00 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
-                       #                                 
+                       #  
+
 .xml                   # no es .xml es .yml
                        #quitar los comentarios del yamel .yml
                        #identificar sus seccion del archivo yamel 
@@ -137,7 +235,6 @@ RUNERS                 #los pipeline se ejecutan atraves de los RUNNERS
 >                      #10 Gitlab CI - Curso Git - OpenBootcamp
                        #video time: 35:12 / 1:56:27 , link: https://www.youtube.com/watch?v=jR1HFox1BMg&list=PLkVpKYNT_U9fFT8xjHVevZI8tWWnnIN0d&index=11&ab_channel=OpenBootcamp                       
                        #                                                       
-->>>                                                                  
 #:51) 09/09/2023      #, hora de inicio: -:-- am, hora de fin: -:-- am,  sesion de estudio/practica: GIT, +Descripcion:                                                                                        
                       #
                        #10 Gitlab CI - Curso Git - OpenBootcamp
